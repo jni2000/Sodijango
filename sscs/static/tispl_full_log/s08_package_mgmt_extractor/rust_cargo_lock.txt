@@ -1,0 +1,6 @@
+
+
+[0;34m==>[0m [0;36mRust cargo lock identification[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No Rust Cargo.lock package files found!
+[[0;33m*[0m] rust_cargo_lock sub-module finished

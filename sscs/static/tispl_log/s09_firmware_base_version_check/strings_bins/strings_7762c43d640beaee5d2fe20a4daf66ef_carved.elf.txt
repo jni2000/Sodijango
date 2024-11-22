@@ -1,0 +1,1082 @@
+'([O
+0`)fD
+#AxO
+#AxO
+ hAa h
+h(ny
+q(f hBn
+@(fL
+!h(FJj
+v0FJn
+f hAn
+!hHj
+`BCh#
+h0`A
+!0`@
+$([O
+`pGM
+ pGo
+|TicE
+`TicE
+`pGM
+ pGo
+0"x$
+sFD\
+ `"b`j
+  b`jx
+(!*B
+kA`Qk
+H`pG
+PpGA
+`CupG
+`pGH
+`pG"
+`pGo
+GLUELOGIC_INVERTED_MAIN_RESETZ_LATCHED
+GLUELOGIC_IO_SWAKEUP_CAN_USART_IO
+GLUELOGIC_IO_SWAKEUP_MAIN_IO
+GLUELOGIC_IO_SWAKEUP_MCU_IO
+WKUP_ICEMELTER0
+WKUP_RTCSS0
+WKUP_TIMER0
+WKUP_TIMER1
+WKUP_UART0
+WKUP_I2C0
+MCU_GPIO0
+USB0
+USB1
+$pGC
+$pGC
+$pGC
+tpG-
+x0)h
+HQ.DF
+&h.D
+#%hC
+%hrQC
+%hpQC
+f%h 3
+(F!F
+(F!F
+`pG-
+1ysy
+F@F)F2F;F
+2h F
+trace:r5fss0_0
+!7D|h=
+%zfz
+IEFh
+PF!F
+>F`F
+PF!F
+`@8C
+PF!F
+PF!F
+RhP@
+PF"F
+(F!F
+PF"F
+(F!F
+PF"F
+(F!F
+@u F
+ F !
+ F@!
+`p(D
+`pHD
+`p8D
+( FO
+A`@hG
+@iHE
+ F !
+ F@!
+ !Fn F
+w FO
+Ff@n
+PF !
+PF@!
+	PFO
+(FYF
+@i@E
+	PF !
+PF@!
+ !FnPF
+7F@!
+	Ff@n
+aE	PF
+FPFO
+(x'F
+IF:F3F|
+%.(+
+FF("
+F(:F
+Fi(f
+IF:FG(
+IF:F% 
+IF:F3F
+IF3F  
+F@hS
+@FIF:F
+IF:Fp
+cYFZE8
+IF  
+IF3F
+F:F3F|
+"FIF3FO
+IF3F
+"FIF3FO
+IF3F
+IFT"
+ yjO
+3!F*F
+V!F*F@
+`kh#
+f(j(j@
+(bhm@
+`.i.iF
+`(l@
+a(l@
+`*i"
+blah@h
+(FYF
+ #iB
+``l*j*j`
+9l@F
+PF)F
+PF9F
+PF)F
+PF)F
+PF)F
+ @@!
+ F !
+g@F !
+2d0l
+Fqdpl
+@F !
+(@FA
+@F !
+0e1m
+ pG-
+XFaF2F+F
+XF2F+F
+*F9F
+gF@D
+aF2F+F
+R!BO
+F@jK
+)QF8
+U2F@
+)F2F@
+ 2FO
+))F8
+T2F@
+]>Dwx\
+%0x(D
+0x8D
+Q(F	x
+!biPxC
+bhIxR
+8!8F
+0FIFRF
+FHF9FZF
+chBxQ
+p0F)
+(})i
+&(}@
+h)}*i
+(})i
+(})i
+r)i*
+(})i
+(})i
+RQX)
+(})i
+(})i
+`(})i
+(})i
+h)}*i@
+(})i
+0F)FKF
+dKF(
+)F:FKF
+0F)FO
+LB)FKFO
+:FPE
+?aCoc
+4(5`
+0`0h@
+0`0h@
+`0h@
+@@7h
+F@!O
+@y0F
+0F !
+0F@!
+0F !
+]w0F
+0D@{@
+HFAF*FSF
+HFAFBFCF
+Eh F
+ FYF
+IFCF
+	&MF
+9FtF
+@h`E
+L RES
+)FRF3F
+BgF(
+SF FMFGF
+SFMFGF
+9F*F
+W@	@
+RSF@
+F(FYF:F
+WJF@	O
+WJF@	O
+@FQF
+F@FQF
+@FQF
+@F1F
+@F1F
+@FQF
+@F1F
+@FQF&F
+F@F!F
+F@F!F
+@F!F
+x4FA
+$ F	
+q*F4F
+ F-"
+(F!F
+(F!FBF
+ F)F
+PFYF
+PFYF3F
+ F)F
+wh F
+)F2F
+#u(F
+`h9F
+FZ )F u F
+Z!!u8
+ F)F
+`h1F
+Z  u F)F
+!0F!u
+P!FJF
+yv(F
+V!FJF
+`E9f
+`Bh"
+zj@F
+`Bh"
+08g)h
+`Bh"
+`Bh"
+`Bh"
+:j@F
+(hAhA
+ F,"
+(FBF
+ F)F
+PFYF;F
+ F)F
+2 F)F
+PF9F"F
+W0F"F
+0hAhA
+PF1FBF
+4h?+%`
+ QF2F
+a(FG
+hIh	
+nF0F
+hIh	
+nF0F
+xl9d1F
+Z xe6
+T|e	
+PFAF
+PF)F
+!DJx"
+`^F@
+PF)F
+PF)F
+rvz~
+hy(@
+hy(R
+I	)@
+ AF:FC#
+VAF:FD#
+hh:FO
+VAF:F
+ :FH#
+zqHC
+c&dhi
+(F1F
+RIF@
+i*F+FA
+1j0F
+U1F:F
+0FYF
+ FJF	
+(})i
+`(})i
+(})i
+h"`C
+0(`(h
+}`<h
+@thVa
+`{`^
+ /`C
+RQXA
+x)x@
+FAF2F
+UAF2F@
+W2FO
+0F9F
+U9FBF
+ BF@
+8F1F
+8 ` h0
+`zh1jM`
+88`7
+Yhsa
+`o`T
+T%hM
+#AF:F
+VAF:F
+VAF:F
+VAF:F
+VAF:F
+VAF:F
+hi:FO
+@	QF*F
+QF*FO
+QF*FO
+QF*F@
+v9FO
+Q*FO
+T`5&
+(FQF
+tu&J
+(FCF
+TF)y
+4D`Fh
+8FQFBFKF
+8F!F>
+8]%(@
+0#px
+HF!F
+1F:FCF
+JF;F
+!F(`
+FPFYFbF
+0F9F"FO
+0F!F
+@F)FO
+@F)FO
+@F)FO
+@F)FO
+#@F)F
+@F)FO
+@F)FO
+@F)FO
+ F	!
+1w&h
+AFRF
+yw0F
+WAFRF
+\AFRFO
+sOFW
+`Bh"
+P(})i
+(})i
+h(})i
+(})i
+0F9F*FO
+0F)F
+9F	#
+ L0O
+GW4#
+W0i!F*F
+W!F*F5#
+W!F*F6#
+W!F*F7#
+@$pi
+z|F#
+(c F
+	(F!FO
+F(F!F
+PD@{
+x0F	
+ F!F
+XF)F
+XF)F
+(z)F
+(rXF
+8iYFF`PF
+FEh(}+i
+h(})i
+(})i
+h(})i
+YF3F
+$0F)F
+S(DR
+(F9F2F
+  0 
+`9hQ
+`Phba
+`K`V
+ FYF
+ FAF
+ FBF
+ FYF
+ FYF
+@p5pK
+8F!FBFKF
+(1pG
+"FCF
+%@E8
+ZFSF
+ FIF
+9F2F
+   F)F
+(F1F
+F1F:F
+ l:FO
+`Hh"jS``E
+0khea
+`N`\
+DP"l_
+h!h	k
+ h!h41
+U8h!h
+h ` h
+e F)F
+ FIF
+g F)F
+FBh	
+\9\ F
+	nhp
+ F)F
+ F1F
+   F)F
+   F)F
+pG<H-
+PF)F
+0D*F
+XfhV
+$yja
+@	 C
+:j@F
+ F)F
+ F)F
+ F)F
+AF(F
+P C@
+0F)F
+pk D*F
+`Phba
+`]`V
+Dxx[
+$i$h
+%0jA
+i9DJx*
+@FMp
+&|@F
+x(Fb
+!z\BTz\
+  -8
+QFBF$adb
+ F)F
+ FAF	
+ FBF
+ F)F
+ F)F
+@Bh"
+W2FA
+qhfa
+`U`S
+(  F)F
+(  F9F
+   F)F
+p F	
+8FAF	
+PFIFBF
+AF*F
+AF*F
+"a`1F	
+F)F	
+```'r
+0FIF
+!1FJF
+ P(x
+!F*F8X
+8!F*F
+F1F:F@
+ U F
+U1F:F
+ :FO
+QFJF
+"a`)F
+FZ @
+hxZ(H
+ )q?
+Z hp
+pB[l
+p	hO
+A$Rk
+HF9F
+F(F9F
+(FAF
+8D@{
+ F)F
+ F)F
+ F)F
+ F)F
+"i`1F
+M	!F
+@"!F
+!F*F
+  F	
+ h'O
+"a`9F
+8F1F
+`Yhca
+`U`W
+Rs(F
+PAh2h
+2Z`2h
+`1hHa
+0hD`
+U0F@
+  sg
+RCFx!
+,TT8`
+	8F1F*FCF
+x0(;
+3R!F
+8F1F
+LP F
+Tq:}
+QZ*	
+ "`(`
+h0`(h
+h `(h
+hIh	
+nK`o
+`Uh%
+2zgzi
+G!xHEA
+ F1F
+&tgt
+ij	y
+8FIFBF
+8&E'
+Ah?)!
+G F)F
+ F)F
+)lJB
+YFKFO
+YF"FKF
+MBYF:FKFO
+'F@E
+<F F
+Eh(})i
++}-i	]
+ FAF
+- FBF
+FAF:F
+W FAF@
+h!hK
+pGp@-
+DEh(})i
+(})i
+$(})i
+h(})i
+h(})i
+h Fp
+HFQFBF
+PF)F2F;FO
+HFQFBF
+F(D@{@
+ F1F:F[F
+ z!F
+ r(F
+(F!F
+y2h)
+8FYF
+PF"F
+$qXa
+0DEh(})i
+(})i
+(F!F
+h!F:p
+ h !
+~0C@
+$>hIF*FO
+ rF"
+\@	@
+6?#@
+#(rPF
+#(rPF
+0$4Dn
+MF(F
+NF0F
+LF F
+`@Ftj
+4` F
+4` F
+\ F@
+0` F
+Ha2F
+DEhA
+"a`)F
+"a`)F
+h l"h	
+%``q
+"i`!F
+5`(F
+5`(F
+F0F)F
+\I0F
+8DEr
+ F1F
+Q F2Fe
+ bFo
+Ph`D
+V0hh
+V0x`
+ 0pC
+ @ x
+ F:F
+"a`)F
+0F*`
+tDPEX
+F !(F
+DDhT
+iF(F
+W iO
+xkF)F
+hCi F
+!F3F
+ b(F
+6(p 
+`Vh&
+DDhT
+DEh(}*i
+h)}*i 
+ F)F
+ F)F
+8F)F
+xg8D
+ @ x
+Rx7*#
+U,h<
+2h!DR
+ @ x
+0$tD
+BcFDT
+\@	@#
+ @ x
+(Fqy
+(F!F
+Xr{_
+80`(h
+ @ x
+ )F2Fpe F
+(m!F
+(m!F
+0F)F
+0F)F
+0F)Fg`
+HFd!
+ F1F
+(F1F"F
+0(` F
+hah#|O
+!(F!`5`
+h(@@
+ @ x
+ @ x
+00S`
+ 2F5%(!
+ )pp
+F(F1F
+F(F1F
+$ Fp
+ cFo
+ pGp
+iy0F
+ F1F
+FpGp
+ F)F
+V0hX
+ F !
+ F !
+1F*F
+hAxJ
+0F)F
+ F !
+F(F"F
+XAj(F
+0F)F
+F!FO
+ F1F*F
+!j F
+*x9F
+ix F
+FpGp
+F0F)F
+ !pp
+E#(h
+0pGx
+ pGo
+ pGA
+Q	hQ
+'(YP
+(F"F
+DIhI|
+F0F)F
+$7Y`
+ pGI
+RQX	i
+@pGI
+@()B
+ pG	
+QXIj
+ pG.1
+DIh	
+D F+F
+i2FA
+EPU`
+!A`Dh
+(F"F
+J`Jd
+0pGM
+PBxZ*
+ppGo
+D@h@
+8F1F*F#F
+U(Y(
+ `` a
+T h0
+h)FP
+ ``(F
+`pGK
+`pGG
+PpGC
+ pGO
+AbpGG
+@XpGG
+@XpGA
+T h 
+ pG1)
+ pGO
+ pGO
+hA`pGC
+ pGK
+QJxZ*
+ppGC
+ppGC
+ pGC
+ppGC
+pG@!
+`pGC
+`pGC
+`pGK
+xpGC
+hpGC
+hpGC
+`pGC
+hpGC
+pGy pG
+lpGd
+ pGK
+p89P
+p89L
+p89I
+(uint32_t)(( ( ( ( pxDelayedTaskList )->uxNumberOfItems == ( UBaseType_t ) 0 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) ))
+WARNING: %s:%d: [IPC RPMSG] Message send to remote core %d @ %d end point truncated due to lack of space in vring buffer !!!
+WARNING: %s:%d: [IPC RPMSG] Message send to remote core %d @ %d end point failed due to lack of space in vring !!!
+WARNING: %s:%d: [IPC RPMSG] Message recv @ %d local end point truncated due to insufficient user buffer size !!!
+ERROR: %s:%d: [IPC RPMSG] Message send to remote core %d @ %d end point failed due to invalid parameters !!!
+(uint32_t)(!( ( pxQueue->pcHead == ((void*)0) ) && ( pxQueue->u.xSemaphore.xMutexHolder != ((void*)0) ) ))
+(uint32_t)(!( ( ( pvBuffer ) == ((void*)0) ) && ( ( pxQueue )->uxItemSize != ( UBaseType_t ) 0U ) ))
+ERROR: %s:%d: [IPC RPMSG] Message recv @ %d local end point failed due to invalid end point Q !!!
+ERROR: %s:%d: [IPC RPMSG] Message recv @ %d local end point failed due to invalid parameters !!!
+(uint32_t)(!( ( pvItemToQueue == ((void*)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ))
+a530-0
+(uint32_t)(!( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) && ( xTicksToWait != 0 ) ))
+(uint32_t)(!( ( pvBuffer == ((void*)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ))
+WARNING: %s:%d: FreeRTOS configTICK_RATE_HZ (%d), does not match ClockP tick rate Hz (%d)
+(uint32_t)(!( ( xCopyPosition == ( ( BaseType_t ) 2 ) ) && ( pxQueue->uxLength != 1 ) ))
+[IPC RPMSG ECHO] All echoed messages received by main core from %d remote cores !!!
+(uint32_t)(( ( &( pxReadyTasksLists[ uxTopPriority ] ) )->uxNumberOfItems ) > 0)
+(uint32_t)(( ( ( uint32_t ) pxTopOfStack & ( uint32_t ) ( 0x0007 ) ) == 0UL ))
+[IPC RPMSG ECHO] Remote Core waiting for messages at end point %d ... !!!
+((uintptr_t)params->stack & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U
+(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U
+[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+pInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreId
+ERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s]
+(uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))
+(params->periodInUsec != 0U) || (params->periodInNsec != 0U)
+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+sizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)
+(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)
+(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)
+[IPC RPMSG ECHO] Total execution time = %lld usecs
+ERROR: %s:%d: UART open failed for instance %d !!!
+[IPC RPMSG ECHO] One way message latency = %d nsec
+sizeof(RPMessage_Object) >= sizeof(RPMessage_Struct)
+[IPC RPMSG ECHO] Messages sent to each core = %d 
+(params->inputClkHz % params->inputPreScaler) == 0U
+w(uint32_t)(( pxTimer->xTimerPeriodInTicks > 0 ))
+(uint32_t)(xReturn != ( ( ( BaseType_t ) 0 ) ))
+[IPC RPMSG ECHO] Number of remote cores = %d 
+params->coreIdList[core] != params->selfCoreId
+pInterruptConfig->coreIdList[core] < maxCoreId
+(uint32_t)(( cRxLock ) != ( ( int8_t ) 127 ))
+(uint32_t)(( xIdleTaskHandle != ((void*)0) ))
+(uint32_t)(( cTxLock ) != ( ( int8_t ) 127 ))
+sizeof(TaskP_Struct) <= sizeof(TaskP_Object)
+params->stackSize >= TaskP_STACK_SIZE_MIN
+[IPC RPMSG ECHO] Version: %s (%s %s):  
+ASSERT: %d.%ds: %s:%s:%d: %s failed !!!
+(uint32_t)(puxStackBuffer != ((void*)0))
+v2024.07.0.0-REL.MCUSDK.K3.10.00.00.08+
+(uint32_t)(pxTaskBuffer != ((void*)0))
+gClockConfig.timerInputPreScaler != 0U
+(uint32_t)(xSize == sizeof( Queue_t ))
+(uint32_t)(pxQueue->uxItemSize == 0)
+params->coreIdList[core] < maxCoreId
+(uint32_t)(xSize == sizeof( TCB_t ))
+Sciclient direct init..... SUCCESS
+vTaskPriorityDisinheritAfterTimeout
+Sciserver Testapp Built On: %s %s
+xQueueCreateCountingSemaphoreStatic
+(uint32_t)(gMainTask != ((void*)0))
+gClockConfig.timerInputClkHz != 0U
+Sciclient direct init..... FAILED
+(uint32_t)(pxTCB == pxCurrentTCB)
+(uint32_t)(pxTCB != pxCurrentTCB)
+gClockConfig.timerBaseAddr != 0U
+dpl/common/SemaphoreP_freertos.c
+(uint32_t)(pxTCB->uxMutexesHeld)
+Starting Sciserver..... PASSED
+pInterruptConfig->numCores > 0U
+vTaskPlaceOnEventListRestricted
+gClockConfig.usecPerTick != 0U
+params->inputPreScaler <= 256U
+object->prms.intrNum != 0xFFFF
+vringSize <= params->vringSize
+vApplicationStackOverflowHook
+../nortos/dpl/common/TimerP.c
+ipc_notify/v0/ipc_notify_v0.c
+generated/ti_drivers_config.c
+(uint32_t)(uxPriority < (32))
+(uint32_t)(xReturn != ( -1 ))
+params->inputPreScaler != 0U
+SemaphoreP_constructCounting
+dpl/common/TaskP_freertos.c
+ipc_rpmsg_create_recv_tasks
+ipc_rpmsg/ipc_rpmsg_vring.c
+dpl/r5/ClockP_freertos_r5.c
+prvProcessReceivedCommands
+(uint32_t)(pxUnblockedTCB)
+REL.MCUSDK.K3.10.00.00.08+
+SemaphoreP_constructBinary
+SemaphoreP_constructMutex
+xQueueGenericCreateStatic
+status == SystemP_SUCCESS
+(uint32_t)(pxTicksToWait)
+(uint32_t)(pxStaticQueue)
+../../../ipc_rpmsg_echo.c
+timerCycles < 0xFFFFFFFFU
+m4f0-0
+xQueueTakeMutexRecursive
+NULL != gUartDrvObj.lock
+FreeRTOS-Kernel/timers.c
+xTaskRemoveFromEventList
+params->inputClkHz != 0U
+xQueueGiveMutexRecursive
+params->taskMain != NULL
+xTaskPriorityDisinherit
+(uint32_t)(pxEventList)
+RM_PM_HAL Version: %s
+status==SystemP_SUCCESS
+(uint32_t)(( pxQueue ))
+ipc_rpmsg_send_messages
+status==SystemP_SUCCESS
+Sciserver Version: %s
+FreeRTOS-Kernel/queue.c
+FreeRTOS-Kernel/tasks.c
+status==SystemP_SUCCESS
+NULL != config->object
+uart/v0/dma/uart_dma.c
+(uint32_t)(pxNewQueue)
+xTaskGetIdleTaskHandle
+UART_dmaDisableChannel
+(uint32_t)(pxCallback)
+params->stack != NULL
+vTaskPlaceOnEventList
+vQueueUnregisterQueue
+xTimerCreateTimerTask
+ipc_rpmsg/ipc_rpmsg.c
+NULL != config->attrs
+(uint32_t)(pxTimeOut)
+params->numCores > 0U
+xTaskCheckForTimeOut
+prvInitialiseNewTask
+0U == timeoutElapsed
+RPMessage_vringReset
+xQueueReceiveFromISR
+(uint32_t)(pxQueue)
+RPMESSAGE_CHAR_PING
+(uint32_t)(pxMutex)
+xQueueSemaphoreTake
+ipc_rpmsg_echo_main
+(uint32_t)(xHandle)
+UART_configInstance
+vTaskStartScheduler
+(uint32_t)(xReturn)
+RPMessage_construct
+vQueueAddToRegistry
+fni-
+Counting Sem (DPL)
+xQueueGenericReset
+(uint32_t)(xQueue)
+ipc_recv_task_main
+xTaskIncrementTick
+[%6s] %5d.%06ds : 
+vTaskSwitchContext
+uart/v0/uart_v0.c
+ti.ipc4.ping-pong
+xTaskCreateStatic
+xQueueGiveFromISR
+(uint32_t)(pxTCB)
+xQueueGenericSend
+a531-1
+0123456789abcdef
+0123456789abcdef
+Drivers_uartOpen
+UART_flushTxFifo
+Binary Sem (DPL)
+TaskP_construct
+taskObj != NULL
+RPMESSAGE_PING
+xTaskResumeAll
+params != NULL
+RPMessage_recv
+UART_masterIsr
+IpcNotify_init
+RPMessage_send
+NULL != object
+NULL != handle
+xQueueReceive
+UART_dmaClose
+eTaskGetState
+NULL != attrs
+baseAddr!=0U
+prvDeleteTCB
+vQueueDelete
+rpmsg_chrdev
+TimerP_setup
+System_init
+main_thread
+ClockP_init
+Jul 25 2024
+Mutex (DPL)
+Jul 25 2024
+vTaskDelete
+vTaskDelay
+UART_write
+UART_close
+Task (DPL)
+hsm-m4f0-0
+../main.c
+UART_init
+UART_open
+v10.00.08
+TmrQ
+a530-1
+a531-0
+06:35:21
+06:36:51
+EXTBOOT
+unknown
+Tmr Svc
+unknown
+r5f0-0
+ERROR
+fni+
+main
+IDLE
+no?MN=U_kur
+!$%&'()*+345;<>VWXtfghi
+#012dj
+Linker
+aeabi
+cortex-r5
+C2.09
+C$$EXIT
+C$$IO$$
+__CIOBUF_
+.vectors
+.bootCode
+.startupCode
+.startupData
+.text.hwi
+.text.cache
+.text.mpu
+.text.boot
+.text:abort
+.bss.ipc_vring_mem
+.resource_table
+.lpm_data
+.text
+.const
+.rodata
+.cinit
+.far
+.data
+.sysmem
+.data_buffer
+.const.devgroup
+.boardcfg_data
+.bss.devgroup
+.bss
+.bss:taskStackSection
+.dm_stub_text
+.dm_stub_data
+.dm_stub_bss
+.dm_stub_rodata
+.dm_stub_stack
+.lpm_trace_buf
+.benchmark_buffer
+.stack
+.irqstack
+.fiqstack
+.svcstack
+.abortstack
+.undefinedstack
+.ARM.exidx
+.init_array
+.fini_array
+.TI.persistent
+.TI.local
+.TI.onchip
+.TI.offchip
+.common:gSelfReset_bootVector
+Veneer$$CMSE
+.ARM.attributes
+.symtab
+.TI.section.flags
+.strtab
+.symtab_meta
+.shstrtab

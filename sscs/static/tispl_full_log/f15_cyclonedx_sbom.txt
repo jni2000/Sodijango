@@ -1,0 +1,5 @@
+[[0;34m+[0m] [0;36m[1mCycloneDX SBOM generator[0m
+[1m=================================================================[0m
+
+
+[[0;31m-[0m] Tue Nov 12 19:59:09 UTC 2024 - F15_cyclonedx_sbom nothing reported

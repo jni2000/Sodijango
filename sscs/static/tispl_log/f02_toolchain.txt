@@ -1,0 +1,34 @@
+[[0;34m+[0m] [0;36m[1mToolchain overview[0m
+[1m=================================================================[0m
+The toolchain identification module aggregates multiple sources to help the tester in getting a better understanding of the toolchain that was used to compile/build the firmware.
+For this process EMBA aggregates the following details:
+    * The identified kernel version
+    * Identifies the kernel release date - getting an idea on how old the used Linux kernel really is
+    * EMBA extracts the GCC version from a kernel identifier string
+    * EMBA extracts the GCC version from the firmware binaries
+    * Uses an already identified libstdc++ for further GCC identification
+    * Identifies the GCC release date - getting an idea on how old the used toolchain really is
+    * EMBA extracts the binary flags from the firmware binaries
+
+
+The following details will help the tester for a better understanding of the original firmware build process. Additionally, these details can support the tester during the build process of a well fitting cross-compilation toolchain.
+
+
+[[0;32m+[0m][0;32m Identified firmware architecture [0;33mARM, EABI5 version 1 (SYSV)[0;32m / endianes [0;33mlittle[0;32m / machine configuration [0;33mARM[0;32m on binary level.[0m
+
+
+
+
+[[0;32m+[0m][0;32m Identified the following used binary flags:[0m
+    [0;33m0x5000000[0m
+    [0;33mVersion5EABI[0m
+
+
+
+-----------------------------------------------------------------
+
+The shown toolchain details can help in building a working buildchain for building working binaries and libraries.
+Multiple examples of such a build process are collected in the EMBA wiki
+
+-----------------------------------------------------------------
+

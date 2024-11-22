@@ -1,0 +1,19 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m[0m) for [0;33m\d\s{1,20}is\s{1,20}[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mThe 'is' object identity operator should not be used for numbers, see https://access.redhat.com/blogs/766093/posts/2592591[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m5_python_is_object_identity_operator_left.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33m1+1 is 2[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mFALSE_POSITIVES_EXAMPLE_PLACEHOLDER[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33m\d\s{1,20}is\s{1,20}[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m130[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m131[m[36m-[mGTC is disabled! Timekeeping broken. Fix Bootloader
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m132[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m133[m[36m:[mGTC_CNTFID[01;31m0 is [m0! Assuming %d Hz. Fix Bootloader
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m134[m[36m-[mRequested nonexistent image
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[m[36m-[m[32m130[m[36m-[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[m[36m-[m[32m131[m[36m-[mGTC is disabled! Timekeeping broken. Fix Bootloader
+[35m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[m[36m-[m[32m132[m[36m-[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[m[36m:[m[32m133[m[36m:[mGTC_CNTFID[01;31m0 is [m0! Assuming %d Hz. Fix Bootloader
+[35m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[m[36m-[m[32m134[m[36m-[mRequested nonexistent image

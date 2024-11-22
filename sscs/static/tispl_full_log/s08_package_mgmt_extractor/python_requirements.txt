@@ -1,0 +1,6 @@
+
+
+[0;34m==>[0m [0;36mPython requirements identification[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No python requirement files found!
+[[0;33m*[0m] python_requirements sub-module finished

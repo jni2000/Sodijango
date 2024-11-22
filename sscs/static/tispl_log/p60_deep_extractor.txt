@@ -1,0 +1,114 @@
+[[0;34m+[0m] [0;36m[1mBinary firmware deep extractor[0m
+[1m=================================================================[0m
+This module extracts firmware with all available extractors and checks if a root filesystem can be found.
+As last resort EMBA will try to extract every available file multiple times.
+
+
+
+
+[0;34m==>[0m [0;36mDeep extraction mode[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Deep extraction - 1st round
+[[0;33m*[0m] Walking through all files and try to extract what ever possible
+[[0;33m*[0m] Unique and limited file array generation for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Details of file: [0;33m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[0m
+    [0;33m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, not stripped[0m
+    [0;33m7762c43d640beaee5d2fe20a4daf66ef  /logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[0m
+[[0;32m+[0m][0;32m Identified ELF file - performing binary tests on this ELF file[0m
+
+
+
+
+[0;34m==>[0m [0;36mAnalyze binary firmware carved.elf with unblob[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Extracting firmware [0;33mcarved.elf[0m to directory [0;33m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf_unblob_extracted[0m
+[[0;33m*[0m] Details of file: [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m
+    [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown: Device Tree Blob version 17, size=1111399, boot CPU=0, string block size=109, DT structure block size=1110236[0m
+    [0;33m829d97fb77f70149c951541b60b52c21  /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m
+2024-11-14 20:02.25 [debug    ] Logging configured             extract_root=. pid=2254 vebosity_level=1
+2024-11-14 20:02.25 [info     ] Start processing file          file=/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf pid=2254
+2024-11-14 20:02.25 [debug    ] Processing file                path=/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf pid=2310 size=0x25530
+2024-11-14 20:02.26 [debug    ] Found valid chunk              chunk=0x0-0x25530 handler=elf32 pid=2310
+2024-11-14 20:02.26 [debug    ] Ended searching for chunks     all_chunks=[0x0-0x25530] pid=2310
+
+
+
+
+[0;34m==>[0m [0;36mAnalyze binary firmware 0-537312.unknown with unblob[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Extracting firmware [0;33m0-537312.unknown[0m to directory [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown_unblob_extracted[0m
+[[0;33m*[0m] Details of file: [0;33m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[0m
+    [0;33m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown: Adobe Photoshop Color swatch, version 0, 2 colors; 1st RGB space (0), w 0x1, x 0x7370, y 0x6c00, z 0; 2nd Pantone space (3), w 0, x 0x4, y 0, z 0x42[0m
+    [0;33macc73be8573274fcf08696ec36b03a47  /logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[0m
+2024-11-14 20:02.27 [debug    ] Logging configured             extract_root=. pid=2384 vebosity_level=1
+2024-11-14 20:02.27 [info     ] Start processing file          file=/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown pid=2384
+2024-11-14 20:02.27 [debug    ] Processing file                path=/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown pid=2434 size=0x832e0
+2024-11-14 20:02.27 [debug    ] Ended searching for chunks     all_chunks=[] pid=2434
+2024-11-14 20:02.27 [debug    ] Calculating entropy for file   path=/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown pid=2434 size=0x832e0
+2024-11-14 20:02.27 [debug    ] Entropy calculated             block_size=0x1a3c highest=84.87 lowest=10.51 mean=71.27 path=/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown pid=2434 size=0x832e0
+
+
+
+
+[0;34m==>[0m [0;36mAnalyze binary firmware 690192-1111399.unknown with unblob[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Extracting firmware [0;33m690192-1111399.unknown[0m to directory [0;33m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown_unblob_extracted[0m
+2024-11-14 20:02.28 [debug    ] Logging configured             extract_root=. pid=2506 vebosity_level=1
+2024-11-14 20:02.28 [info     ] Start processing file          file=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2506
+2024-11-14 20:02.28 [debug    ] Processing file                path=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2557 size=0x66d57
+2024-11-14 20:02.28 [debug    ] Ended searching for chunks     all_chunks=[] pid=2557
+2024-11-14 20:02.28 [debug    ] Calculating entropy for file   path=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2557 size=0x66d57
+2024-11-14 20:02.28 [debug    ] Entropy calculated             block_size=0x1491 highest=99.6 lowest=0.0 mean=71.9 path=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2557 size=0x66d57
+[[0;33m*[0m] Root directory auto detection for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Found no real root directory - setting it to: [0;33m/logs/firmware[0m via [0;33mlast resort[0m.
+[[0;33m*[0m] Deep extraction - 2nd round
+[[0;33m*[0m] Walking through all files and try to extract what ever possible
+[[0;33m*[0m] Unique and limited file array generation for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Root directory auto detection for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Found no real root directory - setting it to: [0;33m/logs/firmware[0m via [0;33mlast resort[0m.
+[[0;33m*[0m] Deep extraction - 3rd round
+[[0;33m*[0m] Walking through all files and try to extract what ever possible
+[[0;33m*[0m] Unique and limited file array generation for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Root directory auto detection for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Found no real root directory - setting it to: [0;33m/logs/firmware[0m via [0;33mlast resort[0m.
+[[0;33m*[0m] Deep extraction - 4th round
+[[0;33m*[0m] Walking through all files and try to extract what ever possible with unblob mode
+[[0;33m*[0m] WARNING: This is the last extraction round that is executed.
+[[0;33m*[0m] Unique and limited file array generation for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Root directory auto detection for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Found no real root directory - setting it to: [0;33m/logs/firmware[0m via [0;33mlast resort[0m.
+[[0;33m*[0m] Before deep extraction we had [0;33m4[0m files, after deep extraction we have now [0;33m5[0m files extracted.
+
+
+[0;34m==>[0m [0;36mExtration results[0m
+-----------------------------------------------------------------
+
+
+[[0;33m*[0m] Found [0;33m5[0m files ([0;33m3[0m unique files) and [0;33m10[0m directories at all.
+[[0;33m*[0m] Found [0;33m3[0m binaries.
+[[0;33m*[0m] Additionally the Linux path counter is [0;33m0[0m.
+[4.0K]  /logs/firmware
+├── [4.0K]  unblob_extracted
+│   └── [4.0K]  firmware_extract
+│       ├── [525K]  0-537312.unknown
+│       ├── [149K]  537312-690192.elf32
+│       ├── [411K]  690192-1111399.unknown
+│       ├── [4.0K]  537312-690192.elf32_extract
+│       │   ├── [149K]  carved.elf
+│       │   └── [4.0K]  carved.elf_unblob_extracted
+│       │       └── [4.0K]  carved.elf_extract
+│       ├── [4.0K]  0-537312.unknown_unblob_extracted
+│       │   └── [4.0K]  0-537312.unknown_extract
+│       └── [4.0K]  690192-1111399.unknown_unblob_extracted
+│           └── [4.0K]  690192-1111399.unknown_extract
+└── [149K]  carved.elf
+
+10 directories, 5 files

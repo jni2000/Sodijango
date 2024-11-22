@@ -1,0 +1,95 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m-i[0m) for [0;33mAuthentication[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mAuthentication[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m5_cryptocred_authentication.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33mAuthentication[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mFALSE_POSITIVES_EXAMPLE_PLACEHOLDER[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m-i[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33mAuthentication[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2087[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2088[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2089[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2090[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2091[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2092[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2093[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3083[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3084[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3085[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3086[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3087[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3088[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3089[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3272[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3273[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3274[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3275[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3276[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3277[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3278[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2050[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2051[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2052[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2053[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2054[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2055[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2056[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2052[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2053[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2054[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2055[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2056[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2057[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2058[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2061[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2062[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2063[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2064[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2065[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2066[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2067[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2053[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2054[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2055[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2056[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2057[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2058[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2059[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2002[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2003[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2004[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2005[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2006[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2007[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2008[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2089[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2090[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2091[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2092[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2093[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2094[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2095[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2061[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2062[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2063[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2064[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2065[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2066[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2067[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1151[m[36m-[mFailed to reserve framebuffer memory (%d)
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1152[m[36m-[mWarning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1153[m[36m-[mInvalid signing certificate size
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1154[m[36m:[mWarning: Did not detect image signing certificate. Skipping [01;31mauthentication[m to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1155[m[36m:[m[01;31mAuthentication[m failed!
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1156[m[36m:[m[01;31mAuthentication[m passed
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1157[m[36m-[mInsufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()Page table pointer not setup.sf1:1Error setting up mem size and base. %d

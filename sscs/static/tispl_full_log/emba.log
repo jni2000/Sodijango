@@ -1,0 +1,146 @@
+[[0;33m*[0m] Tue Nov 12 19:51:07 UTC 2024 - EMBA main container c14aec058175f6cb036b2a69cbc79cc23024939f5fc709217953caff64e5da26 monitoring through [0;33mdocker logs c14aec058175f6cb036b2a69cbc79cc23024939f5fc709217953caff64e5da26 -f[0m.
+[[0;33m*[0m] Tue Nov 12 19:51:07 UTC 2024 - EMBA quest container ec752daa8c85c47d617ff3d34af7bea42695229ada81183773251054a353105b monitoring through [0;33mdocker logs ec752daa8c85c47d617ff3d34af7bea42695229ada81183773251054a353105b -f[0m.
+[[0;35m![0m][0;35m Tue Nov 12 19:51:12 UTC 2024 - Pre-checking phase started on Tue Nov 12 19:51:12 UTC 2024
+    [0mFirmware binary path: /firmware[0m
+[[0;33m*[0m] Tue Nov 12 19:51:12 UTC 2024 - P02_firmware_bin_file_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:13 UTC 2024 - Quest container finished
+[[0;33m*[0m] Tue Nov 12 19:51:17 UTC 2024 - P02_firmware_bin_file_check finished
+[[0;33m*[0m] Tue Nov 12 19:51:17 UTC 2024 - P40_dji_extractor starting
+[[0;33m*[0m] Tue Nov 12 19:51:18 UTC 2024 - P40_DJI_extractor finished
+[[0;33m*[0m] Tue Nov 12 19:51:18 UTC 2024 - P55_unblob_extractor starting
+[[0;33m*[0m] Tue Nov 12 19:51:20 UTC 2024 - P55_unblob_extractor finished
+[[0;33m*[0m] Tue Nov 12 19:51:20 UTC 2024 - P60_deep_extractor starting
+[[0;33m*[0m] Tue Nov 12 19:51:28 UTC 2024 - P60_deep_extractor finished
+[[0;33m*[0m] Tue Nov 12 19:51:28 UTC 2024 - P61_binwalk_extractor starting
+[[0;33m*[0m] Tue Nov 12 19:51:31 UTC 2024 - P61_binwalk_extractor finished
+[[0;33m*[0m] Tue Nov 12 19:51:31 UTC 2024 - P65_package_extractor starting
+[[0;33m*[0m] Tue Nov 12 19:51:32 UTC 2024 - P65_package_extractor finished
+[[0;33m*[0m] Tue Nov 12 19:51:32 UTC 2024 - P99_prepare_analyzer starting
+[[0;33m*[0m] Tue Nov 12 19:51:34 UTC 2024 - P99_prepare_analyzer finished
+[[0;35m![0m][0;35m Tue Nov 12 19:51:34 UTC 2024 - Pre-checking phase ended on Tue Nov 12 19:51:34 UTC 2024 and took about 0 days and 00:00:27 
+[0m
+[[0;35m![0m][0;35m Tue Nov 12 19:51:34 UTC 2024 - Testing phase started on Tue Nov 12 19:51:34 UTC 2024
+    [0mFirmware path: /logs/firmware[0m
+[[0;33m*[0m] Tue Nov 12 19:51:35 UTC 2024 - S26_kernel_vuln_verifier starting
+[[0;33m*[0m] Tue Nov 12 19:51:35 UTC 2024 - S24_kernel_bin_identifier starting
+[[0;33m*[0m] Tue Nov 12 19:51:35 UTC 2024 - S12_binary_protection starting
+[[0;33m*[0m] Tue Nov 12 19:51:35 UTC 2024 - S09_firmware_base_version_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:35 UTC 2024 - S02_uefi_fwhunt starting
+[[0;33m*[0m] Tue Nov 12 19:51:36 UTC 2024 - S03_firmware_bin_base_analyzer starting
+[[0;33m*[0m] Tue Nov 12 19:51:36 UTC 2024 - S02_UEFI_FwHunt finished
+[[0;33m*[0m] Tue Nov 12 19:51:37 UTC 2024 - S04_windows_basic_analysis starting
+[[0;33m*[0m] Tue Nov 12 19:51:37 UTC 2024 - S04_windows_basic_analysis finished
+[[0;33m*[0m] Tue Nov 12 19:51:38 UTC 2024 - S05_firmware_details starting
+[[0;33m*[0m] Tue Nov 12 19:51:38 UTC 2024 - S24_kernel_bin_identifier finished
+[[0;33m*[0m] Tue Nov 12 19:51:38 UTC 2024 - S06_distribution_identification starting
+[[0;33m*[0m] Tue Nov 12 19:51:39 UTC 2024 - S26_kernel_vuln_verifier finished
+[[0;33m*[0m] Tue Nov 12 19:51:40 UTC 2024 - S07_bootloader_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:40 UTC 2024 - S05_firmware_details finished
+[[0;33m*[0m] Tue Nov 12 19:51:40 UTC 2024 - S06_distribution_identification finished
+[[0;33m*[0m] Tue Nov 12 19:51:40 UTC 2024 - S12_binary_protection finished
+[[0;33m*[0m] Tue Nov 12 19:51:41 UTC 2024 - S08_package_mgmt_extractor starting
+[[0;33m*[0m] Tue Nov 12 19:51:41 UTC 2024 - S10_binaries_basic_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:41 UTC 2024 - S13_weak_func_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:42 UTC 2024 - S10_binaries_basic_check finished
+[[0;33m*[0m] Tue Nov 12 19:51:43 UTC 2024 - S14_weak_func_radare_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:44 UTC 2024 - S07_bootloader_check finished
+[[0;33m*[0m] Tue Nov 12 19:51:44 UTC 2024 - S15_radare_decompile_checks starting
+[[0;33m*[0m] Tue Nov 12 19:51:45 UTC 2024 - S08_package_mgmt_extractor finished
+[[0;33m*[0m] Tue Nov 12 19:51:45 UTC 2024 - S16_ghidra_decompile_checks starting
+[[0;33m*[0m] Tue Nov 12 19:51:46 UTC 2024 - S16_ghidra_decompile_checks finished
+[[0;33m*[0m] Tue Nov 12 19:51:47 UTC 2024 - S17_cwe_checker starting
+[[0;33m*[0m] Tue Nov 12 19:51:48 UTC 2024 - S17_cwe_checker finished
+[[0;33m*[0m] Tue Nov 12 19:51:48 UTC 2024 - S18_capa_checker starting
+[[0;33m*[0m] Tue Nov 12 19:51:50 UTC 2024 - S18_capa_checker finished
+[[0;33m*[0m] Tue Nov 12 19:51:50 UTC 2024 - S19_apk_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:51 UTC 2024 - S19_apk_check finished
+[[0;33m*[0m] Tue Nov 12 19:51:52 UTC 2024 - S20_shell_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:57 UTC 2024 - S20_shell_check finished
+[[0;33m*[0m] Tue Nov 12 19:51:57 UTC 2024 - S21_python_check starting
+[[0;33m*[0m] Tue Nov 12 19:51:58 UTC 2024 - S21_python_check finished
+[[0;33m*[0m] Tue Nov 12 19:51:59 UTC 2024 - S22_php_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:01 UTC 2024 - S13_weak_func_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:01 UTC 2024 - S23_lua_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:03 UTC 2024 - S23_lua_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:03 UTC 2024 - S25_kernel_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:05 UTC 2024 - S25_kernel_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:06 UTC 2024 - S27_perl_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:07 UTC 2024 - S27_perl_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:07 UTC 2024 - S35_http_file_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:10 UTC 2024 - S35_http_file_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:10 UTC 2024 - S36_lighttpd starting
+[[0;33m*[0m] Tue Nov 12 19:52:12 UTC 2024 - S36_lighttpd finished
+[[0;33m*[0m] Tue Nov 12 19:52:12 UTC 2024 - S40_weak_perm_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:15 UTC 2024 - S40_weak_perm_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:15 UTC 2024 - S45_pass_file_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:16 UTC 2024 - S45_pass_file_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:16 UTC 2024 - S22_php_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:17 UTC 2024 - S50_authentication_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:17 UTC 2024 - S55_history_file_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:18 UTC 2024 - S55_history_file_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:19 UTC 2024 - S60_cert_file_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:20 UTC 2024 - S60_cert_file_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:20 UTC 2024 - S65_config_file_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:22 UTC 2024 - S50_authentication_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:22 UTC 2024 - S65_config_file_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:22 UTC 2024 - S75_network_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:22 UTC 2024 - S80_cronjob_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:23 UTC 2024 - S80_cronjob_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:24 UTC 2024 - S85_ssh_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:24 UTC 2024 - S75_network_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:25 UTC 2024 - S90_mail_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:25 UTC 2024 - S90_mail_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:26 UTC 2024 - S85_ssh_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:26 UTC 2024 - S95_interesting_files_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:26 UTC 2024 - S99_grepit starting
+[[0;33m*[0m] Tue Nov 12 19:52:28 UTC 2024 - S95_interesting_files_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:28 UTC 2024 - S100_command_inj_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:29 UTC 2024 - S100_command_inj_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:30 UTC 2024 - S106_deep_key_search starting
+[[0;33m*[0m] Tue Nov 12 19:52:31 UTC 2024 - S106_deep_key_search finished
+[[0;33m*[0m] Tue Nov 12 19:52:31 UTC 2024 - S107_deep_password_search starting
+[[0;33m*[0m] Tue Nov 12 19:52:33 UTC 2024 - S107_deep_password_search finished
+[[0;33m*[0m] Tue Nov 12 19:52:33 UTC 2024 - S108_stacs_password_search starting
+[[0;33m*[0m] Tue Nov 12 19:52:35 UTC 2024 - S108_stacs_password_search finished
+[[0;33m*[0m] Tue Nov 12 19:52:36 UTC 2024 - S109_jtr_local_pw_cracking starting
+[[0;33m*[0m] Tue Nov 12 19:52:37 UTC 2024 - S109_jtr_local_pw_cracking finished
+[[0;33m*[0m] Tue Nov 12 19:52:37 UTC 2024 - S110_yara_check starting
+[[0;33m*[0m] Tue Nov 12 19:52:41 UTC 2024 - S14_weak_func_radare_check finished
+[[0;33m*[0m] Tue Nov 12 19:52:41 UTC 2024 - S115_usermode_emulator starting
+[[0;33m*[0m] Tue Nov 12 19:52:42 UTC 2024 - S115_usermode_emulator finished
+[[0;33m*[0m] Tue Nov 12 19:52:43 UTC 2024 - S116_qemu_version_detection starting
+[[0;33m*[0m] Tue Nov 12 19:52:43 UTC 2024 - S116_qemu_version_detection finished
+[[0;33m*[0m] Tue Nov 12 19:52:44 UTC 2024 - S118_busybox_verifier starting
+[[0;33m*[0m] Tue Nov 12 19:53:42 UTC 2024 - S110_yara_check finished
+[[0;33m*[0m] Tue Nov 12 19:54:04 UTC 2024 - S03_firmware_bin_base_analyzer finished
+[[0;33m*[0m] Tue Nov 12 19:54:05 UTC 2024 - S15_radare_decompile_checks finished
+[[0;33m*[0m] Tue Nov 12 19:56:20 UTC 2024 - S09_firmware_base_version_check finished
+[[0;33m*[0m] Tue Nov 12 19:56:21 UTC 2024 - S118_busybox_verifier finished
+[[0;33m*[0m] Tue Nov 12 19:59:04 UTC 2024 - S99_grepit finished
+[[0;35m![0m][0;35m Tue Nov 12 19:59:04 UTC 2024 - Testing phase ended on Tue Nov 12 19:59:04 UTC 2024 and took about 0 days and 00:07:57 
+[0m
+[[0;35m![0m][0;35m Tue Nov 12 19:59:04 UTC 2024 - System emulation phase started on Tue Nov 12 19:59:04 UTC 2024
+    [0mFirmware path: /logs/firmware[0m
+[[0;33m*[0m] Tue Nov 12 19:59:04 UTC 2024 - L10_system_emulation starting
+[[0;33m*[0m] Tue Nov 12 19:59:04 UTC 2024 - L10_system_emulation finished
+[[0;35m![0m][0;35m Tue Nov 12 19:59:05 UTC 2024 - System emulation phase ended on Tue Nov 12 19:59:05 UTC 2024 and took about 0 days and 00:07:58 
+[0m
+[[0;35m![0m][0;35m Tue Nov 12 19:59:05 UTC 2024 - Reporting phase started on Tue Nov 12 19:59:05 UTC 2024
+[0m
+[[0;33m*[0m] Tue Nov 12 19:59:05 UTC 2024 - F02_toolchain starting
+[[0;33m*[0m] Tue Nov 12 19:59:07 UTC 2024 - F02_toolchain finished
+[[0;33m*[0m] Tue Nov 12 19:59:07 UTC 2024 - F05_qs_resolver starting
+[[0;33m*[0m] Tue Nov 12 19:59:08 UTC 2024 - F05_qs_resolver finished
+[[0;33m*[0m] Tue Nov 12 19:59:08 UTC 2024 - F10_license_summary starting
+[[0;33m*[0m] Tue Nov 12 19:59:09 UTC 2024 - F10_license_summary finished
+[[0;33m*[0m] Tue Nov 12 19:59:09 UTC 2024 - F15_cyclonedx_sbom starting
+[[0;33m*[0m] Tue Nov 12 19:59:09 UTC 2024 - F15_cyclonedx_sbom finished
+[[0;33m*[0m] Tue Nov 12 19:59:09 UTC 2024 - F20_vul_aggregator starting
+[[0;33m*[0m] Tue Nov 12 19:59:10 UTC 2024 - F20_vul_aggregator finished
+[[0;33m*[0m] Tue Nov 12 19:59:10 UTC 2024 - F50_base_aggregator starting
+[[0;33m*[0m] Tue Nov 12 19:59:14 UTC 2024 - F50_base_aggregator finished
+[[0;35m![0m][0;35m Tue Nov 12 19:59:15 UTC 2024 - Test ended on Tue Nov 12 19:59:15 UTC 2024 and took about 0 days and 00:08:08 
+[0m
+[[0;33m*[0m] Tue Nov 12 19:59:18 UTC 2024 - Access the web-report with [0;33mfirefox /home/nijames-local/workspace/software-scanning/emba/tispl_full_log/html-report/index.html[0m
+[[0;35m![0m][0;35m Tue Nov 12 19:59:18 UTC 2024 - Test ended on Tue Nov 12 19:59:18 UTC 2024 and took about 0 days and 00:08:19 
+[0m

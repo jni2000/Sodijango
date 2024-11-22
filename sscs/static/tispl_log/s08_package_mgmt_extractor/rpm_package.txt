@@ -1,0 +1,6 @@
+
+
+[0;34m==>[0m [0;36mRPM archive identification[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No RPM package files found!
+[[0;33m*[0m] rpm_package sub-module finished

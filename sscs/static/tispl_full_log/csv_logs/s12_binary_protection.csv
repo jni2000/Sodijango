@@ -1,0 +1,3 @@
+RELRO;STACK CANARY;NX;PIE;RPATH;RUNPATH;Symbols;FORTIFY;Fortified;Fortifiable;FILE
+No RELRO;No Canary found;NX disabled;No PIE;No RPATH;No RUNPATH;Symbols;No;0;0;/logs/firmware/binwalk_extracted/_firmware.extracted/832E0
+No RELRO;No Canary found;NX disabled;No PIE;No RPATH;No RUNPATH;Symbols;No;0;0;/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf

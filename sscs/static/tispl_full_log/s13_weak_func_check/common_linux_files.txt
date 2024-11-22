@@ -1,0 +1,16 @@
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root) not found in default Linux file dictionary[0m
+[[0;32m+[0m][0;32m File /_firmware.extracted/832E0 (-rw-r--r-- root root) not found in default Linux file dictionary[0m

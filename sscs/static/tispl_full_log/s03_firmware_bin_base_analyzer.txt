@@ -1,0 +1,30 @@
+[[0;34m+[0m] [0;36m[1mBinary firmware basic analyzer[0m
+[1m=================================================================[0m
+The firmware bin base analyzer module tries to identify the used operating system via simple counting of different keywords and doing some basic heuristics.
+
+
+
+
+[0;34m==>[0m [0;36mOS detection[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Architecture detection running on /firmware
+[[0;33m*[0m] Initial OS guessing:
+
+
+    [0;33mOperating system detection:[0m
+[0;33m	Linux detected      	:	33             [0m
+[0;33m	VxWorks detected    	:	41             [0m
+[0;33m	FreeRTOS detected   	:	104            [0m
+
+
+[0;34m==>[0m [0;36mArchitecture detection for RTOS based systems[0m
+-----------------------------------------------------------------
+
+
+[[0;32m+[0m][0;32m Possible architecture details found ([0;33mbinwalk -Y[0;32m): [0;33mARM[0m[0m
+
+
+[[0;32m+[0m][0;32m Possible architecture details found ([0;33mbinwalk -A[0;32m): [0;33mAArch64[0m[0m
+
+
+[[0;32m+[0m][0;32m Possible architecture details found ([0;33mcpu_rec[0;32m): [0;33mARM64[0m[0m

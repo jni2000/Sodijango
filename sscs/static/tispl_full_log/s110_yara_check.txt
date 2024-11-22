@@ -1,0 +1,81 @@
+[[0;34m+[0m] [0;36m[1mCheck for code patterns with yara[0m
+[1m=================================================================[0m
+The YARA checking module checks for code patterns in firmware using YARA rules.
+
+
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers1[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers2[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers3[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mBig_Numbers4[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mPrime_Constants_long[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+[[0;32m+[0m][0;32m Yara rule [0;33mDES_sbox[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[0m[0m
+
+
+
+
+[[0;33m*[0m] Found [0;33m69[0m yara rule matches in [0;33m23[0m files.
+
+[*] Statistics:69

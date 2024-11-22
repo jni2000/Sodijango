@@ -1,0 +1,10 @@
+[[0;34m+[0m] [0;36m[1mQemu user-mode emulation[0m
+[1m=================================================================[0m
+The usermode emulator module emulates exectuables from the firmware with Qemu to get version information.
+
+
+
+
+[[0;35m![0m][0;35m Automated emulation is disabled.[0m
+[[0;35m![0m][0;35m Enable it with the [0;33m-E[0;35m switch.[0m[0m
+[[0;31m-[0m] Thu Nov 14 20:03:49 UTC 2024 - S115_usermode_emulator nothing reported

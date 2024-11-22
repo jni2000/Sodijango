@@ -1,0 +1,84 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m-i[0m) for [0;33mbuffer.{0,20}overflow[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mBuffer overflow and variants of it. Sometimes refered in comments or variable names for code that should prevent it. If you find something interesting that is used for prevention in a framework, you might want to add another grep for that in this script.[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m2_general_hacking_techniques_buffer-overflow.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33mbuffer-overflow[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mFALSE_POSITIVES_EXAMPLE_PLACEHOLDER[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m-i[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33mbuffer.{0,20}overflow[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2241[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2242[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2243[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2244[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2245[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2246[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3237[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3238[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3239[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3240[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3241[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3242[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3426[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3427[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3428[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3429[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3430[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3431[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2204[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2205[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2206[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2207[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2208[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2209[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2206[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2207[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2208[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2209[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2210[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2211[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2215[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2216[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2217[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2218[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2219[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2220[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2207[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2208[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2209[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2210[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2211[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2212[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2156[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2157[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2158[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2159[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2160[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2161[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2243[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2244[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2245[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2246[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2247[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2248[m[36m-[m
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2215[m[36m-[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2216[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2217[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2218[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2219[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2220[m[36m-[m
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1305[m[36m-[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1306[m[36m-[mDFU complete %s: 0x%08x
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1307[m[36m-[m%s: Wrong sequence number! [%d] [%d]
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1308[m[36m:[mWrong sequence numberDFU write error[01;31mBuffer overflow[m! (0x%p + 0x%x > 0x%p)
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1309[m[36m:[m[01;31mBuffer overflow[m%s: Failed to fill buffer
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1310[m[36m-[m

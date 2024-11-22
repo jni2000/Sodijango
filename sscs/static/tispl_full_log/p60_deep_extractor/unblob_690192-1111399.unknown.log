@@ -1,0 +1,6 @@
+2024-11-12 19:51.25 [debug    ] Logging configured             extract_root=. pid=2506 vebosity_level=1
+2024-11-12 19:51.25 [info     ] Start processing file          file=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2506
+2024-11-12 19:51.25 [debug    ] Processing file                path=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2558 size=0x66d57
+2024-11-12 19:51.25 [debug    ] Ended searching for chunks     all_chunks=[] pid=2558
+2024-11-12 19:51.25 [debug    ] Calculating entropy for file   path=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2558 size=0x66d57
+2024-11-12 19:51.25 [debug    ] Entropy calculated             block_size=0x1491 highest=99.6 lowest=0.0 mean=71.9 path=/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown pid=2558 size=0x66d57

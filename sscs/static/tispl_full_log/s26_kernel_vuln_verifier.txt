@@ -1,0 +1,8 @@
+[[0;34m+[0m] [0;36m[1mKernel vulnerability identification and verification[0m
+[1m=================================================================[0m
+The kernel verification module extracts the kernel symbols and matches these symbols against the CVE data. The CVE data was first collected from the version identifier only.
+Additionally, this module tries to compile the kernel with a configuration file that was extracted from module s24. This technique was first documented here: https://arxiv.org/pdf/2209.05217.pdf
+
+
+[[0;31m-[0m] No Kernel version file (s24 results) identified ...
+[[0;31m-[0m] Tue Nov 12 19:51:39 UTC 2024 - S26_kernel_vuln_verifier nothing reported

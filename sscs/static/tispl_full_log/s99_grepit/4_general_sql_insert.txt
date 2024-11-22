@@ -1,0 +1,73 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m-i[0m) for [0;33mINSERT.{0,20}INTO[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mSQL INSERT statement[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m4_general_sql_insert.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33mINSERT INTO TABLE example VALUES(123);[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mFALSE_POSITIVES_EXAMPLE_PLACEHOLDER[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m-i[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33mINSERT.{0,20}INTO[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2210[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2211[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2212[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2213[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2214[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3206[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3207[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3208[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3209[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3210[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3395[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3396[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3397[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3398[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3399[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2173[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2174[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2175[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2176[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2177[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2175[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2176[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2177[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2178[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2179[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2184[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2185[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2186[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2187[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2188[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2176[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2177[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2178[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2179[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2180[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2125[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2126[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2127[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2128[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2129[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2212[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2213[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2214[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2215[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2216[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2184[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2185[m[36m-[mabort
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2186[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2187[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2188[m[36m-[mWARNING: '%s' neither in running nor in imported env!
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1274[m[36m-[mError: inflate() returned %d
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1275[m[36m-[mabort
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1276[m[36m-[mlinux,phandle/aliasescompatible<valid offset/length><no error><unknown error>FDT_ERR_NOTFOUNDFDT_ERR_EXISTSFDT_ERR_NOSPACEFDT_ERR_BADOFFSETFDT_ERR_BADPATHFDT_ERR_BADPHANDLEFDT_ERR_BADSTATEFDT_ERR_TRUNCATEDFDT_ERR_BADMAGICFDT_ERR_BADVERSIONFDT_ERR_BADSTRUCTUREFDT_ERR_BADLAYOUTFDT_ERR_INTERNALFDT_ERR_BADNCELLSFDT_ERR_BADVALUEFDT_ERR_BADOVERLAYFDT_ERR_NOPHANDLESFDT_ERR_BADFLAGS#address-cellsMissing DTB
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1277[m[36m:[mstatusokay/chosendisplay-timingshback-porchhfront-porchhactivehsync-lenvback-porchvfront-porchvactivevsync-lenclock-frequencyvsync-activehsync-activede-activepixelclk-activeinterlaceddoublescandoubleclkhimport_r: can't [01;31minsert "%s=%s" into[m hash table
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1278[m[36m-[mWARNING: '%s' neither in running nor in imported env!

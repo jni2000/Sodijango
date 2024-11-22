@@ -1,0 +1,57 @@
+[[0;34m+[0m] [0;36m[1mFirmware and testing details[0m
+[1m=================================================================[0m
+The firmware details module is responsible for providing details about the firmware and testing information. It detects the number of files and directories present in the firmware, offers insights into release/version information and generates a filesystem tree to visualize the directory structure.
+
+
+[[0;33m*[0m] [0;33m23[0m files and [0;33m12[0m directories detected.
+
+
+[0;34m==>[0m [0;36mRelease/Version information[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No release/version information of target found
+
+
+[0;34m==>[0m [0;36mFilesystem information[0m
+-----------------------------------------------------------------
+[drwxr-xr-x        4096]  /logs/firmware
+├── [drwxr-xr-x        4096]  binwalk_extracted
+│   └── [drwxr-xr-x        4096]  _firmware.extracted
+│       ├── [-rw-r--r--     1111399]  0
+│       ├── [-rw-r--r--         971]  1037F0
+│       ├── [-rw-r--r--        1699]  10AC28
+│       ├── [-rw-r--r--       17052]  10B2CB
+│       ├── [-rw-r--r--     1038483]  11CD4
+│       ├── [-rw-r--r--        1700]  158
+│       ├── [-rw-r--r--      646661]  71762
+│       ├── [-rw-r--r--      644345]  7206E
+│       ├── [-rw-r--r--      636103]  740A0
+│       ├── [-rw-r--r--      635847]  741A0
+│       ├── [-rw-r--r--      631479]  752B0
+│       ├── [-rw-r--r--      595138]  7E0A5
+│       ├── [-rw-r--r--      595074]  7E0E5
+│       ├── [-rw-r--r--        1700]  82C3C
+│       ├── [-rw-r--r--      574087]  832E0
+│       ├── [-rw-r--r--        1700]  A88B8
+│       ├── [-rw-r--r--        1700]  D790
+│       ├── [-rw-r--r--      128557]  EFF3A
+│       ├── [-rw-r--r--        1746]  F4254
+│       ├── [-rw-r--r--        1683]  F4926
+│       └── [-rw-r--r--        1683]  FC08C
+├── [-rw-r--r--      152880]  carved.elf
+└── [drwxr-xr-x        4096]  unblob_extracted
+    └── [drwxr-xr-x        4096]  firmware_extract
+        ├── [-rw-r--r--      537312]  0-537312.unknown
+        ├── [drwxr-xr-x        4096]  0-537312.unknown_unblob_extracted
+        │   └── [drwxr-xr-x        4096]  0-537312.unknown_extract
+        ├── [-rw-r--r--      152880]  537312-690192.elf32
+        ├── [drwxrwxr-x        4096]  537312-690192.elf32_extract
+        │   ├── [-rw-r--r--      152880]  carved.elf
+        │   └── [drwxr-xr-x        4096]  carved.elf_unblob_extracted
+        │       └── [drwxr-xr-x        4096]  carved.elf_extract
+        ├── [-rw-r--r--      421207]  690192-1111399.unknown
+        └── [drwxr-xr-x        4096]  690192-1111399.unknown_unblob_extracted
+            └── [drwxr-xr-x        4096]  690192-1111399.unknown_extract
+
+12 directories, 26 files
+
+[*] Statistics:23:12

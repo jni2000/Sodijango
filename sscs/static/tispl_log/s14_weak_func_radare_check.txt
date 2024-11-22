@@ -1,0 +1,20 @@
+[[0;34m+[0m] [0;36m[1mCheck binaries for weak functions (radare mode)[0m
+[1m=================================================================[0m
+This module identifies the usage of critical binary functions in firmware via [0;33mradare2[0m.
+Examples of binary functions are system, strcpy, printf and strcat. These functions are configured in the configuration
+file config/functions.cfg. The module counts the usages per binary. For strcpy functions it also counts strlen functions
+right before the strcpy function. Additionally it checks if the binary is a known Linux binary or unknown and probably
+a vendor binary.
+
+
+[[0;33m*[0m] Vulnerable functions: fprintf mmap popen printf sprintf strcat strcpy system
+
+
+
+[0;34m==>[0m [0;36mTop 10 legacy C functions - Radare2 disasm mode[0m
+-----------------------------------------------------------------
+
+[*] Statistics:0
+
+[*] Statistics1:ARM
+[[0;31m-[0m] Thu Nov 14 20:03:39 UTC 2024 - S14_weak_func_radare_check nothing reported

@@ -1,0 +1,151 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m[0m) for [0;33mexec[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mExec mostly means executing on OS.[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m5_general_exec_wide.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33mrunTime.exec("echo "+unsanitized_input);[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mFALSE_POSITIVES_EXAMPLE_PLACEHOLDER[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33mexec[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m865[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m866[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m867[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m868[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m869[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2367[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2368[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2369[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2370[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2371[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m1861[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m1862[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m1863[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m1864[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m1865[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3363[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3364[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3365[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3366[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3367[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m2050[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m2051[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m2052[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m2053[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m2054[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3552[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3553[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3554[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3555[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3556[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m828[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m829[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m830[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m831[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m832[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2330[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2331[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2332[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2333[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2334[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m830[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m831[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m832[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m833[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m834[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2332[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2333[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2334[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2335[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2336[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m839[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m840[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m841[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m842[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m843[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2341[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2342[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2343[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2344[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2345[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m831[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m832[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m833[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m834[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m835[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2333[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2334[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2335[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2336[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2337[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m780[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m781[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m782[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m783[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m784[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2282[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2283[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2284[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2285[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2286[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m867[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m868[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m869[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m870[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m871[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2369[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2370[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2371[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2372[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2373[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m839[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m840[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m841[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m842[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m843[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2341[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2342[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2343[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2344[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2345[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[m[36m-[m[32m780[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[m[36m-[m[32m781[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[m[36m-[m[32m782[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[m[36m:[m[32m783[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf[m[36m-[m[32m784[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1431[m[36m-[mERROR: temperature outside operating range: %dC
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1432[m[36m-[mcdns,is-decoded-cscdns,fifo-depthcdns,fifo-widthcdns,trigger-addresscdns,is-dmaError: subnode with SPI flash config missing!
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1433[m[36m-[mpage-sizeblock-sizecdns,tshsl-nscdns,tsd2d-nscdns,tchsh-nscdns,tslch-nscdns,read-delaycdns,phy-modecdns,phy-tx-startcdns,phy-tx-endpartitionsospi.phypatterncadence_spicdns,qspi-norti,am654-ospiQSPI: QSPI is still busy after poll for %d ms.
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1434[m[36m:[mQSPI: flash command [01;31mexec[mution timeout
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1435[m[36m-[mIndirect write timed out (%i)
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32[m[36m-[m[32m780[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32[m[36m-[m[32m781[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32[m[36m-[m[32m782[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32[m[36m:[m[32m783[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32[m[36m-[m[32m784[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!
+[36m--[m
+[35m/logs/firmware/carved.elf[m[36m-[m[32m780[m[36m-[m(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U~M 67[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[35m/logs/firmware/carved.elf[m[36m-[m[32m781[m[36m-[m[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+[35m/logs/firmware/carved.elf[m[36m-[m[32m782[m[36m-[mpInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreIdERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s](uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))(params->periodInUsec != 0U) || (params->periodInNsec != 0U)()O*+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+[35m/logs/firmware/carved.elf[m[36m:[m[32m783[m[36m:[msizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)[IPC RPMSG ECHO] Total [01;31mexec[mution time = %lld usecs
+[35m/logs/firmware/carved.elf[m[36m-[m[32m784[m[36m-[mERROR: %s:%d: UART open failed for instance %d !!!

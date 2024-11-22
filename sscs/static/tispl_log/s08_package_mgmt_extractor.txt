@@ -1,0 +1,33 @@
+[[0;34m+[0m] [0;36m[1mEMBA central SBOM environment[0m
+[1m=================================================================[0m
+This is the main module for building the non-binary SBOM of the firmware. It analyzes the following package types and environments:
+    Debian package management system
+    OpenWRT package management system
+    RPM package management system
+    RPM packages
+    DEB packages
+    BSD pkg packages
+    Python PIP environments
+    Python requirement files
+    Java jar archives
+    Ruby gem archives
+    Alpine apk packages
+    Windows exif information
+    Rust cargo lock
+
+
+[[0;33m*[0m] No Debian archives SBOM results available
+[[0;33m*[0m] No Debian packages SBOM results available
+[[0;33m*[0m] No Python poetry.lock SBOM results available
+[[0;33m*[0m] No RPM package management database SBOM results available
+[[0;33m*[0m] No Python requirements SBOM results available
+[[0;33m*[0m] No Java package SBOM results available
+[[0;33m*[0m] No Node.js lock SBOM results available
+[[0;33m*[0m] No Ruby gemx package SBOM results available
+[[0;33m*[0m] No FreeBSD pkg package SBOM results available
+[[0;33m*[0m] No OpenWRT packages SBOM results available
+[[0;33m*[0m] No Windows executables SBOM results available
+[[0;33m*[0m] No RPM package SBOM results available
+[[0;33m*[0m] No Alpine APK archives SBOM results available
+[[0;33m*[0m] No Rust Cargo.lock SBOM results available
+[[0;33m*[0m] No Python PIP SBOM results available

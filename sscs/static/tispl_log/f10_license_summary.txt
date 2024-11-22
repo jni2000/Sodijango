@@ -1,0 +1,6 @@
+[[0;34m+[0m] [0;36m[1mLicense inventory[0m
+[1m=================================================================[0m
+This module collects license details.
+
+
+[[0;31m-[0m] Thu Nov 14 20:06:16 UTC 2024 - F10_license_summary nothing reported

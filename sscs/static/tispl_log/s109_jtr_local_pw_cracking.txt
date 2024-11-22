@@ -1,0 +1,7 @@
+[[0;34m+[0m] [0;36m[1mCracking identified password hashes[0m
+[1m=================================================================[0m
+The jtr local password cracking module cracks password hashes found in firmware using John the Ripper.
+
+
+[*] Statistics:0
+[[0;31m-[0m] Thu Nov 14 20:03:50 UTC 2024 - S109_jtr_local_pw_cracking nothing reported

@@ -1,0 +1,9 @@
+[[0;34m+[0m] [0;36m[1mCheck perl scripts for security issues[0m
+[1m=================================================================[0m
+The Perl checking module is designed to analyze Perl scripts for security vulnerabilities with the SAST tool zarn
+    [0;33mhttps://github.com/htrgouvea/zarn[0m
+
+
+
+[*] Statistics:0:0
+[[0;31m-[0m] Thu Nov 14 20:03:36 UTC 2024 - S27_perl_check nothing reported

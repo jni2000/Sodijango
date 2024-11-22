@@ -1,0 +1,8 @@
+[[0;34m+[0m] [0;36m[1mCheck python scripts for security issues[0m
+[1m=================================================================[0m
+The Python checking module is designed to analyze Python scripts for security vulnerabilities, providing comprehensive logs and optional integration with ChatGPT for enhanced insights.
+
+
+
+[*] Statistics:0:0
+[[0;31m-[0m] Tue Nov 12 19:51:58 UTC 2024 - S21_python_check nothing reported

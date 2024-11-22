@@ -1,0 +1,28 @@
+[[0;34m+[0m] [0;36m[1mCheck for interesting files[0m
+[1m=================================================================[0m
+This modules searches for interesting files and binaries like gcc or gdb. Additionally it also searches binaries that could be useful for post exploitation tasks like wget or ftp.
+
+
+
+
+[0;34m==>[0m [0;36mInteresting binaries[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No interesting binaries found
+
+
+[0;34m==>[0m [0;36mInteresting binaries for post exploitation[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No interesting binaries for post exploitation found
+
+
+[0;34m==>[0m [0;36mHidden files[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No hidden files found
+
+
+[0;34m==>[0m [0;36mToolchain related files[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] No compile related files found
+
+[*] Statistics:0:0
+[[0;31m-[0m] Thu Nov 14 20:03:46 UTC 2024 - S95_interesting_files_check nothing reported

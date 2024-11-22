@@ -1,0 +1,11 @@
+[[0;34m+[0m] [0;36m[1mCheck binary protection mechanisms[0m
+[1m=================================================================[0m
+Modern Linux distributions offer different mitigation techniques to make it harder to exploit software vulnerabilities reliably.
+Mitigations such as RELRO, NoExecute (NX), Stack Canaries, Address Space Layout Randomization (ASLR) and Position Independent Executables (PIE) have made reliably exploiting any vulnerabilities that do exist far more challenging.
+Source: https://www.trapkit.de/tools/checksec/
+RELRO: https://www.trapkit.de/articles/relro/
+
+
+	RELRO          CANARY            NX           PIE          RPATH        RUNPATH      SYMBOLS      FORTI  FILE
+	[31mNo RELRO[0m       [31mNo Canary found[0m   [31mNX disabled[0m  [31mNo PIE[0m       [32mNo RPATH[0m     [32mNo RUNPATH[0m   [31mSymbols[0m      No     /_firmware.extracted/832E0 (-rw-r--r-- root root)
+	[31mNo RELRO[0m       [31mNo Canary found[0m   [31mNX disabled[0m  [31mNo PIE[0m       [32mNo RPATH[0m     [32mNo RUNPATH[0m   [31mSymbols[0m      No     logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf (-rw-r--r-- root root)

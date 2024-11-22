@@ -1,0 +1,5 @@
+2024-11-14 20:02.25 [debug    ] Logging configured             extract_root=. pid=2254 vebosity_level=1
+2024-11-14 20:02.25 [info     ] Start processing file          file=/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf pid=2254
+2024-11-14 20:02.25 [debug    ] Processing file                path=/logs/firmware/unblob_extracted/firmware_extract/537312-690192.elf32_extract/carved.elf pid=2310 size=0x25530
+2024-11-14 20:02.26 [debug    ] Found valid chunk              chunk=0x0-0x25530 handler=elf32 pid=2310
+2024-11-14 20:02.26 [debug    ] Ended searching for chunks     all_chunks=[0x0-0x25530] pid=2310

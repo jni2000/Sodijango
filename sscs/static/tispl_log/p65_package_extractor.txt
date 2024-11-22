@@ -1,0 +1,7 @@
+[[0;34m+[0m] [0;36m[1mPackage extractor[0m
+[1m=================================================================[0m
+The extraction module extracts package archives (DEB, IPK, APK) from firmware files and provides details about the extracted files and binaries.
+
+
+[[0;33m*[0m] As there is no root directory detected it is not possible to process package archives
+[[0;31m-[0m] Thu Nov 14 20:02:35 UTC 2024 - P65_package_extractor nothing reported

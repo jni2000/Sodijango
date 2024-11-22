@@ -1,0 +1,273 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2024 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s) and contributors from the EMBA project are listed here: https://github.com/e-m-b-a/emba/blob/master/CONTRIBUTORS.md
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s110_yara_check.html" title="./../s110_yara_check.html" >&laquo; Back to s110_yara_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">Big_Numbers1</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>Big_Numbers1 [] [author="_pusher_",description="Looks for big numbers 32:sized",date="2016-07"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x7943b:32:$c0: FFFFFFFDFFFFFFFFFFFFFFFFFFFFFFFF</pre>
+<pre>0x7945c:32:$c0: FFFFFFFDFFFFFFFFFFFFFFFFFFFFFFFC</pre>
+<pre>0x7947d:32:$c0: E87579C11079F43DD824993C2CEE5ED3</pre>
+<pre>0x7949e:32:$c0: FFFFFFFE0000000075A30D1B9038A115</pre>
+<pre>0x794bf:32:$c0: 161FF7528B899B2D0C28607CA52C5B86</pre>
+<pre>0x794e0:32:$c0: CF5AC8395BAFEB13C02DA292DDED7A83</pre>
+<pre>0x79501:32:$c0: D6031998D1B3BBFEBF59CC9BBFF9AEE1</pre>
+<pre>0x79522:32:$c0: 5EEEFCA380D02919DC2C6558BB6D8A5D</pre>
+<pre>0x79543:32:$c0: 3FFFFFFF7FFFFFFFBE0024720613B5A3</pre>
+<pre>0x79564:32:$c0: 7B6AA5D85E572983E6FB32A7CDEBC140</pre>
+<pre>0x79585:32:$c0: 27B6916A894D3AEE7106FE805FC34B44</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">Big_Numbers2</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>Big_Numbers2 [] [author="_pusher_",description="Looks for big numbers 48:sized",date="2016-07"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x79813:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFF</pre>
+<pre>0x79844:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFC</pre>
+<pre>0x79875:48:$c0: 64210519E59C80E70FA7E9AB72243049FEB8DEECC146B9B1</pre>
+<pre>0x798a6:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFF99DEF836146BC9B1B4D22831</pre>
+<pre>0x798d7:48:$c0: 188DA80EB03090F67CBF20EB43A18800F4FF0AFD82FF1012</pre>
+<pre>0x79908:48:$c0: 07192B95FFC8DA78631011ED6B24CDD573F977A11E794811</pre>
+<pre>0x79939:48:$c0: CC22D6DFB95C6B25E49C0D6364A4E5980C393AA21668D953</pre>
+<pre>0x7996a:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFE5FB1A724DC80418648D8DD31</pre>
+<pre>0x7999b:48:$c0: EEA2BAE7E1497842F2DE7769CFE9C989C072AD696F48034A</pre>
+<pre>0x799cc:48:$c0: 6574D11D69B6EC7A672BB82A083DF2F2B0847DE970B2DE15</pre>
+<pre>0x799fd:48:$c0: 22123DC2395A05CAA7423DAECCC94760A7D462256BD56916</pre>
+<pre>0x79a2e:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFF7A62D031C83F4294F640EC13</pre>
+<pre>0x79a5f:48:$c0: 7D29778100C65A1DA1783716588DCE2B8B4AEE8E228F1896</pre>
+<pre>0x79a90:48:$c0: 38A90F22637337334B49DCB66A6DC8F9978ACA7648A943B0</pre>
+<pre>0x79ac1:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFEE37</pre>
+<pre>0x79af2:48:$c0: 000000000000000000000000000000000000000000000003</pre>
+<pre>0x79b23:48:$c0: FFFFFFFFFFFFFFFFFFFFFFFE26F2FC170F69466A74DEFD8D</pre>
+<pre>0x79b54:48:$c0: DB4FF10EC057E9AE26B07D0280B7F4341DA5D1B1EAE06C7D</pre>
+<pre>0x79b85:48:$c0: 9B2F2F6D9C5628A7844163D015BE86344082AA88D95E2F9D</pre>
+<pre>0x7aae7:48:$c0: C302F41D932A36CDA7A3463093D18DB78FCE476DE1A86297</pre>
+<pre>0x7ab18:48:$c0: 6A91174076B1E0E19C39C031FE8685C1CAE040E5C69A28EF</pre>
+<pre>0x7ab49:48:$c0: 469A28EF7C28CCA3DC721D044F4496BCCA7EF4146FBF25C9</pre>
+<pre>0x7ab7a:48:$c0: C302F41D932A36CDA7A3462F9E9E916B5BE8F1029AC4ACC1</pre>
+<pre>0x7abab:48:$c0: C0A0647EAAB6A48753B033C56CB0F0900A2F5C4853375FD6</pre>
+<pre>0x7abdc:48:$c0: 14B690866ABD5BB88B5F4828C1490002E6773FA2FA299B8F</pre>
+<pre>0x7b6bf:48:$c0: C302F41D932A36CDA7A3463093D18DB78FCE476DE1A86294</pre>
+<pre>0x7b6f0:48:$c0: 13D56FFAEC78681E68F9DEB43B35BEC2FB68542E27897B79</pre>
+<pre>0x7b721:48:$c0: 3AE9E58C82F63C30282E1FE7BBF43FA72C446AF6F4618129</pre>
+<pre>0x7b752:48:$c0: 097E2C5667C2223A902AB5CA449D0084B7E5B3DE7CCC01C9</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">Big_Numbers3</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>Big_Numbers3 [] [author="_pusher_",description="Looks for big numbers 64:sized",date="2016-07"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x79e2b:64:$c0: FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF</pre>
+<pre>0x79e6c:64:$c0: FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC</pre>
+<pre>0x79ead:64:$c0: 5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B</pre>
+<pre>0x79eee:64:$c0: FFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551</pre>
+<pre>0x79f2f:64:$c0: 6B17D1F2E12C4247F8BCE6E563A440F277037D812DEB33A0F4A13945D898C296</pre>
+<pre>0x79f70:64:$c0: 4FE342E2FE1A7F9B8EE7EB4A7C0F9E162BCE33576B315ECECBB6406837BF51F5</pre>
+<pre>0x79fb1:64:$c0: FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F</pre>
+<pre>0x79ff2:64:$c0: 0000000000000000000000000000000000000000000000000000000000000000</pre>
+<pre>0x7a033:64:$c0: 0000000000000000000000000000000000000000000000000000000000000007</pre>
+<pre>0x7a074:64:$c0: FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141</pre>
+<pre>0x7a0b5:64:$c0: 79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798</pre>
+<pre>0x7a0f6:64:$c0: 483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8</pre>
+<pre>0x7ad63:64:$c0: A9FB57DBA1EEA9BC3E660A909D838D726E3BF623D52620282013481D1F6E5377</pre>
+<pre>0x7ada4:64:$c0: 7D5A0975FC2C3057EEF67530417AFFE7FB8055C126DC5C6CE94A4B44F330B5D9</pre>
+<pre>0x7ade5:64:$c0: 26DC5C6CE94A4B44F330B5D9BBD77CBF958416295CF7E1CE6BCCDC18FF8C07B6</pre>
+<pre>0x7ae26:64:$c0: A9FB57DBA1EEA9BC3E660A909D838D718C397AA3B561A6F7901E0E82974856A7</pre>
+<pre>0x7ae67:64:$c0: 8BD2AEB9CB7E57CB2C4B482FFC81B7AFB9DE27E1E3BD23C23A4453BD9ACE3262</pre>
+<pre>0x7aea8:64:$c0: 547EF835C3DAC4FD97F8461A14611DC9C27745132DED8E545C1D54C72F046997</pre>
+<pre>0x7b867:64:$c0: A9FB57DBA1EEA9BC3E660A909D838D726E3BF623D52620282013481D1F6E5374</pre>
+<pre>0x7b8a8:64:$c0: 662C61C430D84EA4FE66A7733D0B76B7BF93EBC4AF2F49256AE58101FEE92B04</pre>
+<pre>0x7b8e9:64:$c0: A3E8EB3CC1CFE7B7732213B23A656149AFA142C47AAFBC2B79A191562E1305F4</pre>
+<pre>0x7b92a:64:$c0: 2D996C823439C56D7F7B22E14644417E69BCB6DE39D027001DABE8F35B25C9BE</pre>
+<pre>0x7be37:64:$c0: FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFF</pre>
+<pre>0x7be78:64:$c0: FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFC</pre>
+<pre>0x7beb9:64:$c0: 28E9FA9E9D9F5E344D5A9E4BCF6509A7F39789F515AB8F92DDBCBD414D940E93</pre>
+<pre>0x7befa:64:$c0: FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFF7203DF6B21C6052B53BBF40939D54123</pre>
+<pre>0x7bf3b:64:$c0: 32C4AE2C1F1981195F9904466A39C9948FE30BBFF2660BE1715A4589334C74C7</pre>
+<pre>0x7bf7c:64:$c0: BC3736A2F4F6779C59BDCEE36B692153D0A9877CC62A474002DF32E52139F0A0</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">Big_Numbers4</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>Big_Numbers4 [] [author="_pusher_",description="Looks for big numbers 128:sized",date="2016-08"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x7b315:128:$c0: AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA703308717D4D9B009BC66842AECDA12AE6A380E62881FF2F2D82C68528AA6056583A48F3</pre>
+<pre>0x7b396:128:$c0: 7830A3318B603B89E2327145AC234CC594CBDD8D3DF91610A83441CAEA9863BC2DED5D5AA8253AA10A2EF1C98B9AC8B57F1117A72BF2C7B9E7C1AC4D77FC94CA</pre>
+<pre>0x7b417:128:$c0: 3DF91610A83441CAEA9863BC2DED5D5AA8253AA10A2EF1C98B9AC8B57F1117A72BF2C7B9E7C1AC4D77FC94CADC083E67984050B75EBAE5DD2809BD638016F723</pre>
+<pre>0x7b498:128:$c0: AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA70330870553E5C414CA92619418661197FAC10471DB1D381085DDADDB58796829CA90069</pre>
+<pre>0x7b519:128:$c0: 81AEE4BDD82ED9645A21322E9C4C6A9385ED9F70B5D916C1B43B62EEF4D0098EFF3B1F78E2D0D48D50D1687B93B97D5F7C6D5047406A5E688B352209BCB9F822</pre>
+<pre>0x7b59a:128:$c0: 7DDE385D566332ECC0EABFA9CF7822FDF209F70024A57B1AA000C55B881F8111B2DCDE494A5F485E5BCA4BD88A2763AED1CA2B2FA8F0540678CD1E0F3AD80892</pre>
+<pre>0x7bc33:128:$c0: AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA703308717D4D9B009BC66842AECDA12AE6A380E62881FF2F2D82C68528AA6056583A48F0</pre>
+<pre>0x7bcb4:128:$c0: 7CBBBCF9441CFAB76E1890E46884EAE321F70C0BCB4981527897504BEC3E36A62BCDFA2304976540F6450085F2DAE145C22553B465763689180EA2571867423E</pre>
+<pre>0x7bd35:128:$c0: 640ECE5C12788717B9C1BA06CBC2A6FEBA85842458C56DDE9DB1758D39C0313D82BA51735CDB3EA499AA77A7D6943A64F7A3F25FE26F06B51BAA2696FA9035DA</pre>
+<pre>0x7bdb6:128:$c0: 5B534BD595F5AF0FA2C892376C84ACE1BB4E3019B71634C01131159CAE03CEE9D9932184BEEF216BD71DF2DADF86A627306ECFF96DBB8BACE198B61E00F8B332</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">Prime_Constants_long</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>Prime_Constants_long [] [author="_pusher_",description="List of primes [long]",date="2016-07"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x74f7c:212:$c0: 03 00 00 00 05 00 00 00 07 00 00 00 0B 00 00 00 0D 00 00 00 11 00 00 00 13 00 00 00 17 00 00 00 1D 00 00 00 1F 00 00 00 25 00 00 00 29 00 00 00 2B 00 00 00 2F 00 00 00 35 00 00 00 3B 00 00 00 ...</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">SHA512_Constants</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>SHA512_Constants [] [author="phoul (&commat;phoul)",description="Look for SHA384/SHA512 constants",date="2014-01",version="0.1"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x11cd4:4:$c1: 98 2F 8A 42</pre>
+<pre>0x72f68:4:$c1: 98 2F 8A 42</pre>
+<pre>0x11cd8:4:$c3: 91 44 37 71</pre>
+<pre>0x72f70:4:$c3: 91 44 37 71</pre>
+<pre>0x11cdc:4:$c5: CF FB C0 B5</pre>
+<pre>0x72f78:4:$c5: CF FB C0 B5</pre>
+<pre>0x11ce0:4:$c7: A5 DB B5 E9</pre>
+<pre>0x72f80:4:$c7: A5 DB B5 E9</pre>
+<pre>0x72f64:4:$c9: 22 AE 28 D7</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Yara rule </span><span class="orange">DES_sbox</span><span class="green"> matched in </span><span class="orange">/logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</span></span></pre>
+<br />
+<pre>DES_sbox [] [author="_pusher_",date="2015-05",description="DES [sbox]"] /logs/firmware/unblob_extracted/firmware_extract/0-537312.unknown</pre>
+<pre>0x741a0:64:$c0: 00 04 01 01 00 00 00 00 00 00 01 00 04 04 01 01 04 00 01 01 04 04 01 00 04 00 00 00 00 00 01 00 00 04 00 00 00 04 01 01 04 04 01 01 00 04 00 00 04 04 00 01 04 00 01 01 00 00 00 01 04 00 00 00</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+// the following function is currently not used
+// it is for future extensions
+function overlay_output(link) {
+  var rawfile = new XMLHttpRequest();
+  rawfile.open('GET', link, false);
+  rawfile.overrideMimeType("text");
+  rawfile.onreadystatechange = function()
+  {
+    alert(rawfile.responseText);
+    //console.log(rawfile.responseText);
+  }
+  rawfile.send(null);
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

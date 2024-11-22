@@ -1,0 +1,14 @@
+[[0;34m+[0m] [0;36m[1mAndroid apk checks[0m
+[1m=================================================================[0m
+The APK checking module performs comprehensive checks and analysis on Android APK files.
+
+
+
+
+[0;34m==>[0m [0;36mAndroid apk identifier[0m
+-----------------------------------------------------------------
+
+
+[0;34m==>[0m [0;36mAndroid apk analysis[0m
+-----------------------------------------------------------------
+[[0;31m-[0m] Thu Nov 14 20:03:06 UTC 2024 - S19_apk_check nothing reported

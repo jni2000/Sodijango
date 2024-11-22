@@ -1,0 +1,73 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m-i[0m) for [0;33mCRC32[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mCRC32 is a checksum algorithm. Security depends heavily on usage and what is secured.[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m4_cryptocred_ciphers_crc32.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33mCRC32[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mFALSE_POSITIVES_EXAMPLE_PLACEHOLDER[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m-i[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33mCRC32[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2184[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2185[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2186[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2187[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2188[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3180[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3181[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3182[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3183[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3184[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3369[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3370[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3371[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3372[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3373[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2147[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2148[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2149[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2150[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2151[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2149[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2150[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2151[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2152[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2153[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2158[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2159[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2160[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2161[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2162[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2150[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2151[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2152[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2153[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2154[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2099[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2100[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2101[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2102[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2103[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2186[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2187[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2188[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2189[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2190[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2158[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2159[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2160[m[36m-[malloc space exhausted
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2161[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2162[m[36m-[m## Error: illegal character '=' in variable name "%s"
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1248[m[36m-[mFailed to get splash image from FIT
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1249[m[36m-[mFailed to get size of splash image (err=%d)
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1250[m[36m-[malloc space exhausted
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1251[m[36m:[msha1sha256sha512crc16-ccitt[01;31mcrc32[mloadxy_timeoutUnknown errorBlock sequence errorCRC/checksum errorInvalid framingCancelledEnd of fileTimed outSorry, zModem not available yetCan't access fileenv_buf [%u bytes] too small for value of "%s"
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1252[m[36m-[m## Error: illegal character '=' in variable name "%s"

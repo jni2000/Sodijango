@@ -1,0 +1,73 @@
+[[0;33m*[0m] Searching (args for grep: [0;33m[0m) for [0;33mDES[0m.
+[[0;33m*[0m] Grepit state info - comment: [0;33mDES cipher. Security depends heavily on usage and what is secured.[0m
+[[0;33m*[0m] Grepit state info - Filename [0;33m7_cryptocred_ciphers_des.txt[0m
+[[0;33m*[0m] Grepit state info - Example: [0;33mDES[0m
+[[0;33m*[0m] Grepit state info - False positive example: [0;33mDESCRIPTION TRADES[0m
+[[0;33m*[0m] Grepit state info - Grep args: [0;33m[0m
+[[0;33m*[0m] Grepit state info - Search regex: [0;33mDES[0m
+
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2140[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2141[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2142[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m:[m[32m2143[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7206E[m[36m-[m[32m2144[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3136[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3137[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3138[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m:[m[32m3139[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/11CD4[m[36m-[m[32m3140[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3325[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3326[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3327[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m:[m[32m3328[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/0[m[36m-[m[32m3329[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2103[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2104[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2105[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m:[m[32m2106[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0E5[m[36m-[m[32m2107[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2105[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2106[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2107[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m:[m[32m2108[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[m[36m-[m[32m2109[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2114[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2115[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2116[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m:[m[32m2117[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/741A0[m[36m-[m[32m2118[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2106[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2107[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2108[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m:[m[32m2109[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/752B0[m[36m-[m[32m2110[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2055[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2056[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2057[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m:[m[32m2058[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/832E0[m[36m-[m[32m2059[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2142[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2143[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2144[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m:[m[32m2145[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/71762[m[36m-[m[32m2146[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2114[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2115[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2116[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m:[m[32m2117[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/binwalk_extracted/_firmware.extracted/740A0[m[36m-[m[32m2118[m[36m-[mERROR: Invalid USB CFG length (%d)
+[36m--[m
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1204[m[36m-[munable to get descriptor, error %lX
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1205[m[36m-[mconfig descriptor too short (expected %i, got %i)
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1206[m[36m-[mselecting invalid interface %dusb_new_device: Cannot read configuration, skipping device %04x:%04x
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m:[m[32m1207[m[36m:[m ERROR: NOT USB_CONFIG_[01;31mDES[mC %x
+[35m/logs/firmware/unblob_extracted/firmware_extract/690192-1111399.unknown[m[36m-[m[32m1208[m[36m-[mERROR: Invalid USB CFG length (%d)

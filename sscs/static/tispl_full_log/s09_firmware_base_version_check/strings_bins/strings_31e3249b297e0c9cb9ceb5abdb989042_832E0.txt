@@ -1,0 +1,4993 @@
+'([O
+0`)fD
+#AxO
+#AxO
+ hAa h
+h(ny
+q(f hBn
+@(fL
+!h(FJj
+v0FJn
+f hAn
+!hHj
+`BCh#
+h0`A
+!0`@
+$([O
+`pGM
+ pGo
+|TicE
+`TicE
+`pGM
+ pGo
+0"x$
+sFD\
+ `"b`j
+  b`jx
+(!*B
+kA`Qk
+H`pG
+PpGA
+`CupG
+`pGH
+`pG"
+`pGo
+GLUELOGIC_INVERTED_MAIN_RESETZ_LATCHED
+GLUELOGIC_IO_SWAKEUP_CAN_USART_IO
+GLUELOGIC_IO_SWAKEUP_MAIN_IO
+GLUELOGIC_IO_SWAKEUP_MCU_IO
+WKUP_ICEMELTER0
+WKUP_RTCSS0
+WKUP_TIMER0
+WKUP_TIMER1
+WKUP_UART0
+WKUP_I2C0
+MCU_GPIO0
+USB0
+USB1
+$pGC
+$pGC
+$pGC
+tpG-
+x0)h
+HQ.DF
+&h.D
+#%hC
+%hrQC
+%hpQC
+f%h 3
+(F!F
+(F!F
+`pG-
+1ysy
+F@F)F2F;F
+2h F
+trace:r5fss0_0
+!7D|h=
+%zfz
+IEFh
+PF!F
+>F`F
+PF!F
+`@8C
+PF!F
+PF!F
+RhP@
+PF"F
+(F!F
+PF"F
+(F!F
+PF"F
+(F!F
+@u F
+ F !
+ F@!
+`p(D
+`pHD
+`p8D
+( FO
+A`@hG
+@iHE
+ F !
+ F@!
+ !Fn F
+w FO
+Ff@n
+PF !
+PF@!
+	PFO
+(FYF
+@i@E
+	PF !
+PF@!
+ !FnPF
+7F@!
+	Ff@n
+aE	PF
+FPFO
+(x'F
+IF:F3F|
+%.(+
+FF("
+F(:F
+Fi(f
+IF:FG(
+IF:F% 
+IF:F3F
+IF3F  
+F@hS
+@FIF:F
+IF:Fp
+cYFZE8
+IF  
+IF3F
+F:F3F|
+"FIF3FO
+IF3F
+"FIF3FO
+IF3F
+IFT"
+ yjO
+3!F*F
+V!F*F@
+`kh#
+f(j(j@
+(bhm@
+`.i.iF
+`(l@
+a(l@
+`*i"
+blah@h
+(FYF
+ #iB
+``l*j*j`
+9l@F
+PF)F
+PF9F
+PF)F
+PF)F
+PF)F
+ @@!
+ F !
+g@F !
+2d0l
+Fqdpl
+@F !
+(@FA
+@F !
+0e1m
+ pG-
+XFaF2F+F
+XF2F+F
+*F9F
+gF@D
+aF2F+F
+R!BO
+F@jK
+)QF8
+U2F@
+)F2F@
+ 2FO
+))F8
+T2F@
+]>Dwx\
+%0x(D
+0x8D
+Q(F	x
+!biPxC
+bhIxR
+8!8F
+0FIFRF
+FHF9FZF
+chBxQ
+p0F)
+(})i
+&(}@
+h)}*i
+(})i
+(})i
+r)i*
+(})i
+(})i
+RQX)
+(})i
+(})i
+`(})i
+(})i
+h)}*i@
+(})i
+0F)FKF
+dKF(
+)F:FKF
+0F)FO
+LB)FKFO
+:FPE
+?aCoc
+4(5`
+0`0h@
+0`0h@
+`0h@
+@@7h
+F@!O
+@y0F
+0F !
+0F@!
+0F !
+]w0F
+0D@{@
+HFAF*FSF
+HFAFBFCF
+Eh F
+ FYF
+IFCF
+	&MF
+9FtF
+@h`E
+L RES
+)FRF3F
+BgF(
+SF FMFGF
+SFMFGF
+9F*F
+W@	@
+RSF@
+F(FYF:F
+WJF@	O
+WJF@	O
+@FQF
+F@FQF
+@FQF
+@F1F
+@F1F
+@FQF
+@F1F
+@FQF&F
+F@F!F
+F@F!F
+@F!F
+x4FA
+$ F	
+q*F4F
+ F-"
+(F!F
+(F!FBF
+ F)F
+PFYF
+PFYF3F
+ F)F
+wh F
+)F2F
+#u(F
+`h9F
+FZ )F u F
+Z!!u8
+ F)F
+`h1F
+Z  u F)F
+!0F!u
+P!FJF
+yv(F
+V!FJF
+`E9f
+`Bh"
+zj@F
+`Bh"
+08g)h
+`Bh"
+`Bh"
+`Bh"
+:j@F
+(hAhA
+ F,"
+(FBF
+ F)F
+PFYF;F
+ F)F
+2 F)F
+PF9F"F
+W0F"F
+0hAhA
+PF1FBF
+4h?+%`
+ QF2F
+a(FG
+hIh	
+nF0F
+hIh	
+nF0F
+xl9d1F
+Z xe6
+T|e	
+PFAF
+PF)F
+!DJx"
+`^F@
+PF)F
+PF)F
+rvz~
+hy(@
+hy(R
+I	)@
+ AF:FC#
+VAF:FD#
+hh:FO
+VAF:F
+ :FH#
+zqHC
+c&dhi
+(F1F
+RIF@
+i*F+FA
+1j0F
+U1F:F
+0FYF
+ FJF	
+(})i
+`(})i
+(})i
+h"`C
+0(`(h
+}`<h
+@thVa
+`{`^
+ /`C
+RQXA
+x)x@
+FAF2F
+UAF2F@
+W2FO
+0F9F
+U9FBF
+ BF@
+8F1F
+8 ` h0
+`zh1jM`
+88`7
+Yhsa
+`o`T
+T%hM
+#AF:F
+VAF:F
+VAF:F
+VAF:F
+VAF:F
+VAF:F
+hi:FO
+@	QF*F
+QF*FO
+QF*FO
+QF*F@
+v9FO
+Q*FO
+T`5&
+(FQF
+tu&J
+(FCF
+TF)y
+4D`Fh
+8FQFBFKF
+8F!F>
+8]%(@
+0#px
+HF!F
+1F:FCF
+JF;F
+!F(`
+FPFYFbF
+0F9F"FO
+0F!F
+@F)FO
+@F)FO
+@F)FO
+@F)FO
+#@F)F
+@F)FO
+@F)FO
+@F)FO
+ F	!
+1w&h
+AFRF
+yw0F
+WAFRF
+\AFRFO
+sOFW
+`Bh"
+P(})i
+(})i
+h(})i
+(})i
+0F9F*FO
+0F)F
+9F	#
+ L0O
+GW4#
+W0i!F*F
+W!F*F5#
+W!F*F6#
+W!F*F7#
+@$pi
+z|F#
+(c F
+	(F!FO
+F(F!F
+PD@{
+x0F	
+ F!F
+XF)F
+XF)F
+(z)F
+(rXF
+8iYFF`PF
+FEh(}+i
+h(})i
+(})i
+h(})i
+YF3F
+$0F)F
+S(DR
+(F9F2F
+  0 
+`9hQ
+`Phba
+`K`V
+ FYF
+ FAF
+ FBF
+ FYF
+ FYF
+@p5pK
+8F!FBFKF
+(1pG
+"FCF
+%@E8
+ZFSF
+ FIF
+9F2F
+   F)F
+(F1F
+F1F:F
+ l:FO
+`Hh"jS``E
+0khea
+`N`\
+DP"l_
+h!h	k
+ h!h41
+U8h!h
+h ` h
+e F)F
+ FIF
+g F)F
+FBh	
+\9\ F
+	nhp
+ F)F
+ F1F
+   F)F
+   F)F
+pG<H-
+PF)F
+0D*F
+XfhV
+$yja
+@	 C
+:j@F
+ F)F
+ F)F
+ F)F
+AF(F
+P C@
+0F)F
+pk D*F
+`Phba
+`]`V
+Dxx[
+$i$h
+%0jA
+i9DJx*
+@FMp
+&|@F
+x(Fb
+!z\BTz\
+  -8
+QFBF$adb
+ F)F
+ FAF	
+ FBF
+ F)F
+ F)F
+@Bh"
+W2FA
+qhfa
+`U`S
+(  F)F
+(  F9F
+   F)F
+p F	
+8FAF	
+PFIFBF
+AF*F
+AF*F
+"a`1F	
+F)F	
+```'r
+0FIF
+!1FJF
+ P(x
+!F*F8X
+8!F*F
+F1F:F@
+ U F
+U1F:F
+ :FO
+QFJF
+"a`)F
+FZ @
+hxZ(H
+ )q?
+Z hp
+pB[l
+p	hO
+A$Rk
+HF9F
+F(F9F
+(FAF
+8D@{
+ F)F
+ F)F
+ F)F
+ F)F
+"i`1F
+M	!F
+@"!F
+!F*F
+  F	
+ h'O
+"a`9F
+8F1F
+`Yhca
+`U`W
+Rs(F
+PAh2h
+2Z`2h
+`1hHa
+0hD`
+U0F@
+  sg
+RCFx!
+,TT8`
+	8F1F*FCF
+x0(;
+3R!F
+8F1F
+LP F
+Tq:}
+QZ*	
+ "`(`
+h0`(h
+h `(h
+hIh	
+nK`o
+`Uh%
+2zgzi
+G!xHEA
+ F1F
+&tgt
+ij	y
+8FIFBF
+8&E'
+Ah?)!
+G F)F
+ F)F
+)lJB
+YFKFO
+YF"FKF
+MBYF:FKFO
+'F@E
+<F F
+Eh(})i
++}-i	]
+ FAF
+- FBF
+FAF:F
+W FAF@
+h!hK
+pGp@-
+DEh(})i
+(})i
+$(})i
+h(})i
+h(})i
+h Fp
+HFQFBF
+PF)F2F;FO
+HFQFBF
+F(D@{@
+ F1F:F[F
+ z!F
+ r(F
+(F!F
+y2h)
+8FYF
+PF"F
+$qXa
+0DEh(})i
+(})i
+(F!F
+h!F:p
+ h !
+~0C@
+$>hIF*FO
+ rF"
+\@	@
+6?#@
+#(rPF
+#(rPF
+0$4Dn
+MF(F
+NF0F
+LF F
+`@Ftj
+4` F
+4` F
+\ F@
+0` F
+Ha2F
+DEhA
+"a`)F
+"a`)F
+h l"h	
+%``q
+"i`!F
+5`(F
+5`(F
+F0F)F
+\I0F
+8DEr
+ F1F
+Q F2Fe
+ bFo
+Ph`D
+V0hh
+V0x`
+ 0pC
+ @ x
+ F:F
+"a`)F
+0F*`
+tDPEX
+F !(F
+DDhT
+iF(F
+W iO
+xkF)F
+hCi F
+!F3F
+ b(F
+6(p 
+`Vh&
+DDhT
+DEh(}*i
+h)}*i 
+ F)F
+ F)F
+8F)F
+xg8D
+ @ x
+Rx7*#
+U,h<
+2h!DR
+ @ x
+0$tD
+BcFDT
+\@	@#
+ @ x
+(Fqy
+(F!F
+Xr{_
+80`(h
+ @ x
+ )F2Fpe F
+(m!F
+(m!F
+0F)F
+0F)F
+0F)Fg`
+HFd!
+ F1F
+(F1F"F
+0(` F
+hah#|O
+!(F!`5`
+h(@@
+ @ x
+ @ x
+00S`
+ 2F5%(!
+ )pp
+F(F1F
+F(F1F
+$ Fp
+ cFo
+ pGp
+iy0F
+ F1F
+FpGp
+ F)F
+V0hX
+ F !
+ F !
+1F*F
+hAxJ
+0F)F
+ F !
+F(F"F
+XAj(F
+0F)F
+F!FO
+ F1F*F
+!j F
+*x9F
+ix F
+FpGp
+F0F)F
+ !pp
+E#(h
+0pGx
+ pGo
+ pGA
+Q	hQ
+'(YP
+(F"F
+DIhI|
+F0F)F
+$7Y`
+ pGI
+RQX	i
+@pGI
+@()B
+ pG	
+QXIj
+ pG.1
+DIh	
+D F+F
+i2FA
+EPU`
+!A`Dh
+(F"F
+J`Jd
+0pGM
+PBxZ*
+ppGo
+D@h@
+8F1F*F#F
+U(Y(
+ `` a
+T h0
+h)FP
+ ``(F
+`pGK
+`pGG
+PpGC
+ pGO
+AbpGG
+@XpGG
+@XpGA
+T h 
+ pG1)
+ pGO
+ pGO
+hA`pGC
+ pGK
+QJxZ*
+ppGC
+ppGC
+ pGC
+ppGC
+pG@!
+`pGC
+`pGC
+`pGK
+xpGC
+hpGC
+hpGC
+`pGC
+hpGC
+pGy pG
+lpGd
+ pGK
+p89P
+p89L
+p89I
+(uint32_t)(( ( ( ( pxDelayedTaskList )->uxNumberOfItems == ( UBaseType_t ) 0 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) ))
+WARNING: %s:%d: [IPC RPMSG] Message send to remote core %d @ %d end point truncated due to lack of space in vring buffer !!!
+WARNING: %s:%d: [IPC RPMSG] Message send to remote core %d @ %d end point failed due to lack of space in vring !!!
+WARNING: %s:%d: [IPC RPMSG] Message recv @ %d local end point truncated due to insufficient user buffer size !!!
+ERROR: %s:%d: [IPC RPMSG] Message send to remote core %d @ %d end point failed due to invalid parameters !!!
+(uint32_t)(!( ( pxQueue->pcHead == ((void*)0) ) && ( pxQueue->u.xSemaphore.xMutexHolder != ((void*)0) ) ))
+(uint32_t)(!( ( ( pvBuffer ) == ((void*)0) ) && ( ( pxQueue )->uxItemSize != ( UBaseType_t ) 0U ) ))
+ERROR: %s:%d: [IPC RPMSG] Message recv @ %d local end point failed due to invalid end point Q !!!
+ERROR: %s:%d: [IPC RPMSG] Message recv @ %d local end point failed due to invalid parameters !!!
+(uint32_t)(!( ( pvItemToQueue == ((void*)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ))
+a530-0
+(uint32_t)(!( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) && ( xTicksToWait != 0 ) ))
+(uint32_t)(!( ( pvBuffer == ((void*)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ))
+WARNING: %s:%d: FreeRTOS configTICK_RATE_HZ (%d), does not match ClockP tick rate Hz (%d)
+(uint32_t)(!( ( xCopyPosition == ( ( BaseType_t ) 2 ) ) && ( pxQueue->uxLength != 1 ) ))
+[IPC RPMSG ECHO] All echoed messages received by main core from %d remote cores !!!
+(uint32_t)(( ( &( pxReadyTasksLists[ uxTopPriority ] ) )->uxNumberOfItems ) > 0)
+(uint32_t)(( ( ( uint32_t ) pxTopOfStack & ( uint32_t ) ( 0x0007 ) ) == 0UL ))
+[IPC RPMSG ECHO] Remote Core waiting for messages at end point %d ... !!!
+((uintptr_t)params->stack & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U
+(params->stackSize & (sizeof(configSTACK_DEPTH_TYPE) - 1U)) == 0U
+[IPC RPMSG ECHO] Message exchange started with RTOS cores !!!
+[IPC RPMSG ECHO] Closing all drivers and going to WFI ... !!!
+pInterruptConfig->coreIdList[core] != gIpcNotifyCtrl.selfCoreId
+ERROR: %s:%d: [FreeRTOS] Stack overflow detected for task [%s]
+(uint32_t)(pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 ))
+(params->periodInUsec != 0U) || (params->periodInNsec != 0U)
+Starting Sciserver (Sciserver_tirtosInit) FAILED, ret=%d
+sizeof(SemaphoreP_Struct) <= sizeof(SemaphoreP_Object)
+(uint32_t)(uxSchedulerSuspended == ( UBaseType_t ) 0U)
+(uint32_t)(uxSchedulerSuspended != ( UBaseType_t ) 0U)
+[IPC RPMSG ECHO] Total execution time = %lld usecs
+ERROR: %s:%d: UART open failed for instance %d !!!
+[IPC RPMSG ECHO] One way message latency = %d nsec
+sizeof(RPMessage_Object) >= sizeof(RPMessage_Struct)
+[IPC RPMSG ECHO] Messages sent to each core = %d 
+(params->inputClkHz % params->inputPreScaler) == 0U
+w(uint32_t)(( pxTimer->xTimerPeriodInTicks > 0 ))
+(uint32_t)(xReturn != ( ( ( BaseType_t ) 0 ) ))
+[IPC RPMSG ECHO] Number of remote cores = %d 
+params->coreIdList[core] != params->selfCoreId
+pInterruptConfig->coreIdList[core] < maxCoreId
+(uint32_t)(( cRxLock ) != ( ( int8_t ) 127 ))
+(uint32_t)(( xIdleTaskHandle != ((void*)0) ))
+(uint32_t)(( cTxLock ) != ( ( int8_t ) 127 ))
+sizeof(TaskP_Struct) <= sizeof(TaskP_Object)
+params->stackSize >= TaskP_STACK_SIZE_MIN
+[IPC RPMSG ECHO] Version: %s (%s %s):  
+ASSERT: %d.%ds: %s:%s:%d: %s failed !!!
+(uint32_t)(puxStackBuffer != ((void*)0))
+v2024.07.0.0-REL.MCUSDK.K3.10.00.00.08+
+(uint32_t)(pxTaskBuffer != ((void*)0))
+gClockConfig.timerInputPreScaler != 0U
+(uint32_t)(xSize == sizeof( Queue_t ))
+(uint32_t)(pxQueue->uxItemSize == 0)
+params->coreIdList[core] < maxCoreId
+(uint32_t)(xSize == sizeof( TCB_t ))
+Sciclient direct init..... SUCCESS
+vTaskPriorityDisinheritAfterTimeout
+Sciserver Testapp Built On: %s %s
+xQueueCreateCountingSemaphoreStatic
+(uint32_t)(gMainTask != ((void*)0))
+gClockConfig.timerInputClkHz != 0U
+Sciclient direct init..... FAILED
+(uint32_t)(pxTCB == pxCurrentTCB)
+(uint32_t)(pxTCB != pxCurrentTCB)
+gClockConfig.timerBaseAddr != 0U
+dpl/common/SemaphoreP_freertos.c
+(uint32_t)(pxTCB->uxMutexesHeld)
+Starting Sciserver..... PASSED
+pInterruptConfig->numCores > 0U
+vTaskPlaceOnEventListRestricted
+gClockConfig.usecPerTick != 0U
+params->inputPreScaler <= 256U
+object->prms.intrNum != 0xFFFF
+vringSize <= params->vringSize
+vApplicationStackOverflowHook
+../nortos/dpl/common/TimerP.c
+ipc_notify/v0/ipc_notify_v0.c
+generated/ti_drivers_config.c
+(uint32_t)(uxPriority < (32))
+(uint32_t)(xReturn != ( -1 ))
+params->inputPreScaler != 0U
+SemaphoreP_constructCounting
+dpl/common/TaskP_freertos.c
+ipc_rpmsg_create_recv_tasks
+ipc_rpmsg/ipc_rpmsg_vring.c
+dpl/r5/ClockP_freertos_r5.c
+prvProcessReceivedCommands
+(uint32_t)(pxUnblockedTCB)
+REL.MCUSDK.K3.10.00.00.08+
+SemaphoreP_constructBinary
+SemaphoreP_constructMutex
+xQueueGenericCreateStatic
+status == SystemP_SUCCESS
+(uint32_t)(pxTicksToWait)
+(uint32_t)(pxStaticQueue)
+../../../ipc_rpmsg_echo.c
+timerCycles < 0xFFFFFFFFU
+m4f0-0
+xQueueTakeMutexRecursive
+NULL != gUartDrvObj.lock
+FreeRTOS-Kernel/timers.c
+xTaskRemoveFromEventList
+params->inputClkHz != 0U
+xQueueGiveMutexRecursive
+params->taskMain != NULL
+xTaskPriorityDisinherit
+(uint32_t)(pxEventList)
+RM_PM_HAL Version: %s
+status==SystemP_SUCCESS
+(uint32_t)(( pxQueue ))
+ipc_rpmsg_send_messages
+status==SystemP_SUCCESS
+Sciserver Version: %s
+FreeRTOS-Kernel/queue.c
+FreeRTOS-Kernel/tasks.c
+status==SystemP_SUCCESS
+NULL != config->object
+uart/v0/dma/uart_dma.c
+(uint32_t)(pxNewQueue)
+xTaskGetIdleTaskHandle
+UART_dmaDisableChannel
+(uint32_t)(pxCallback)
+params->stack != NULL
+vTaskPlaceOnEventList
+vQueueUnregisterQueue
+xTimerCreateTimerTask
+ipc_rpmsg/ipc_rpmsg.c
+NULL != config->attrs
+(uint32_t)(pxTimeOut)
+params->numCores > 0U
+xTaskCheckForTimeOut
+prvInitialiseNewTask
+0U == timeoutElapsed
+RPMessage_vringReset
+xQueueReceiveFromISR
+(uint32_t)(pxQueue)
+RPMESSAGE_CHAR_PING
+(uint32_t)(pxMutex)
+xQueueSemaphoreTake
+ipc_rpmsg_echo_main
+(uint32_t)(xHandle)
+UART_configInstance
+vTaskStartScheduler
+(uint32_t)(xReturn)
+RPMessage_construct
+vQueueAddToRegistry
+fni-
+Counting Sem (DPL)
+xQueueGenericReset
+(uint32_t)(xQueue)
+ipc_recv_task_main
+xTaskIncrementTick
+[%6s] %5d.%06ds : 
+vTaskSwitchContext
+uart/v0/uart_v0.c
+ti.ipc4.ping-pong
+xTaskCreateStatic
+xQueueGiveFromISR
+(uint32_t)(pxTCB)
+xQueueGenericSend
+a531-1
+0123456789abcdef
+0123456789abcdef
+Drivers_uartOpen
+UART_flushTxFifo
+Binary Sem (DPL)
+TaskP_construct
+taskObj != NULL
+RPMESSAGE_PING
+xTaskResumeAll
+params != NULL
+RPMessage_recv
+UART_masterIsr
+IpcNotify_init
+RPMessage_send
+NULL != object
+NULL != handle
+xQueueReceive
+UART_dmaClose
+eTaskGetState
+NULL != attrs
+baseAddr!=0U
+prvDeleteTCB
+vQueueDelete
+rpmsg_chrdev
+TimerP_setup
+System_init
+main_thread
+ClockP_init
+Jul 25 2024
+Mutex (DPL)
+Jul 25 2024
+vTaskDelete
+vTaskDelay
+UART_write
+UART_close
+Task (DPL)
+hsm-m4f0-0
+../main.c
+UART_init
+UART_open
+v10.00.08
+TmrQ
+a530-1
+a531-0
+06:35:21
+06:36:51
+EXTBOOT
+unknown
+Tmr Svc
+unknown
+r5f0-0
+ERROR
+fni+
+main
+IDLE
+no?MN=U_kur
+!$%&'()*+345;<>VWXtfghi
+#012dj
+Linker
+aeabi
+cortex-r5
+C2.09
+C$$EXIT
+C$$IO$$
+__CIOBUF_
+.vectors
+.bootCode
+.startupCode
+.startupData
+.text.hwi
+.text.cache
+.text.mpu
+.text.boot
+.text:abort
+.bss.ipc_vring_mem
+.resource_table
+.lpm_data
+.text
+.const
+.rodata
+.cinit
+.far
+.data
+.sysmem
+.data_buffer
+.const.devgroup
+.boardcfg_data
+.bss.devgroup
+.bss
+.bss:taskStackSection
+.dm_stub_text
+.dm_stub_data
+.dm_stub_bss
+.dm_stub_rodata
+.dm_stub_stack
+.lpm_trace_buf
+.benchmark_buffer
+.stack
+.irqstack
+.fiqstack
+.svcstack
+.abortstack
+.undefinedstack
+.ARM.exidx
+.init_array
+.fini_array
+.TI.persistent
+.TI.local
+.TI.onchip
+.TI.offchip
+.common:gSelfReset_bootVector
+Veneer$$CMSE
+.ARM.attributes
+.symtab
+.TI.section.flags
+.strtab
+.symtab_meta
+.shstrtab
+.none
+)arm64
+:U-Boot
+$standalone
+HSPL (64-bit)
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+240805073840Z
+240904073840Z0
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+>['l
+EE|K
+sJh(1
+7nfxo
+0FM4
+n`TP
+tX~_ 
+EmjD
+sA7m
+r)4&
+a;*1
+k9sH
+j\D)
+BH`8c
+9c6Cy
+bfF9
+abF9
+6`B_
+ZB<@
+2AB8
+2AB8
+2AB8
+"h`8_
+6Bn@
+ZAn@
+R5|@
+6`"@9
+`"@9
+S!|@
+Zbj%
+TbD@
+RB|@
+P@)_
+D9`~
+R`j@
+hb8F
+Tbja8bhb8B
+9!<H
+b(@9_
+5dJb8B
+j!8!
+`ZD9
+@9?$
+uJD9
+wJD9
+9`*By
+TtnD9
+ij8?
+d^D9
+a:D9
+a>D9
+aBD9
+@9a.
+`*@9
+"@9aB
+&@9aF
+*@9`J
+@9a.@96 
+u6@9
+e2@9U
+Ra6@9
+a:@9
+Re2@9
+a6@9
+a:@9
+chd8
+6t6@94<
+B9A 
+*e2@9!
+t:@9
+@9!(@
+`B@9
+T`*@y
+`*@y
+V@9a2
+*@ya6
+*@yA
+5`&@
+e6A9d2A9
+Te6A9
+d2A9
+*@9`
+*@9`
+a:@9
+*ah@
+a6@9
+*a:@9
+6b:@9
+qa6@9A
+6a6@98
+2@9?
+D9@	
+D9`B
+D9`F
+5`6@9 
+4`:@9
+4`F@9`
+5`>@9`
+4aB@9 x
+86b6
+9`>@9
+*@h@
+ `	S
+9@(@9`
+*A9z
+T`2A9
+Tc6A9
+b2A9
+A9]5
+5@N@
+@9 @
+4`zt
+5s~7
+T`*D
+7`BP9aFP9
+T`.D
+a&Hy!
+?  k`
+ja8!
+TaJP9?
+5`BP9
+6`"B
+9`BP9aRP9
+T`&B
+2!h%
+\8,0\83p\8C 
+" \8:
+\8b@
+#P\8L`
+"@\8
+Z80]8>p]8C 
+"`\81
+\8b@
+\8S`
+\8b@
+]8Y`
+Z	!	
+( ]8(A
+)P]8
+(@]8
+Z	!	
+(`]8(A
+]8(A
+]8/0^8	!	
+]8.p^8+
+^8(A
+^850_8	!	
+( ^8-
+^8(A
+)P^8
+(@^8
+(`^8(A
+^8hA
+_8va
+4 _8kA
+4P_8ua
++@_8
+4`_8kA
+4p_8ka
+_8k	
+Scx	
+Tsfz
+`N@9
+9`&@y
+9`^@9
+9`.@y
+9`n@9
+9`6@y
+9`~@9
+9`>@y
+9`F@y
+9`"@
+9`"@
+\870\88p\8C 
+" \8:
+\8b@
+#P\8W`
+"@\840]8
+Z3p]8B 
+#`\8>
+]8B@
+\8X`
+\8B@
+\8Z`
+\8B@
+]8Y`
+# ]8B@
+#P]8T`
+"@]8
+#`]8B@
+]8S`
+]8B@
+]8^`
+]8B@
+Z00^8/p^8B 
+# ^8.
+^8B@
+#P^8P`
+"@^8+0_8
+Z*p_8B 
+#`^8,
+_8B@
+^8O`
+^8B@
+^8N`
+^8B@
+_8M`
+# _8B@
+#P_8K`
+"@_8k	
+#`_8B@
+_8J`
+_8J	
+_8B@
+_8L`
+_8B@
+A)C,
+J{+LJ
+J{+VJ
+J{+UJ
+J{+WJZ
+J{+XJ9
+J{+ZJ
+J{+YJs
++TJ1
+*SJ{
+)^J{
+)QJ{
+)PJ{
+)OJk
+J)NJ{
+)MJ{
+*KJ{
+*JJ{
+*LJ{
++VJ{
+Z+UJ{
+9+WJ{
+*XJ{
+s*ZJ{
+QJ{+YJs
+1*TJ{
+OJqN
+J1*SJ
+)^J{
+)QJ{
+)PJ{
+k)OJ{
+J)NJ{
+)MJ{
+*KJ{
+*JJ{
+*LJ{
++VJ{
+Z+UJ{
+Z+WJ{
+SJ{+XJ{
+s*YJ{
+{+TJ3J
+*SJ:
+J5*UJ
+J/*OJ
+(NJG
+(MJ'
+	JBd
+Tsfz
+@)Bt
+`.@9
+9`>@9
+9`N@9
+9`&@y
+9`^@9
+9`.@y
+9`n@9
+9`6@y
+9`~@9
+9`>@y
+9`F@y
+9`"@
+9`"@
+9`N@y
+9`&@
+9`&@
+_89?P
+_8Y#
+8bj`
+8bj`
+8bj`
+8bj`
+8bj`
+8bj`
+8bj`
+0N)B
+@9& 
+@94 
+@95 
+@9!@
+hv8Xh68
+TB@5
+jv8Yh68
+TB@5
+TB@)
+hv8Xh68
+<@8T<
+@98#
+*Xh4x
+x"xB
+<@yG
+&xbx
+SJyhx
+(xgx
+ihxM
+i(xJ=
+:i;8
+Xsx&xfx_
+i08n
++i%85
+R`*@
+$hc8c
+@9!@
+& _8
+70_8
+$@_8
+6P_8
++`_8
+5p_8k
+@_8k
+`_8J
+p_8s
+TDl|
+$hb8B
+X|xa
+P6??
+P6bV@
+j|8A
+R@+@
+j|8A
+H6??
+Ta2@y?
+R  @
+K`V@
+Q X`x
+az x`
+ X`xb
+dz!xa
+Tbr@
+Tb~@
+dz`x
+dz"x
+T`r@
+h`8K
+TbV@
+h`8K
+TbZ@
+Ka"@
+Te6@
+#hb8
+k"8B
+TaV@
+4`V@
+T`"@
+*!@#
+KA#@
+6`(@9b,@9
+ehb8
+*t|@
+4b~@
+Tc|@
+TaJ 
+Taz`
+*@n@
+#hd8
+c @J
+Sc|@
+xcx`
+Akb8
+j"8@k"8B
+BKa8@
+5sB!
+$hc8c
+@9"hb8B
+hb8"
+T@[`xa
+!hb8
+!hb8
+!hb8
+%hb8
+%hb8
+h$8=
+hd8A
+@9?p
+@9?x
+he8#he8d
+hg8g
+#hb8
+h"8B
+T$hc8
+h#8c
+#hb8
+h"8B
+$hc8
+hc8c
+&hd8
+h#8c
+%hc8
+h#8c
+dh`8$h 8
+hd8 hd8
+hc8c
+ @9!
+K!|@
+hd8d
+Chc8
+_8Chc8
+R!|"
+ @9@
+Rs~ 
+Rs~ 
+`2@9
+_k 8
+ @9A
+?h 8
+G9?T
+@y @
+@y @
+4#|@
+hc8c
+h"8B
+@ha8
+@y`@
+@9  
+@9 `
+`2@9a6@9b>@9
+`:@9 @
+Tab@9`f@9  
+aj@9
+`n@9 `
+ar@9
+`v@9 
+az@9
+`~@9 
+@9  
+@9 `
+@9  
+@9 `
+@9  
+@9 `
+`BA9aFA9tNA9
+`JA9 @
+aRA9
+`VA9  
+aZA9
+`^A9 `
+a&A9
+`"A9
+`*A9
+a.A9
+`2A9 
+a6A9
+`:A9 
+a>A9
+`BA9aFA9bNA9
+`JA9 @
+aRA9
+`VA9  
+aZA9
+`^A9 `
+bbA9afA9A 
+bjA9"@
+anA9A`
+@9  
+@9 `
+@9A 
+@9"@
+@9A`
+`"@9`
+5s~|
+6`J@
+R`~ 
+Ta*@
+*Bx*
+*Bx*
+?A9?
+*Bx*
+*Bx*
+*Bx*
+5`"@
+4b&@
+5  @
+4a*@
+*@n@
+7@n@
+4@n@
+R@n@
+Rs~ 
+R!|"
+Rs~ 
+7`r@
+*@n@
+5AZ@
+4!|@
+6Bn@
+R@n@
+T@ha
+@ha8
+T@hax
+@hax
+@hax
+T@ha
+@h!8
+@h!x
+T`J@
+4`J@
+*@n@
+*@n@
+*@n@
+*@n@
+*@n@
+Z!|@
+*@n@
+*@n@
+R`n@
+R`n@
+R`n@
+6`n@
+6`n@
+6`n@
+*@n@
+*@n@
+*`b@
+4af@
+Ta^@
+Taj@
+5an@
+*A(D
+*Ah 
+p@98
+)@ 3
+*Bx*
+DI9a
+9A<H
+9A\P
+BI9 
+`B@9`
+*Bx*
+`B@9`
+*Bx*
+JI9?
+`B@9eB@9
+@9  
+@9  
+# @9"$@9
+9",@9#(@9
+9"0@9
+9"4@9
+9"8@9!<@9
+@9  
+@9  
+@9  
+@9 `
+# @9"$@9c
+9#(@9",@9c
+9"0@9#4@9C 
+"8@9b@
+#<@9b
+9"@@9#D@9C 
+"H@9b@
+#L@9b"
+9"P@9#T@9C 
+"X@9b@
+#\@9b2
+9"`@9#d@9C 
+"h@9b@
+#l@9bB
+9"p@9#t@9C 
+"x@9b@
+#|@9bR
+@9C 
+@9b@
+@9C`
+@9bb
+@9C 
+@9b@
+@9C`
+@9A 
+@9A 
+@9A 
+@9"@
+@9A`
+b"@9a&@9A 
+b*@9"@
+a.@9A`
+b2@9a6@9A 
+b:@9"@
+a>@9A`
+bB@9aF@9A 
+bJ@9"@
+aN@9A`
+bR@9aV@9A 
+bZ@9"@
+a^@9A`
+bb@9af@9A 
+bj@9"@
+an@9A`
+br@9"
+av@9A
+bz@9"
+a~@9A
+@9A 
+@9"@
+@9A`
+ab@9
+TaB@9
+9aJ@9b
+9aN@9
+9aR@9
+9aV@9
+9aZ@9
+9a2@y
+ya6@y
+ya:@y
+#$@9"(@9b 
+#,@9C@
+"0@9b`
+#4@9C
+"8@9b
+#<@9C
+"@@9b
+#D@9"H@9b 
+#L@9C@
+"P@9b`
+#T@9"X@9b 
+#\@9C@
+"`@9b`
+"d@9#h@9C 
+"l@9!p@9b@
+b @9a$@9A 
+b(@9"@
+a,@9A`
+b0@9"
+a4@9A
+b8@9"
+a<@9A
+b@@9aD@9A 
+bH@9"@
+aL@9A`
+9a>H
+9a^P
+# @9"$@9b 
+5$(@9#,@9
+y"(@9!,@9A 
+b @9a$@9A 
+b(@9"@
+a,@9A`
+b0@9"
+a4@9A
+b8@9"
+a<@9A
+b@@9aD@9A 
+bH@9"@
+aL@9A`
+bP@9"
+aT@9A
+bX@9"
+a\@9A
+" @9#$@9C 
+"(@9b@
+#,@9C`
+"0@9b
+#4@9C
+"8@9!<@9b
+" @9#$@9C 
+"(@9b@
+#,@9C`
+"0@9b
+#4@9C
+"8@9!<@9b
+! @9
+! @9a
+# @9"$@9b 
+#(@9C@
+",@9b`
+#0@9"4@9b 
+#8@9C@
+"<@9b`
+"@@9
+!D@9
+*cl2
+*cl2
+`F	9!
+`B	9@
+R`J	9@
+" @9
+!$@9
+*Bx*
+@9` 
+j6x`
+!K 8
+R`J@
+j x`ju8
+j`xB<
+`*@9
+`.@9
+`&@9
+`&@9
+`&@9
+dj x
+dj x
+@9cj x
+Raj x
+aj x
+@9`j`x
+@9|j x
+Raj x
+@9`j!x
+dj x
+Raj x
+@9aj x
+ej x
+"$@9
+"0@9
+"4@9
+"8@9
+"$@9
+&@9`j`x
+"@9A
+Raj x
+Raj x
+@9`j`x
+aj x
+>@9{j`x{?
+>@9aj x`w
+>@9`j!x
+>@9xj x@
+aj x@
+>@9xj x@
+>@9aj x@
+>@9xj x@
+>@9{j x
+&@9`j`x
+"@9A
+Raj x
+aj x
+@9`j`x
+aj x
+6`6@
+X6a6@
+P6a6@
+H6a6@
+@6a6@
+g6`6@
+@y!<
+T`~8
+RU|@
+vC9`vC9?
+C9anB9
+6arB9
+avC9!|
+6`rB9
+Ta~@
+B9sA
+Ta2@
+5`>@
+`&C9@
+4`"C9
+_@y`
+TCtZ
+chd8
+4`B@
+5a6@
+5`>@
+xA*!DO
+9!xz
+@y_L
+T @ 
+BH`8`
+|@y!<
+_  kb
+rc"@
+Ay!<
+ 6br@
+j 8`
+k`8Ck 8!
+ h`8`
+A9B|
+6`J@
+5`J@
+lCy`
+ 8B9`
+! @9?
+9# @9
+9#`@9c
+9$(@
+9"h@9B
+9"(@9B
+TB<@
+?A9`
+h38s
+T`"G9@
+@9!|
+j`8"
+j`8"
+X@9a
+T@9 
+PB9a
+"0@9_ 
+A @9?
+TA$@9?
+`*@ya
+`.@y
+4`"@9
+A9  
+b:@9
+@9?#
+5`2@y
+i 8C
+#i 8B<H
+Bi 8ai 
+@9  
+*!TQ
+  @9
+7" @9_
+9`"@9
+Zs~@
+7@n@
+Zs~@
+Tab@9d
+!c@9
+*Bx*
+R`J@
+*Bx*
+*Bx*
+*Bx*
+T`:@
+T`&@
+T`:@
+Zs~@
+T`J@
+T`J@
+T@Z@
+@ha8
+bh!8
+*Bx*
+*Bx*
+*Bx*
+@9`r
+6" @9b
+4"(@9"
+6"`@9b
+4"h@9
+6"(@
+"(@9
+7"h@9b
+Rb~@
+Tuj@
+#B9?
+CB9?
+CB99
+gB9?
+B9`r
+b@9`
+9`J@
+`@9!
+6  @9`
+4 (@9`
+6 (@
+9 $@9
+Z)!4
+@96(@
+ @9!
+ @9s
+ @9!
+(`@9W
+ @9!l
+Rbr@
+Rb~@
+j!8!
+C9!L
+ @9!l
+$h`8
+5` @9
+4a$@9
+5``@9
+4ad@9
+5`$@
+T" @9
+T"`@9
+T"$@
+@9_ 
+T"(@
+7#(@9#
+7#h@9
+b@9s
+@ @9C
+@`@9c
+*Bx*
+5`:@
+K'<@
+9jh!8
+yih!x
+R`:@
+ya:@
+ h`8
+A9!l
+7az@
+@9?4
+aJ@9bN@9cV@9ef@9" 
+aR@9k>@9
+ A)A@
+b^@9aZ@9
+ab@9A@
+bv@9%`
+ar@9
+*a:@9+ 
+Tg<@
+Ke|@
+c*@9
+d.@9
+c2@9
+d6@9d`
+hq8? 
+T,	@9)
+@9jjj8
+T,	@9)
+@9)M
+*ijj8
+		*I
+Tjjj8,
+@9)	@9J=
+jjj8J
+9)	@9I
+4@8?@
+_8BHC
+F*f$
+_8)%
+D@8c
+_8Bt
+_8)}
+SIx	*
+_8b1
+Q`N@
+QdZ@
+*a(@
+*a(@
+*`(@
+T`:@
+TajA
+@ybhb
+T LC
+@y h`
+Tb0@
+Qdzf
+*czf
+*Bx*
+*Bx*
+8!\H
+7B @
+Ta:@
+Ta>@
+@ys"
+X@y`
+X@y 
+h!8`
+@9  
+T9#@
+B@B9_
+@9V<
+5aN@
+4bN@
+Q_h!
+TxN@
+4aN@
+Q?h 
+9aN@
+?h 8aR@
+7bR@
+Ah 8`N@
+@9b 
+@9t 
+@9d 
+@9f 
+@9d 
+@y`*
+@y`6
+$@9F
+,@9F
+4@9F
+4@9F
+ 6F(@9
+(6F,@9
+06F0@9
+86D4@9 
+@6D8@9 
+H6D<@9 
+@9B@@9_
+T!,@
+@9A 
+4@n@
+T@n@
+?`Bk
+2A9b
+6wBI
+*?`Ck
+@9U 
+@9A 
+@9a 
+@9T 
+@9A 
+@9A 
+B9;!
+Rc0/
+@9a 
+b9@ 
+b9  
+S"\P
+R`"@
+R`:@
+R`"@
+!,@9?
+*5x 
+6`*@
+6 (@
+?`Bk
+?`@k
+?`Bk
+?`Bk
++Q) 
+C@q{
+_`@k
+*arQy
+@9"@
+@9A`
+@9A 
+@9"@
+@9A`
+_c@k
+T`"@
+*Bx*
+Taf@
+T`jA
+2avC
+TajA
+2avC
+L94t
+T`BC
+86`vC
+2`6C
+9`jA
+TafC
+4`jA
+*ajA
+TajA
+*`jA
+4`jA
+2`rC
+2`jA
+	3av
+@9`vC
+5`rC
+4af@
+4af@
+4af@
+T`jA
+2avC
+2ajA
+T`jA
+arB9
+T`2@
+`rB9
+*avC
+A9e,@
+9$\P
+i&8d
+9e2@9
+Rd6@9
+e:@9
+d>@9
+6b0@ye2
+*C<H
+9C\P
+9c2@9!
+b6@9!d
+c:@9C@
+b>@9b`
+T`jA
+R`jA
+R`jA
+6af@
+T`jA
+Taf@
+RB<K
+hL9?
+rB9!
+2`jA
+4`.@
+)arB9
+4`rB9
+uzB9
+arB9
+A9a^@
+9`rB9
+7`Z@y
+5b*@
+Ta.@
+TarB9
+TaJ@
+TazB9
+azB9
+2@9@
+&@9  
+T`.@
+Ta&@
+arB9
+TarB9
+T!$@
+T!$@
+arB9
+T`vC
+`rB9
+@9a 
+arB9b
+arB97
+arB9
+Tt6@
+9`6@
+K`:@
+@9  
+ 7a.@
+Ta&@
+TarB9
+arB9
+brB9 
+2`jA
+R`vC
+4af@
+4af@
+crB9a
+pB9B
+afL9
+7ajL9
+7`f@
+4af@
+QcjA
+*ajA
+Taf@
+T`jA
+4b.A
+T`vC
+9`.A
+RbjA
+T`vC
+*`jA
+4af@
+4af@
+R`.C
+T`jA
+T`bL9
+T`bA
+h"8a
+9a<H
+9a\P
+9"<H
+9"\P
+!pB9?
+rB9b
+@9$ 
+@9! 
+T`hA
+T`hA
+S@y`.
+W@y`&
+[@y`*
+y`jA
+`6b*Fy@
+P6b^L9_
+rB9 
+R`B	
+Rc\?
+TbbA
+@9b 
+RcvC
+@9U 
+abL9
+TajA
+@9! 
+@9bzB
+TbjA
+5`B	
+*ajA
+T`vC
+Taf@
+X@yaR
+@9` 
+@9a 
+@#@9A'@9
+@+@9 @
+A/@9
+Ac@9@g@9  
+Ak@9
+Z@y!
+zB95
+6{J@
+5@n@
+aB@9!
+4bR@
+hc8b
+he8e
+h#8c
+Aha8@h`8  
+@y`.@9c2@9e.@y
+4bB@9
+4`V@9
+T`6@9g6@9
+5`&@
+4aF@9t|
+S`J@9
+5a&@
+cR@9a
+`N@9
+5c"@
+wA9c
+)`*@
+RB\H
+t4@y
+@4@y
+ja8!
+aha8
+)@(@
+ ,@9`
+ 4@yC
+T!(@y!<
+'Ay (@y_
+34@y
+,@9!
+@9! %
+D7q/;M
++Yo,
+&\8!
+* qW
+LwH'
+L*~e
+B c0
+s2R"
+b$C4 
+S6r&
+>2.Q
+P%@Fpg`
+RwbVr
+ftGd$T
+Wfvv
+F4VL
+DXeH
+uJTZ7j
+ld\EL
+n6~UNt^
+*__of_translate_address
+fdt_fixup_memory_banks
+spl_usb_load
+spl_register_fat_device
+fit_find_config_node
+usb_setup_descriptor
+ti_sci_clk_get_rate
+dfu_fill_entity
+pca953x_read_single
+ti_sci_sysreset_request
+ti_sci_of_to_info
+wait_for_event
+sdhci_setup_cfg
+ti_sci_power_domain_on
+k3_sec_proxy_of_xlate
+tidss_drv_probe
+g_dnl_register
+xhci_get_endpoint_interval
+xhci_setup_addressable_virt_dev
+xhci_ctrl_tx
+dwc3_clear_stall_all_ep
+dwc3_ep0_end_control_data
+load_simple_fit
+spl_load_image_fat
+ti_sci_clk_set_rate
+dfu_read
+pca953x_write_single
+ti_sci_probe
+wait_for_bb
+sdhci_transfer_data
+ti_sci_power_domain_off
+k3_sec_proxy_send
+dss_oldi_tx_power
+composite_unbind
+xhci_address_device
+xhci_get_input_control_ctx
+record_transfer_result
+spl_load_simple_fit
+fdt_record_loadable
+ti_sci_clk_set_parent
+dfu_write
+ti_sci_get_response
+sdhci_send_command
+k3_sec_proxy_verify_thread
+dss_set_num_datalines
+_xhci_alloc_device
+xhci_scratchpad_alloc
+abort_td
+dwc3_cleanup_done_reqs
+dwc3_ep0_xfernotready
+ti_sci_clk_enable
+dfu_get_buf
+ti_sci_do_xfer
+xhci_update_hub_device
+xhci_alloc_container_ctx
+reset_ep
+ti_sci_clk_disable
+sdhci_reset
+xhci_configure_endpoints
+xhci_malloc
+xhci_bulk_tx
+dwc3_ep0_complete_data
+fdt_find_or_add_subnode
+sdhci_init
+xhci_segment_alloc
+xhci_wait_for_event
+__dwc3_gadget_kick_transfer
+dwc3_ep0_set_sel_cmpl
+sdhci_set_clock
+xhci_ring_alloc
+xhci_queue_command
+dwc3_ep0_out_start
+xhci_ring_free
+__dwc3_gadget_ep_queue
+__dwc3_ep0_do_control_data
+xhci_inval_cache
+__dwc3_ep0_do_control_status
+xhci_flush_cache
+dwc3_stop_active_transfer
+(((((
+AAAAAA
+BBBBBB
+default
+Failed to get SYSFW (%d)
+SYSFW ABI: %d.%d (firmware rev 0x%04x '%s')
+Failed to reserve framebuffer memory (%d)
+Warning: Detected image signing certificate on GP device. Skipping certificate to prevent boot failure. This will fail if the image was also encrypted
+Invalid signing certificate size
+Warning: Did not detect image signing certificate. Skipping authentication to prevent boot failure. This will fail on Security Enforcing(HS-SE) devices
+Authentication failed!
+Authentication passed
+Insufficient RAM for page table: 0x%lx > 0x%lx. Please increase the size in get_page_table_size()
+Page table pointer not setup.
+Error setting up mem size and base. %d
+Error setting up memory banksize. %d
+Error fixing up memory node! %d
+SPL: Cannot set up bloblist
+Trying to boot from %s
+SPL: Unsupported Boot Device!
+SPL: failed to boot from all boot devices
+Warning: Failed to finish bloblist (ret=%d)
+U-Boot SPL 2024.04-ti-gfda88f8bcea3 (Jul 26 2024 - 11:00:12 +0000)
+SPL initial stack usage: %lu bytes
+cannot find image node '%s': %d
+Can't load %s: No load address and no buffer
+%s: Skip load '%s': image size is 0!
+Cannot get image data/size
+Uncompressing error
+Could not get FIT buffer of %lu bytes
+	check CONFIG_SPL_SYS_MALLOC_SIZE
+/images
+loadables
+%s: can't load image loadables index %d (ret = %d)
+arch
+spl: ymodem err - %s
+Loaded %lu bytes
+UART
+spl: unsupported mmc boot device.
+spl: could not initialize mmc. error: %d
+spl: could not find mmc device %d. error: %d
+spl: mmc init failed with error: %d
+spl: mmc partition switch failed
+mmc_load_image_raw_sector: mmc block read error
+spl: mmc: wrong boot mode
+u-boot.img
+MMC2_2
+MMC2
+MMC1
+%s: usb init failed: err - %d
+Error loading from USB device
+%s: fat register err - %d
+%s: error reading image %s, err - %d
+"%s" env variable not defined!
+dfu_alt_info
+unable to set env variable "dfu_alt_info"!
+usb_dnl_dfu
+SPI probe failed.
+u-boot,spl-payload-offset
+dfu_alt_info_ram
+Compression
+architecture
+compression
+operating system
+image type
+bzip2
+gzip
+lzma
+zstd
+none
+u-boot
+U-Boot phase
+SPL Phase
+uncompressed
+bzip2 compressed
+gzip compressed
+lzma compressed
+lzo compressed
+lz4 compressed
+zstd compressed
+aisimage
+Davinci AIS image
+filesystem
+Filesystem Image
+flat_dt
+Flat Device Tree
+gpimage
+TI Keystone SPL Image
+kernel
+Kernel Image
+kernel_noload
+Kernel Image (no loading done)
+kwbimage
+Kirkwood Boot Image
+imximage
+Freescale i.MX Boot Image
+imx8image
+NXP i.MX8 Boot Image
+imx8mimage
+NXP i.MX8M Boot Image
+invalid
+Invalid Image
+multi
+Multi-File Image
+omapimage
+TI OMAP SPL With GP CH
+pblimage
+Freescale PBL Boot Image
+ramdisk
+RAMDisk Image
+script
+Script
+socfpgaimage
+Altera SoCFPGA CV/AV preloader
+socfpgaimage_v1
+Altera SoCFPGA A10 preloader
+standalone
+Standalone Program
+ublimage
+Davinci UBL image
+mxsimage
+Freescale MXS Boot Image
+atmelimage
+ATMEL ROM-Boot Image
+x86_setup
+x86 setup.bin
+lpc32xximage
+LPC32XX Boot Image
+rkimage
+Rockchip Boot Image
+rksd
+Rockchip SD Boot Image
+rkspi
+Rockchip SPI Boot Image
+vybridimage
+Vybrid Boot Image
+zynqimage
+Xilinx Zynq Boot Image
+zynqmpimage
+Xilinx ZynqMP Boot Image
+zynqmpbif
+Xilinx ZynqMP Boot Image (bif)
+fpga
+FPGA Image
+Trusted Execution Environment Image
+firmware_ivt
+Firmware with HABv4 IVT
+pmmc
+TI Power Management Micro-Controller Firmware
+stm32image
+STMicroelectronics STM32 Image
+mtk_image
+MediaTek BootROM loadable Image
+copro
+Coprocessor Image
+sunxi_egon
+Allwinner eGON Boot Image
+sunxi_toc0
+Allwinner TOC0 Boot Image
+fdt_legacy
+legacy Image with Flat Device Tree 
+spkgimage
+Renesas SPKG Image
+sfspl
+StarFive SPL Image
+Invalid OS
+arm-trusted-firmware
+ARM Trusted Firmware
+linux
+Linux
+netbsd
+NetBSD
+Enea OSE
+plan9
+Plan 9
+rtems
+RTEMS
+Trusted Execution Environment
+U-Boot
+vxworks
+VxWorks
+opensbi
+RISC-V OpenSBI
+EFI Firmware
+Invalid ARCH
+alpha
+Alpha
+Intel x86
+ia64
+IA64
+m68k
+M68K
+microblaze
+MicroBlaze
+mips
+MIPS
+mips64
+MIPS 64 Bit
+nios2
+NIOS II
+powerpc
+PowerPC
+s390
+IBM S390
+SuperH
+sparc
+SPARC
+sparc64
+SPARC 64 Bit
+blackfin
+Blackfin
+avr32
+AVR32
+nds32
+NDS32
+or1k
+OpenRISC 1000
+sandbox
+Sandbox
+arm64
+AArch64
+AMD x86_64
+xtensa
+Xtensa
+riscv
+RISC-V
+#size-cells
+%s: Bad cell count for %s
+%s: %s: %s
+%s: num banks %d exceeds hardcoded limit %d. Recompile with higher MEMORY_BANKS_MAX?
+memory
+device_type
+WARNING: could not set %s %s.
+fit-images
+entry
+ranges
+Unsupported %s address size
+description
+data-offset
+data-position
+data-size
+/configurations
+%s: Missing FDT description in DTB
+Failed to allocate %x bytes
+Used size=%x, total size=%x
+udc_device_get_by_index failed
+g_dnl_register failed
+Deferred dfu_flush() failed!
+unable to get device descriptor (error=%d)
+USB device descriptor short read (expected %i, got %i)
+%s: invalid max packet size
+unable to get descriptor, error %lX
+config descriptor too short (expected %i, got %i)
+selecting invalid interface %d
+usb_new_device: Cannot read configuration, skipping device %04x:%04x
+ ERROR: NOT USB_CONFIG_DESC %x
+ERROR: Invalid USB CFG length (%d)
+ERROR: Invalid USB IF length (%d)
+USB IF descriptor overflowed buffer!
+Too many USB interfaces!
+ERROR: Invalid USB EP length (%d)
+USB EP descriptor overflowed buffer!
+Endpoint descriptor out of order!
+Interface %d has too many endpoints!
+ERROR: Invalid USB EPC length (%d)
+USB EPC descriptor overflowed buffer!
+EPC descriptor out of order!
+failed to set default configuration len %d, status %lX
+Cannot allocate device context to get SLOT_ID
+      USB device not accepting new address (error=%lX)
+cannot reset port %i!?
+usb_pgood_delay
+Can't allocate memory for USB device!
+Port %d over-current occurred %d times
+usb_hub
+usb-hub
+	Did not get interrupt on CBI
+cmd 0x%02X returned 0x%02X 0x%02X 0x%02X 0x%02X (NOT READY)
+cmd 0x%02X returned 0x%02X 0x%02X 0x%02X 0x%02X
+       scanning usb for storage devices... 
+%d Storage Device(s) found
+USB Storage Transport unknown / not yet implemented
+Sorry, protocol %d not yet supported.
+Device NOT ready
+   Request Sense returned %02X %02X %02X
+READ_CAP ERROR
+error in inquiry
+lun%d
+usb_storage_blk
+usb_mass_storage
+usb-mass-storage
+splashpos
+splashimage
+sata
+Error: unsupported location storage.
+Error: could not access storage.
+Unknown splash location
+splash.bmp
+Error: bad splashimage address specified
+splashsource
+splashsource env variable set to unsupported value
+splashdevpart
+Error: splashimage address too high. Data overwrites U-Boot and/or placed beyond DRAM boundaries.
+splashfile
+Cannot load splash image: no SATA support
+Cannot load splash image: no virtio support
+Cannot load splash image: no UBIFS support
+Error (%d): cannot determine file size
+Cannot unmount UBIFS: no UBIFS support
+Could not find FDT magic
+Failed to get splash image from FIT
+Failed to get size of splash image (err=%d)
+alloc space exhausted
+sha1
+sha256
+sha512
+crc16-ccitt
+crc32
+loadxy_timeout
+Unknown error
+Block sequence error
+CRC/checksum error
+Invalid framing
+Cancelled
+End of file
+Timed out
+Sorry, zModem not available yet
+Can't access file
+env_buf [%u bytes] too small for value of "%s"
+## Error: illegal character '=' in variable name "%s"
+## Can't malloc %d bytes
+## Error inserting "%s" variable, errno=%d
+setenv
+*** Warning - %s, using default environment
+## Error: Environment import failed: errno = %d
+^%s$
+Error compiling regex: %s
+## Warning: Unknown environment variable type '%c'
+## Warning: Unknown environment variable access method '%c'
+.flags
+eth\d*addr:mo,ipaddr:i,gatewayip:i,netmask:i,serverip:i,nvlan:d,vlan:d,dnsip:i,serial#:so,
+## Error: flags type check failure for "%s" <= "%s" (type: %c)
+## Error: Can't delete "%s"
+## Error: Can't overwrite "%s"
+oldval: %s  defval: %s
+## Error: Can't create "%s"
+nowhere
+invalid distance too far back
+invalid distance code
+invalid literal/length code
+unknown header flags set
+unknown compression method
+incorrect header check
+invalid window size
+header crc mismatch
+invalid block type
+invalid stored block lengths
+too many length or distance symbols
+invalid code lengths set
+invalid bit length repeat
+invalid literal/lengths set
+invalid distances set
+incorrect data check
+incorrect length check
+Error: Bad gzipped data
+Error: gunzip out of data in header
+%s: size %lu not a multiple of %lu
+%s: start offset %lu not a multiple of %lu
+Error: gunzip out of data in header
+size of %lx doesn't match trailer low bits %x
+%s: uncompressed size %lu exceeds device size
+1.2.3
+Error: inflateInit2() returned %d
+%s: weird termination with result %d
+Error: inflate() returned %d
+abort
+linux,phandle
+/aliases
+compatible
+<valid offset/length>
+<no error>
+<unknown error>
+FDT_ERR_NOTFOUND
+FDT_ERR_EXISTS
+FDT_ERR_NOSPACE
+FDT_ERR_BADOFFSET
+FDT_ERR_BADPATH
+FDT_ERR_BADPHANDLE
+FDT_ERR_BADSTATE
+FDT_ERR_TRUNCATED
+FDT_ERR_BADMAGIC
+FDT_ERR_BADVERSION
+FDT_ERR_BADSTRUCTURE
+FDT_ERR_BADLAYOUT
+FDT_ERR_INTERNAL
+FDT_ERR_BADNCELLS
+FDT_ERR_BADVALUE
+FDT_ERR_BADOVERLAY
+FDT_ERR_NOPHANDLES
+FDT_ERR_BADFLAGS
+#address-cells
+Missing DTB
+status
+okay
+/chosen
+display-timings
+hback-porch
+hfront-porch
+hactive
+hsync-len
+vback-porch
+vfront-porch
+vactive
+vsync-len
+clock-frequency
+vsync-active
+hsync-active
+de-active
+pixelclk-active
+interlaced
+doublescan
+doubleclk
+himport_r: can't insert "%s=%s" into hash table
+WARNING: '%s' neither in running nor in imported env!
+WARNING: '%s' not in imported env, deleting it!
+### ERROR ### Please RESET the board ###
+RE is too long (code overflow)
+RE is too long (data overflow)
+unknown cmd (%d) at %d
+Jump offset is too big
+No closing ']' bracket
+No closing bracket
+Unbalanced brackets
+|.^$*+?()[\
+%s:%u: %s: Assertion `%s' failed.
+Whole Disk
+** Bad device specification %s %s **
+** Bad HW partition specification %s %s **
+bootdevice
+** No device specified **
+auto
+** Bad partition specification %s %s **
+** Bad device size - %s %s **
+** No partition table - %s %s **
+** Invalid partition %d **
+** No valid partitions found **
+** Invalid partition type "%.32s" (expect "U-Boot")
+Could not find "%s" partition
+Couldn't find partition %s %s
+usbd
+mmcsd
+%s%c%d
+blk_partition
+FAT32
+** Nested DOS partitions detected, stopping **
+** Can't read partition table on %d:%lu **
+bad MBR sector signature 0x%02x%02x
+%08x-%02x
+%s:%d
+%s.%s
+scsi
+nvme
+nvmxip
+efiloader
+virtio
+pvblock
+blkmap
+rkmtd
+#clock-cells
+clock-names
+assigned-clock-parents
+assigned-clocks
+assigned-clock-rates
+fixed_rate_raw_clock
+fixed_clock
+clock-div
+clock-mult
+fixed_factor_clock
+fixed-factor-clock
+%s %s: %s: idle_clock failed (%d)
+udevice *)
+(NULL
+%s %s: %s: put_clock failed (%d)
+%s %s: %s: get_num_parents failed (%d)
+%s %s: %s: clock has no settable parents!
+%s %s: %s: invalid parent clock!
+%s %s: %s: set_parent failed (%d)
+%s %s: %s: get_freq failed (%d)
+%s %s: %s: set_freq failed (%d)
+ti-sci-clk
+ti,k2g-sci-clk
+reg-names
+/clocks
+/firmware
+root
+root_driver
+simple_bus
+simple-bus
+simple-mfd
+little-endian
+big-endian
+native-endian
+syscon
+panel-timing
+/config
+dfu_bufsiz
+%s: Could not memalign 0x%lx bytes
+DFU complete %s: 0x%08x
+%s: Wrong sequence number! [%d] [%d]
+Wrong sequence number
+DFU write error
+Buffer overflow! (0x%p + 0x%x > 0x%p)
+Buffer overflow
+%s: Failed to fill buffer
+UPLOAD ... done
+Ctrl+C to exit ...
+dfu_hash_algo
+DFU hash method: %s not supported!
+Hash algorithm %s not supported
+Too many arguments for %s
+MMC support not available!
+MTD support not available!
+nand
+NAND support not available!
+SF support not available!
+virt
+VIRT support not available!
+%s: Device %s not (yet) supported!
+"dfu_alt_info" env variable not defined!
+DFU entities configuration failed!
+(partition table does not match dfu_alt_info?)
+RAW_ADDR
+EXT2
+EXT3
+EXT4
+RAM_ADDR
+SKIP
+SCRIPT
+eMMC
+OneNAND
+VIRT
+unsupported layout: %s
+request exceeds allowed area
+Invalid number of arguments.
+unsupported device: %s
+%s: %s: error: gpio %s%d not reserved
+get_value
+set_value
+set_dir_flags
+%s.%s%d
+#gpio-cells
+input
+output
+unused
+unknown
+func
+%s %s: %s error
+%s %s: Unsupported now
+%s %s: Max support %d pins now
+%s %s: Error reading output register
+%s %s: Error reading direction register
+label
+%s@%x_
+gpio@%x_
+%s %s: Error writing invert register
+pca953x
+nxp,pca9505
+nxp,pca9534
+nxp,pca9535
+nxp,pca9536
+nxp,pca9537
+nxp,pca9538
+nxp,pca9539
+nxp,pca9554
+nxp,pca9555
+nxp,pca9556
+nxp,pca9557
+nxp,pca9574
+nxp,pca9575
+nxp,pca9698
+nxp,pcal6524
+maxim,max7310
+maxim,max7312
+maxim,max7313
+maxim,max7315
+ti,pca6107
+ti,tca6408
+ti,tca6416
+ti,tca6424
+ti,tca9539
+ti,tca9554
+onsemi,pca9654
+exar,xra1202
+gpio@%4x_
+ti,ngpio
+ti_dm6441_gpio
+ti,dm6441-gpio
+ti,k2g-gpio
+ti,keystone-gpio
+no sysreset
+resetting ...
+%s %s: %s: reboot_device failed (%d)
+ti-sci-sysreset
+%s %s: TI-SCI message transfer size not sane
+%s %s: %s: Message sending failed. ret = %d
+%s %s: %s: Message receive failed. ret = %d
+%s %s: %s: Unable to handle %zu xfer (max %d)
+%s %s: %s: Recv xfer %zu < expected %d length
+%s %s: Message not acknowledged
+%s %s: %s: Acquiring Tx channel failed. ret = %d
+%s %s: %s: Acquiring Rx channel failed. ret = %d
+notify
+ti,host-id
+ti,secure-host
+%s %s: %s: Probe failed with error %d
+%s %s: Sending core %u wait message fail %d
+%s %s: Sending core %u shutdown message fail %d
+%s %s: %s resource type ids not available
+ti_sci
+ti,k2g-sci
+ti,am654-sci
+u-boot,i2c-transaction-bytes
+generic_%x
+i2c_generic_chip_drv
+u-boot,i2c-offset-len
+i2c-chip
+i2c_generic
+Timed out in %s: status=%04x
+Check if pads/pull-ups of bus are properly configured
+i2c_probe: pads on bus probably not configured (status=0x%x)
+I2C read: data len < 0
+I2C read: NULL pointer passed
+I2C read: address out of range
+i2c_read (data phase): pads on bus probably not configured (status=0x%x)
+I2C write: data len < 0
+I2C write: NULL pointer passed
+I2C write: address 0x%x + 0x%x out of range
+i2c_write: error waiting for data ACK (status=0x%x)
+i2c_write: bus not ready for data Tx (i=%d)
+i2c_write: timed out writig last byte!
+Error : I2C initializing first phase clock
+Error : I2C initializing clock
+ERROR: Timeout in soft-reset
+ERROR: failed to setup I2C bus-speed!
+i2c_omap
+ti,omap3-i2c
+ti,omap4-i2c
+Error enabling VMMC supply : %d
+MMC: block number 0x%lx exceeds max(0x%lx)
+mmc fail to send stop cmd
+unable to select a mode
+Select HS400 failed %d
+Select HS400ES failed %d
+unable to select a mode : %d
+vmmc-supply
+vqmmc-supply
+Card did not respond to voltage select! : %d
+bus_mode requested is not supported
+MMC: no card present
+No ext_csd found!
+cap-sd-highspeed
+%s %s: Invalid "bus-width" value %u!
+cap-mmc-highspeed
+sd-uhs-sdr12
+sd-uhs-sdr25
+sd-uhs-sdr50
+sd-uhs-sdr104
+sd-uhs-ddr50
+mmc-ddr-1_8v
+mmc-ddr-1_2v
+mmc-hs200-1_8v
+mmc-hs200-1_2v
+mmc-hs400-1_8v
+mmc-hs400-1_2v
+mmc-hs400-enhanced-strobe
+non-removable
+cd-inverted
+broken-cd
+no-1-8-v
+MMC Device %d not found
+mmc_blk
+%s: Reset 0x%x never completed.
+%s: MMC: %d busy 
+timeout increasing to: %u ms.
+timeout.
+%s: Timeout for status update: %08x %08x
+%s: Transfer data timeout
+%s: Timeout to wait cmd & data inhibit
+%s: Error while setting tap delay
+%s: Error while configuring dll
+%s: Internal clock never stabilised.
+failed to disable vqmmc-supply
+failed to set vqmmc-voltage to 3.3V
+failed to enable vqmmc-supply
+3.3V regulator output did not become stable
+failed to set vqmmc-voltage to 1.8V
+1.8V regulator output did not become stable
+cd-gpios
+%s: Aligned buffer alloc failed!!!
+sdhci-caps-mask
+sdhci-caps
+%s: Your controller doesn't support ADMA!!
+%s: Hardware doesn't specify base clock frequency
+%s %s: No passing ITAPDLY, return 0
+ti,trm-icp
+ti,driver-strength-ohm
+%s %s: Invalid driver strength
+ti,strobe-sel
+ti,clkbuf-sel
+clk_xin
+%s %s: failed to get clock
+%s %s: failed to get rate
+ti,otap-del-sel-legacy
+am654_sdhci
+ti,am654-sdhci-5.1
+ti,j721e-sdhci-8bit
+ti,j721e-sdhci-4bit
+ti,am64-sdhci-8bit
+ti,am64-sdhci-4bit
+ti,am62-sdhci
+AM65X
+SR1.0
+ti,itap-del-sel-legacy
+ti,otap-del-sel-mmc-hs
+ti,itap-del-sel-mms-hs
+ti,otap-del-sel-sd-hs
+ti,itap-del-sel-sd-hs
+ti,otap-del-sel-ddr52
+ti,itap-del-sel-ddr52
+ti,otap-del-sel-sdr12
+ti,itap-del-sel-sdr12
+ti,otap-del-sel-sdr25
+ti,itap-del-sel-sdr25
+ti,otap-del-sel-sdr50
+ti,otap-del-sel-ddr50
+ti,otap-del-sel-sdr104
+ti,otap-del-sel-hs200
+ti,otap-del-sel-hs400
+spi_flash
+jedec_spi_nor
+SF: Failed to set up slave
+jedec,spi-nor
+s25sl032p
+s25sl064p
+s25fl256s0
+s25fl256s1
+s25fl512s
+s25fs512s
+s25fl512s_256k
+s25fl512s_64k
+s25fl512s_512k
+s70fs01gs_256k
+s25sl12800
+s25sl12801
+s25fl128s
+s25fl129p0
+s25fl129p1
+s25sl008a
+s25sl016a
+s25sl032a
+s25sl064a
+s25fl116k
+s25fl164k
+s25fl208k
+s25fl064l
+s25fl128l
+s25fl256l
+s25hl512t
+s25hl01gt
+s25hl02gt
+s25hs512t
+s25hs01gt
+s25hs02gt
+s25fs256t
+s28hl512t
+s28hl01gt
+s28hs512t
+s28hs01gt
+s28hs02gt
+%s %s: Erase operation failed.
+%s %s: Program operation failed.
+%s %s: Attempted to modify a protected sector.
+%s %s: flash operation timed out
+%s %s: unrecognized JEDEC id bytes: %02x, %02x, %02x
+m25p,fast-read
+%s %s: failed to read SFDP parameter headers
+%s %s: 16-bit opcodes not supported
+gpio-controller
+pinconfig
+pinctrl-names
+pinctrl-%d
+%s %s: could not find pctldev
+UNCLAIMED
+%pa 0x%08x %s
+Error
+PIN%u
+%s %s: mux offset out of range: 0x%x (0x%x)
+pinctrl-single,register-width
+%s %s: missing register width
+%s %s: wrong register width
+%s %s: failed to get base register address
+pinctrl-single,function-mask
+pinctrl-single,bit-per-mux
+#pinctrl-cells
+%s %s: function mask needs to be non-zero
+#pinctrl-single,gpio-range-cells
+pinctrl-single,gpio-range
+pinctrl-single,pins
+%s %s:   invalid register offset 0x%x
+%s %s:   failed to get pin by offset %x
+pinctrl-single,bits
+%s %s:   failed to get pin by offset 0x%pa
+%s %s: Invalid mask at 0x%x
+single-pinctrl
+pinctrl-single
+#power-domain-cells
+power-domains
+power_domain
+%s %s: %s: put_device(%lu) failed (%d)
+%s %s: %s: get_device(%lu) failed (%d)
+ti-sci-pm-domains
+ti,sci-pm-domain
+regulator-min-microvolt
+regulator-max-microvolt
+regulator-init-microvolt
+regulator-min-microamp
+regulator-max-microamp
+regulator-always-on
+regulator-boot-on
+regulator-ramp-delay
+regulator-force-boot-off
+regulator-state-mem
+regulator-off-in-suspend
+regulator-suspend-microvolt
+regulator-name
+enable-active-high
+startup-delay-us
+u-boot,off-on-delay-us
+Can't set regulator : %s gpio to: %d
+regulator_fixed_clk
+regulator_fixed
+regulator-fixed-clock
+regulator-fixed
+states
+enable-gpios
+gpio regulator
+regulator-gpio
+stdout-path
+No serial driver found
+reg-offset
+reg-shift
+reg-io-width
+ns16550_serial
+ns16550
+ns16550a
+ingenic,jz4780-uart
+nvidia,tegra20-uart
+snps,dw-apb-uart
+omap_serial
+ti,omap2-uart
+ti,omap3-uart
+ti,omap4-uart
+ti,am3352-uart
+ti,am4372-uart
+ti,dra742-uart
+ti,am654-uart
+%s %s: Cannot set speed (err=%d)
+%s %s: Cannot set mode (err=%d)
+spi-max-frequency
+%s %s: Invalid cs %d (err=%d)
+Invalid bus %d (err=%d)
+%s %s: Invalid chip select %d:%d (err=%d)
+spi-cpol
+spi-cpha
+spi-cs-high
+spi-3wire
+spi-half-duplex
+spi-tx-bus-width
+spi-rx-bus-width
+spi_generic_drv
+spi_generic
+SF: Calibration failed (read)
+SF: Calibration failed (low range)
+ERROR: temperature outside operating range: %dC
+cdns,is-decoded-cs
+cdns,fifo-depth
+cdns,fifo-width
+cdns,trigger-address
+cdns,is-dma
+Error: subnode with SPI flash config missing!
+page-size
+block-size
+cdns,tshsl-ns
+cdns,tsd2d-ns
+cdns,tchsh-ns
+cdns,tslch-ns
+cdns,read-delay
+cdns,phy-mode
+cdns,phy-tx-start
+cdns,phy-tx-end
+partitions
+ospi.phypattern
+cadence_spi
+cdns,qspi-nor
+ti,am654-ospi
+QSPI: QSPI is still busy after poll for %d ms.
+QSPI: flash command execution timeout
+Indirect write timed out (%i)
+Indirect read clear completion error (%i)
+Indirect read completion error (%i)
+Indirect write clear completion error (%i)
+Indirect write completion error (%i)
+#mbox-cells
+mboxes
+mbox-names
+mailbox
+%s: Thread %d is corrupted, cannot send data.
+%s: Trying to receive data on tx Thread %d
+%s: Trying to send data on rx Thread %d
+%s %s: %s: Thread%d verification failed. ret = %d
+%s %s: %s: Thread %ld message length %zu > max msg size %d
+%s %s: %s: Invalid Thread ID %d
+target_data
+%s %s: No reg property for target data base
+scfg
+%s %s: No reg property for Secure Cfg base
+%s %s: No reg property for Real Time Cfg base
+k3-secure-proxy
+ti,am654-secure-proxy
+backlight
+vidconsole0
+no such font: %s, make sure it's name has <width>x<height> format
+8x16
+Video device '%s' cannot allocate frame buffer memory - ensure the device is set up before relocation
+%s.vidconsole%d
+video
+vidconsole
+Error: no valid bmp image at %lx
+Error: %d bit/pixel mode, but BMP has %d bit/pixel
+power-supply
+simple_panel
+simple-panel
+auo,b133xtn01
+auo,b116xw03
+auo,b133htn01
+boe,nv140fhmn49
+lg,lb070wv8
+sharp,lq123p1jx31
+boe,nv101wxmn51
+panasonic,vvx10f004b00
+Error: malloc in gunzip failed!
+Image could be truncated (increase CONFIG_VIDEO_LOGO_MAX_SIZE)!
+There is no valid bmp file at the given address
+Image size    : %d x %d
+Bits per pixel: %d
+Compression   : %d
+/drivers/video/tidss/tidss_drv.c
+WARNING at %s:%d/%s()!
+%s %s: panel device error %d
+%s %s: decode display timing error %d
+data-mapping
+vesa-24
+%s %s: video port %d clock enable error %d
+ti,am65x-oldi-io-ctrl
+%s %s: peripheral clock get error %d
+%s %s: peripheral clock enable error %d
+%s %s: %s: Failed to get fclk: %ld
+tidss_drv
+ti,am625-dss
+common
+ovr1
+ovr2
+vidl1
+!cdev->config
+composite
+usb_dnload
+dwc3-gadget
+%s: failed!, error: %d
+serial#
+DOWNLOAD ... OK
+Ctrl+C to exit ...
+dr_mode
+maximum-speed
+phy_type
+utmi
+utmi_wide
+ulpi
+hsic
+UNKNOWN
+low-speed
+full-speed
+high-speed
+wireless
+super-speed
+super-speed-plus
+gadget not registered.
+failed to start %s: %d
+No UDC available in the system
+All UDCs in use (%d available), use the unbind command
+No USB device found
+usb,device-class
+usb,interface-class
+generic_bus_%x_dev_%x
+usb_dev_generic_drv
+scanning bus %s for devices... 
+No USB Device found
+%d USB Device(s) found
+Bus %s: 
+Port not available.
+probe failed, error %d
+companion
+Failed to get companion (ret=%d)
+No working controllers found
+usb_dev_generic
+Host not halted after %u microseconds.
+non-bulk pipe (type=%lu)
+non-interrupt pipe (type=%lu)
+Evaluate Context
+Configure Endpoint
+/drivers/usb/host/xhci.c
+BUG at %s:%d/%s()!
+BUG!
+ERROR: %s command returned completion code %d.
+Could not allocate xHCI USB device data structures
+non-control pipe (type=%lu)
+The request port(%d) exceeds maximum port number
+unknown value DT_STRING %x
+unknown value %x
+unknown feature %x
+Unknown request
+Setup ERROR: address device command for slot %d.
+Device not responding to set address.
+ERROR: Incompatible devicefor address device command.
+ERROR: unexpected command completion code 0x%x.
+Failed to configure xHCI endpoint
+Register %x NbrPorts %d
+Starting the controller
+USB XHCI %x.%02x
+/drivers/usb/host/xhci-mem.c
+Virt dev for slot[%d] already allocated
+Failed to allocate virtual device
+Failed to allocate out context for virt dev
+Failed to allocate in context for virt dev
+unable to allocate DCBA
+/drivers/usb/host/xhci-ring.c
+WARN urb submitted to disabled ep
+WARN waiting for error on ep to be cleared
+WARN endpoint is halted
+ERROR unknown endpoint state for ep
+Unexpected XHCI event TRB, skipping... (%08x %08x %08x %08x)
+XHCI timeout on event type %d...
+Resetting EP %d...
+abort_td: Expected a TRB_TRANSFER TRB first
+thermal
+%s %s: TISCI reset ring fail (%d) ring_idx %d
+ti,num-rings
+%s %s: ti,num-rings read failure %d
+ti,dma-ring-reset-quirk
+ti,sci
+%s %s: TISCI RA RM disabled
+ti,sci-dev-id
+%s %s: ti,sci-dev-id read failure %d
+ti,sci-rm-range-gp-rings
+k3-navss-ringacc
+ti,am654-navss-ringacc
+AM62X
+AM62AX
+AM62PX
+AM64X
+J7200
+J721E
+J721S2
+J722S
+J784S4
+J742S2
+Unknown Silicon
+Unknown Revision
+SR%s
+soc_ti_k3
+ti,am654-chipid
+%s %s: failed to initialize gadget
+%s %s: Unsupported mode of operation %d
+%s %s: this is not a DesignWare USB3 DRD Core
+%s %s: Reset Timed Out
+disable_scramble cannot be used on non-FPGA builds
+%s %s: Invalid property
+%s %s: can't allocate event buffer
+%s %s: failed to allocate event buffers
+%s %s: failed to initialize core
+%s %s: failed to setup event buffers
+snps,has-lpm-erratum
+snps,lpm-nyet-threshold
+snps,is-utmi-l1-suspend
+snps,hird-threshold
+snps,disable_scramble_quirk
+snps,u2exit_lfps_quirk
+snps,u2ss_inp3_quirk
+snps,req_p1p2p3_quirk
+snps,del_p1p2p3_quirk
+snps,del_phy_power_chg_quirk
+snps,lfps_filter_quirk
+snps,rx_detect_poll_quirk
+snps,dis_u3_susphy_quirk
+snps,dis_u2_susphy_quirk
+snps,dis-del-phy-power-chg-quirk
+snps,dis-tx-ipgap-linecheck-quirk
+snps,dis_enblslpm_quirk
+snps,dis-u2-freeclk-exists-quirk
+snps,tx_de_emphasis_quirk
+snps,tx_de_emphasis
+snps,quirk-frame-length-adjustment
+snps,incr-burst-type-adjustment
+ep%d%s
+%s %s: failed to allocate trb pool for %s
+%s %s: failed to put link in Recovery
+%s %s: failed to send remote wakeup
+/drivers/usb/dwc3/gadget.c
+request %p belongs to '%s'
+%s %s: %s's TRB (%p) still owned by HW
+%s %s: incomplete IN transfer %s
+%s %s: request %p was not queued to %s
+%s is already enabled
+-isoc
+-bulk
+-int
+%s %s: %s is of Isochronous type
+%s %s: failed to set STALL on %s
+%s %s: failed to clear STALL on %s
+%s %s: %s is already bound to %s
+%s %s: failed to enable %s
+%s is already disabled
+%s %s: failed to allocate ctrl request
+%s %s: failed to allocate ep0 trb
+%s %s: failed to allocate ep0 bounce buffer
+%s %s: failed to register udc
+%s %s: Stream event for non-Bulk %s
+LPM Erratum not available on dwc3 revisisions < 2.40a
+unexpected hibernation event
+%s %s: UNKNOWN IRQ type %d
+/drivers/usb/dwc3/ep0.c
+%s %s: Set SEL should be 6 bytes, got %d
+UNKNOWN ep0state %d
+%s %s: can't map IOMEM resource
+%s %s: can't get usb2_refclk
+%s %s: unsupported usb2_refclk rate: %lu KHz
+%s %s: unable to get ti,syscon-phy-pll-refclk regmap
+ti,syscon-phy-pll-refclk
+%s %s: failed to set phy pll reference clock rate
+ti,vbus-divider
+dwc3-am62
+ti,am62-usb
+port
+Invalid usb mode setup
+ref_clk
+rockchip,rk3399-dwc3
+xlnx,zynqmp-dwc3
+fsl,permanently-attached
+fsl,disable-port-power-control
+fsl,over-current-active-low
+fsl,power-active-low
+ti,am437x-dwc3
+utmi-mode
+dwc3-generic-peripheral
+dwc3-generic-host
+dwc3-generic-wrapper
+xlnx,versal-dwc3
+ti,keystone-dwc3
+ti,dwc3
+ti,am654-dwc3
+rockchip,rk3328-dwc3
+rockchip,rk3568-dwc3
+rockchip,rk3588-dwc3
+qcom,dwc3
+fsl,imx8mp-dwc3
+fsl,imx8mq-dwc3
+intel,tangier-dwc3
+            %s/
+    <SYM>   %s
+ %8lld   %s
+%d file(s), %d dir(s)
+unsupported
+Invalid FAT entry: %#08x
+FAT sector size mismatch (fs=%u, dev=%lu)
+FAT cluster size not set
+FAT cluster size too big (cs=%u, max=%u)
+Partition %d invalid on device %d
+Invalid FAT entry
+Error reading cluster
+%02X%02X-%02X%02X
+bootcmd=run envboot; run bootcmd_ti_mmc; bootflow scan -lb
+bootdelay=2
+baudrate=115200
+loadaddr=0x82000000
+arch=arm
+cpu=armv8
+board=am62x
+board_name=am62x
+vendor=ti
+soc=k3
+mtdids=
+mtdparts=
+addr_fit=0x90000000
+args_all=setenv optargs ${optargs} earlycon=ns16550a,mmio32,0x02800000 ${mtdparts}
+args_mmc=run finduuid;setenv bootargs console=${console} ${optargs} root=PARTUUID=${uuid} rw rootfstype=${mmcrootfstype}
+args_ospi_nand=setenv bootargs console=${console} ${optargs} ubi.mtd=${ospi_nand_bootpart} root=${ospi_nand_bootvolume} rootfstype=ubifs
+boot=mmc
+boot_fdt=try
+boot_fit=0
+boot_rprocs=if test ${dorprocboot} -eq 1 && test ${boot} = mmc; then rproc init; run boot_rprocs_mmc; fi;
+boot_rprocs_mmc=env set rproc_id; env set rproc_fw; env set secure_suffix; if test ${secure_rprocs} -eq 1; then env set secure_suffix -sec; fi; for i in ${rproc_fw_binaries} ; do if test -z "${rproc_id}" ; then env set rproc_id $i; else env set rproc_fw $i${secure_suffix}; run rproc_load_and_boot_one; env set rproc_id; env set rproc_fw; fi; done
+boot_targets=mmc1 mmc0 usb pxe dhcp
+bootcmd_ti_mmc=run init_${boot}; run update_do_main_cpsw0_qsgmii_phyinit; if test ${do_main_cpsw0_qsgmii_phyinit} -eq 1; then run main_cpsw0_qsgmii_phyinit; fi; run boot_rprocs; if test ${boot_fit} -eq 1; then run get_fit_${boot}; run get_fit_overlaystring; run run_fit; else; run get_kern_${boot}; run get_fdt_${boot}; run get_overlay_${boot}; run run_kern; fi;
+bootdir=/boot
+bootenvfile=uEnv.txt
+bootm_size=0x10000000
+bootpart=1:2
+bootscript=echo Running bootscript from mmc${mmcdev} ...; source ${loadaddr}
+console=ttyS2,115200n8
+dfu_alt_info_emmc=rawemmc raw 0 0x800000 mmcpart 1; rootfs part 0 1; tiboot3.bin.raw raw 0x0 0x400 mmcpart 1; tispl.bin.raw raw 0x400 0x1000 mmcpart 1; u-boot.img.raw raw 0x1400 0x2000 mmcpart 1; u-env.raw raw 0x3400 0x100 mmcpart 1; sysfw.itb.raw raw 0x3600 0x800 mmcpart 1
+dfu_alt_info_mmc=boot part 1 1; rootfs part 1 2; tiboot3.bin fat 1 1; tispl.bin fat 1 1; u-boot.img fat 1 1; uEnv.txt fat 1 1; sysfw.itb fat 1 1
+dfu_alt_info_nand=NAND.tiboot3 part 0 1; NAND.tispl part 0 2; NAND.tiboot3.backup part 0 3; NAND.u-boot part 0 4; NAND.u-boot-env part 0 5; NAND.u-boot-env.backup part 0 6; NAND.file-system part 0 7
+dfu_alt_info_ospi=tiboot3.bin raw 0x0 0x080000; tispl.bin raw 0x080000 0x200000; u-boot.img raw 0x280000 0x400000; u-boot-env raw 0x680000 0x020000; sysfw.itb raw 0x6c0000 0x100000; rootfs raw 0x800000 0x3800000
+dfu_alt_info_ospi_nand=ospi_nand.tiboot3 part 1; ospi_nand.tispl part 2; ospi_nand.u-boot part 3; ospi_nand.env part 4; ospi_nand.env.backup part 5; ospi_nand.rootfs part 6; ospi_nand.phypattern part 7
+dfu_alt_info_ram=tispl.bin ram 0x80080000 0x200000; u-boot.img ram 0x81000000 0x400000
+dorprocboot=0
+dtboaddr=0x89000000
+envboot=if mmc dev ${mmcdev}; then if mmc rescan; then echo SD/MMC found on device ${mmcdev}; if test -n "${loadbootscript}" && run loadbootscript; then run bootscript; else if run loadbootenv; then echo Loaded env from ${bootenvfile}; run importbootenv; fi; if test -n $uenvcmd; then echo Running uenvcmd ...; run uenvcmd; fi; fi; fi; fi;
+fdt_addr_r=0x88000000
+fdtaddr=0x88000000
+fdtoverlay_addr_r=0x89000000
+finduuid=part uuid ${boot} ${bootpart} uuid
+get_fdt_mmc=load mmc ${bootpart} ${fdtaddr} ${bootdir}/dtb/${fdtfile}
+get_fdt_ospi_nand=ubifsload ${fdtaddr} ${bootdir}/dtb/${fdtfile};
+get_fit_config=setexpr name_fit_config gsub / _ conf-${fdtfile}
+get_fit_mmc=load mmc ${bootpart} ${addr_fit} ${bootdir}/${name_fit}
+get_fit_ospi_nand=ubifsload ${addr_fit} ${bootdir}/${name_fit}
+get_fit_overlaystring=for overlay in $name_overlays; do; setexpr name_fit_overlay gsub / _ conf-${overlay}; setenv overlaystring ${overlaystring}'#'${name_fit_overlay}; done;
+get_kern_mmc=load mmc ${bootpart} ${loadaddr} ${bootdir}/${name_kern}
+get_kern_ospi_nand=ubifsload ${loadaddr} ${bootdir}/${name_kern}
+get_overlay_mmc=fdt address ${fdtaddr}; fdt resize 0x100000; for overlay in $name_overlays; do; load mmc ${bootpart} ${dtboaddr} ${bootdir}/dtb/${overlay} && fdt apply ${dtboaddr}; done;
+get_overlay_ospi_nand=fdt address ${fdtaddr} fdt resize 0x100000; for overlay in $name_overlays; do; ubifsload ${dtboaddr} ${bootdir}/dtb/${overlay} && fdt apply ${dtboaddr}; done;
+importbootenv=echo Importing environment from mmc${mmcdev} ...; env import -t ${loadaddr} ${filesize}
+init_mmc=run args_all args_mmc
+init_ospi_nand=run args_all args_ospi_nand ospi_nand_ubi_init
+kernel_addr_r=0x82000000
+loadaddr=0x82000000
+loadbootenv=fatload mmc ${mmcdev} ${loadaddr} ${bootenvfile}
+loadfdt=load ${devtype} ${bootpart} ${fdtaddr} ${bootdir}/dtb/${fdtfile}
+loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+mmcboot=if mmc dev ${mmcdev}; then devnum=${mmcdev}; devtype=mmc; if mmc rescan; then echo SD/MMC found on device ${mmcdev}; if run loadimage; then run args_mmc; if test ${boot_fit} -eq 1; then run run_fit; else run mmcloados; fi; fi; fi; fi;
+mmcdev=1
+mmcloados=if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run get_fdt_mmc; then bootz ${loadaddr} - ${fdtaddr}; else if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;
+mmcrootfstype=ext4 rootwait
+mtdids=spi-nand0=spi-nand0
+mtdparts=mtdparts=spi-nand0:512k(ospi_nand.tiboot3),2m(ospi_nand.tispl),4m(ospi_nand.u-boot),256k(ospi_nand.env),256k(ospi_nand.env.backup),98048k@32m(ospi_nand.rootfs),256k@130816k(ospi_nand.phypattern)
+name_fit=fitImage
+name_kern=Image
+ospi_nand_bootpart=ospi_nand.rootfs
+ospi_nand_bootvolume=ubi0:rootfs
+ospi_nand_ubi_init=ubi part ${ospi_nand_bootpart}; ubifsmount ${ospi_nand_bootvolume};
+partitions=name=rootfs,start=0,size=-,uuid=${uuid_gpt_rootfs}
+pxefile_addr_r=0x80100000
+ramdisk_addr_r=0x88080000
+rd_spec=-
+rdaddr=0x88080000
+rproc_fw_binaries= 0 /lib/firmware/am62-mcu-m4f0_0-fw
+rproc_load_and_boot_one=if load mmc ${bootpart} $loadaddr ${rproc_fw}; then if rproc load ${rproc_id} ${loadaddr} ${filesize}; then rproc start ${rproc_id}; fi; fi
+run_fit=run get_fit_config; bootm ${addr_fit}#${name_fit_config}${overlaystring}
+run_kern=booti ${loadaddr} ${rd_spec} ${fdtaddr}
+scriptaddr=0x80000000
+secure_rprocs=0
+splashfile=ti_logo_414x97_32bpp.bmp.gz
+splashimage=0x80200000
+splashpos=m,m
+splashsource=mmc
+update_do_main_cpsw0_qsgmii_phyinit=setenv do_main_cpsw0_qsgmii_phyinit 0;
+update_to_fit=setenv loadaddr ${addr_fit}; setenv bootfile ${name_fit}
+Device Firmware Upgrade
+aroc
+sdxbim
+Texas Instruments
+#(-27<FP
+USB download gadget
+ $(,048<@
+ !R\
+248>
+-gpios
+<fBBf<
+<ffff<
+?3?0000p
+ccccg
+fffffff
+88||
+||88
+fff$
+8ll8v
+000`
+000000
+0000
+fff|ffff
+lffffffl
+fbhxh`bf
+fbhxh```
+fflxxlff
+``````bf
+fff|````
+fff|lfff
+l|88|l
+ffff<
+<00000000<
+``xlffff|
+620x0000x
+``lvffff
+``flxxlf
+ffffff
+fffff|``
+vf```
+00006
+l888l
+fbhxhbf
+8ld`
+````
+ffffff
+<ll>
+8ll8
+6666666
+66666666
+66666666
+66666
+666666666666666666666666
+6666666666666
+6666666
+66666667666666666666670?
+?076666666666666
+666666666666670766666666
+66666
+66666666
+6666666
+666666666666666?
+?666666666666666
+66666666
+llllll
+ffffff|``
+<ffff<
+llll
+>ffff<
+0``|```0
+8ll8
+l66666
+~~~~~~~
+MSFT100
+tifsstub-hs
+:tifsstub-hs
+.none
+)arm32
+$firmware
+HTIFSSTUB
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+240805073839Z
+240904073839Z0
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+>['l
+EE|K
+sJh(1
+7nfxo
+0FM4
+n`TP
+42'I_
+(1Yn
+g',cc
+C*Tx
+	PMZ
+Dallas1!0
+Texas Instruments., Inc.1
+PBU1
+Albert1
+Albert@ti.com0
+240719124348Z
+240818124348Z0
+Dallas1!0
+Texas Instruments., Inc.1
+PBU1
+Albert1
+Albert@ti.com0
+[eb'
+a2xBrcp
+hzL6U
+9Fk,
+p 0\
+!vG=
+f hb
+c3Ra5
+vW'J
+>PqK
+o#z}
+ipt+
+)h@E
+] ZN
+NO_\
+867+
+G&v+
+@mj$
+9Y9d
+c}a^
+n>EN
+sG!]
+ACGh
+F	eh
+(?(T
+ED>})x}#
+VG26
+=J2V
+-hIl
+2g0q
+eiO-
+a)zi$
+r)RA
+],},i
+-b`Tw(
+H)dU
+\<>\s
+*J;Dy
+pSQ"9I
+PWhz
+i99n
+x4"+
+uSf*
+]{4#
+NAew
+>AK	
+J2 TN
+cOYtd
+}o='
+INyU
+M[P5
+^H<S
+mjE^
+N(Cl
+1n[r
+7!GH1
+US\l
+2xaf
+1d=e
+0VXuN
+C48zF
+CrhH
+c'B5
+^r^d
+. )^
+s8*G
+AI:,
+Sa,O
+zUp$0
+V$t0
+y'r!
+{38|U
+lha 
+\)7Q2Z
+rCxx
+_")j
+u@-p
+K}mr	
+xsv%d
+$FisG
+G?=F
+RXJ?!
+4ceN.
+*}}!
+5!-s
+X)mnl#Yw
+Y$4$&
+TH.*T
+mmF3
+"	%6
+2G)B
+wH',
+ ,ro
+'<X/
+<&V$
+5D)uw
+n~^b
+cifQ
+;t;f
+5_;gZ
+uM1Q
+=xd{
+&[ZmW
+,e;+7
+oxszW
+3}yu=
+MKDJ
+BVr	
+E#e1
+$dOi
+yqj@
+pNG/
+e90B
+Q3Rv
+hb/C#
+p4'Q
+EeRPR
+Y@g s
+A'\/2
+iK212Jf
+!p|:
+Dih^
+G$Uy
+}h<"+
+5mA"
+Mg>s
+nsJc
+(b>w
+(~y(
+nm~CB]
+kp#	(
+rYeWI
+95O@,0
+c_TZ
+=8(|
+gD$Ne
+'pM	9
+s74r
+?r}!
+:==0
+^zm5)n
+@7NqU
+T%|G
+y|M"(
+8]&.
+Z*n6Cv
+^.g#
+W,Bd 
+UP:C 
+:uFV
+(P:PJ
+>q U
+Mf8j
+`'>("
+{TR.
+-pxt
+'/59#
+!\}d
+'n.r?
+uwD=
+,*_H
+|PIz
+2XXN
+sXbt
+vM@N(
+^*3/1
+E8=S
+"NHu*w[
+5BW"R
+f+1<q
+ JUC
+8J1f
+QLiO
+s6[:)
+#@gjY
+a3=b
+tqdu
+;1f/n
+9AUr4
+,c8V
+F,N-
+0UbS]
+'Yz{
+'^ 4
+Io_a
+x?s!
+1hyl4o
+G1@:
+@75)
+BY=/D
+vgP)L
+"KwS
+;n9H
+0-)S
+*e\c[
+2ruZ
+zI%UM
+Cw[S
+V%vW
+OjvL[[
+/*.3
+\]}2f
+fiF|NQ
+9T~>eGn
+/2+]l
+PWzW!M
+H,ts`
+n&CG
+^11EQZ|
+xWhn
+qzKNzJw
+gPfHT
+G6du
+ @`j
+c6R&
+TlyG
+H|T!
+EO<"
+k#3H
++JWij
+p@Q.)
+Hs~J
+a_=7
+,R}I
+R|4;
+WTN%
+O`[0
+Evo352(
+78Yc	
+|4\Laz0
+_-zHRZsJ!f
+[(J{
+=cny$
+\ZO?v
+y`]t
+@ ,"C
+Cifz
+qha	
+=prd
+/Twu
+Z~3<u-
+K4F@
+`kBA
+`]w{ 
+fX_Z]
+(PU(
+"*<,
+@%2(
+_"u(
+eP X
+m]u5
+A6APq
+Q]E&
+qC-|
+uEgP
+>4us
+C6i'
+B@hS
+Zok,
+_m\6
+W/1K
+KMsD
+{c`3
+rjy0	
+mJQ;d=
+#TpA
+"'/c
+-S0)
+R%l1
+t)~'
+`x)x
+gc2yP
+L(Q-
+(}K:Y
+jNGRx
+	izg
+D#MXP
+23Fk4
+<RJ@d+G
+u7+P
+z0.q0
+&&Sc
+t#~T
+}]T|E
+eZ L
+=h}.
+aO@:
+`ouaQ
+QKi9D=
+HDQu9
+ S,8
+	E'd
+igY5o
+VPG_8
+\9 M
+x&.0
+	"~B
+K(x	
+$gLr
+E?^;l
+oOLC
+],Z{>
+@g+[
+6r&O 
+UJO?
+Ntg(	
+:Rf7G
+^yu2c[rC
+~s+"
+/+S[\H
+/\G>
+xv}A
+Gs6^a-N
+3[][
+	fkJ
+;oQv
+iOTi5
+$a3i
+<EZ){
+hHjrP
+z_;~
+EL`X7
++)nJ
+c[^d
+W-\j@l
+Ij5n
+Iv	z
+Eag|
+!8)Zxm1
+ Nfs
+aryR
+TB6b-9
+6ip|1
+9@k#
+"FLN,,
+$nh.N{P
+7!ig
+p0]/>w0
+kVKE7
+X-C4
+/~)Me
+>}@T
+vS~ah
+5AgE
+rP~ne4
+un'fp^
+6g	!6
+-:7)3w
+tifsstub-fs
+:tifsstub-fs
+.none
+)arm32
+$firmware
+HTIFSSTUB
+Dallas1!0
+Texas Instruments., Inc.1
+PBU1
+Albert1
+Albert@ti.com0
+240719124348Z
+240818124348Z0
+Dallas1!0
+Texas Instruments., Inc.1
+PBU1
+Albert1
+Albert@ti.com0
+[eb'
+a2xBrcp
+hzL6U
+9Fk,
+p 0\
+!vG=
+f hb
+c3Ra5
+vW'J
+>PqK
+o#z}
+ipt+
+)h@E
+] ZN
+NO_\
+867+
+G&v+
+@mj$
+9Y9d
+c}a^
+n>EN
+sG!]
+ACGh
+F	eh
+(?(T
+ED>})x}#
+VG26
+=J2V
+-hIl
+2g0q
+eiO-
+a)zi$
+r)RA
+],},i
+-b`Tw(
+H)dU
+\<>\s
+*J;Dy
+pSQ"9I
+PWhz
+i99n
+x4"+
+uSf*
+]{4#
+NAew
+>AK	
+J2 TN
+cOYtd
+}o='
+INyU
+M[P5
+^H<S
+mjE^
+N(Cl
+1n[r
+7!GH1
+US\l
+2xaf
+1d=e
+0VXuN
+C48zF
+CrhH
+c'B5
+^r^d
+. )^
+s8*G
+AI:,
+Sa,O
+zUp$0
+V$t0
+y'r!
+{38|U
+lha 
+\)7Q2Z
+rCxx
+_")j
+u@-p
+K}mr	
+xsv%d
+$FisG
+G?=F
+RXJ?!
+4ceN.
+*}}!
+5!-s
+X)mnl#Yw
+Y$4$&
+TH.*T
+mmF3
+"	%6
+2G)B
+wH',
+ ,ro
+'<X/
+<&V$
+5D)uw
+n~^b
+cifQ
+;t;f
+5_;gZ
+uM1Q
+=xd{
+&[ZmW
+,e;+7
+oxszW
+3}yu=
+MKDJ
+BVr	
+E#e1
+$dOi
+yqj@
+pNG/
+e90B
+Q3Rv
+hb/C#
+p4'Q
+EeRPR
+Y@g s
+A'\/2
+iK212Jf
+!p|:
+Dih^
+G$Uy
+}h<"+
+5mA"
+Mg>s
+nsJc
+(b>w
+(~y(
+nm~CB]
+kp#	(
+rYeWI
+95O@,0
+c_TZ
+=8(|
+gD$Ne
+'pM	9
+s74r
+?r}!
+:==0
+^zm5)n
+@7NqU
+T%|G
+y|M"(
+8]&.
+Z*n6Cv
+^.g#
+W,Bd 
+UP:C 
+:uFV
+(P:PJ
+>q U
+Mf8j
+`'>("
+{TR.
+-pxt
+'/59#
+!\}d
+'n.r?
+uwD=
+,*_H
+|PIz
+2XXN
+sXbt
+vM@N(
+^*3/1
+E8=S
+"NHu*w[
+5BW"R
+f+1<q
+ JUC
+8J1f
+QLiO
+s6[:)
+#@gjY
+a3=b
+tqdu
+;1f/n
+9AUr4
+,c8V
+F,N-
+0UbS]
+'Yz{
+'^ 4
+Io_a
+x?s!
+1hyl4o
+G1@:
+@75)
+BY=/D
+vgP)L
+"KwS
+;n9H
+0-)S
+*e\c[
+2ruZ
+zI%UM
+Cw[S
+V%vW
+OjvL[[
+/*.3
+\]}2f
+fiF|NQ
+9T~>eGn
+/2+]l
+PWzW!M
+H,ts`
+n&CG
+^11EQZ|
+xWhn
+qzKNzJw
+gPfHT
+G6du
+ @`j
+c6R&
+TlyG
+H|T!
+EO<"
+k#3H
++JWij
+p@Q.)
+Hs~J
+a_=7
+,R}I
+R|4;
+WTN%
+O`[0
+Evo352(
+78Yc	
+|4\Laz0
+_-zHRZsJ!f
+[(J{
+=cny$
+\ZO?v
+y`]t
+@ ,"C
+Cifz
+qha	
+=prd
+/Twu
+Z~3<u-
+K4F@
+`kBA
+`]w{ 
+fX_Z]
+(PU(
+"*<,
+@%2(
+_"u(
+eP X
+m]u5
+A6APq
+Q]E&
+qC-|
+uEgP
+>4us
+C6i'
+B@hS
+Zok,
+_m\6
+W/1K
+KMsD
+{c`3
+rjy0	
+mJQ;d=
+#TpA
+"'/c
+-S0)
+R%l1
+t)~'
+`x)x
+gc2yP
+L(Q-
+(}K:Y
+jNGRx
+	izg
+D#MXP
+23Fk4
+<RJ@d+G
+u7+P
+z0.q0
+&&Sc
+t#~T
+}]T|E
+eZ L
+=h}.
+aO@:
+`ouaQ
+QKi9D=
+HDQu9
+ S,8
+	E'd
+igY5o
+VPG_8
+\9 M
+x&.0
+	"~B
+K(x	
+$gLr
+E?^;l
+oOLC
+],Z{>
+@g+[
+6r&O 
+UJO?
+Ntg(	
+:Rf7G
+^yu2c[rC
+~s+"
+/+S[\H
+/\G>
+xv}A
+Gs6^a-N
+3[][
+	fkJ
+;oQv
+iOTi5
+$a3i
+<EZ){
+hHjrP
+z_;~
+EL`X7
++)nJ
+c[^d
+W-\j@l
+Ij5n
+Iv	z
+Eag|
+!8)Zxm1
+ Nfs
+aryR
+TB6b-9
+6ip|1
+9@k#
+"FLN,,
+$nh.N{P
+7!ig
+p0]/>w0
+kVKE7
+X-C4
+/~)Me
+>}@T
+vS~ah
+5AgE
+rP~ne4
+un'fp^
+6g	!6
+-:7)3w
+tifsstub-gp
+:tifsstub-gp
+.none
+)arm32
+$firmware
+HTIFSSTUB
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+240805073839Z
+240904073839Z0
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+A&G2w
+*|Hb
+B.V~
+Z'Z$
+Q1K@
+`(`8F
+)`)hF
+(hiF
+ 8`8h
+`FpG
+D@B-
+@@8`
+JPPpG
+fdt-0
+.none
+)arm
+$flat_dt
+Hk3-am625-sk
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+240805073840Z
+240904073840Z0
+Dallas1'0%
+Texas Instruments Incorporated1
+Processors1
+TI Support1
+support@ti.com0
+>['l
+EE|K
+sJh(1
+7nfxo
+0FM4
+n`TP
+Hq@0
+Oq3k
+k?bo
+uF9D
+lo0Y
+9=>x
+b!?l
+Texas Instruments AM625 SK
+ti,am625-sk
+ti,am625
+chosen
+,serial2:115200n8
+8/bus@f0000/timer@2400000
+bus@f0000
+simple-bus
+bus@4000000
+simple-bus
+pinctrl@4084000
+pinctrl-single
+wkup-uart0-default-pins
+esm@4100000
+ti,j721e-esm
+bus@b00000
+simple-bus
+syscon@43000000
+syscon
+simple-mfd
+chipid@14
+ti,am654-chipid
+syscon@4008
+ti,am62-usb-phy-ctrl
+syscon
+target-module@2b300050
+ti,sysc-omap2
+ti,sysc
+sysc
+syss
+serial@0
+ti,am64-uart
+ti,am654-uart
+'reserved
+.default
+bus@100000
+simple-bus
+phy@4044
+ti,am654-phy-gmii-sel
+oldi-io-controller@8600
+ti,am625-dss-oldi-io-ctrl
+syscon
+bus@48000000
+simple-bus
+mailbox@4d000000
+ti,am654-secure-proxy
+target_data
+scfg
+vrx_012
+dma-controller@485c0000
+ti,am64-dmss-pktdma
+gcfg
+rchanrt
+tchanrt
+ringrt
+ring
+tchan
+rchan
+rflow
+system-controller@44043000
+ti,k2g-sci
+debug_messages
+power-controller
+ti,sci-pm-domain
+clock-controller
+ti,k2g-sci-clk
+reset-controller
+ti,sci-reset
+mailbox@43600000
+ti,am654-secure-proxy
+target_data
+scfg
+'disabled
+pinctrl@f4000
+ti,am654-padconf
+pinctrl-single
+main-uart0-default-pins
+main-uart1-default-pins
+main-i2c0-default-pins
+main-i2c1-default-pins
+main-mmc0-default-pins
+main-mmc1-default-pins
+main-rgmii1-default-pins
+ospi0-default-pins
+main-rgmii2-default-pins
+vdd-sd-dv-default-pins
+main-gpio1-ioexp-intr-default-pins
+esm@420000
+ti,j721e-esm
+timer@2400000
+ti,am654-timer
+serial@2800000
+ti,am64-uart
+ti,am654-uart
+fclk
+'okay
+.default
+virq
+wakeup
+serial@2810000
+ti,am64-uart
+ti,am654-uart
+fclk
+'reserved
+.default
+i2c@20010000
+ti,am64-i2c
+ti,omap4-i2c
+'okay
+.default
+gpio@22
+ti,tca6424
+GPIO_CPSW2_RST
+GPIO_CPSW1_RST
+PRU_DETECT
+MMC1_SD_EN
+VPP_LDO_EN
+EXP_PS_3V3_En
+EXP_PS_5V0_En
+EXP_HAT_DETECT
+GPIO_AUD_RSTn
+GPIO_eMMC_RSTn
+UART1_FET_BUF_EN
+WL_LT_EN
+GPIO_HDMI_RSTn
+CSI_GPIO1
+CSI_GPIO2
+PRU_3V3_EN
+HDMI_INTn
+PD_I2C_IRQ
+MCASP1_FET_EN
+MCASP1_BUF_BT_EN
+MCASP1_FET_SEL
+UART1_FET_SEL
+TSINT#
+IO_EXP_TEST_LED
+.default
+gpio@600000
+ti,am64-gpio
+ti,keystone-gpio
+gpio
+gpio@601000
+ti,am64-gpio
+ti,keystone-gpio
+gpio
+mmc@fa10000
+ti,am62-sdhci
+clk_ahb
+clk_xin
+'okay
+.default
+mmc@fa00000
+ti,am62-sdhci
+clk_ahb
+clk_xin
+'okay
+.default
+dwc3-usb@f900000
+ti,am62-usb
+'okay
+usb@31000000
+snps,dwc3
+vhost
+peripheral
+high-speed
+peripheral
+bus@fc00000
+simple-bus
+spi@fc40000
+ti,am654-ospi
+cdns,qspi-nor
+'okay
+.default
+flash@0
+jedec,spi-nor
+partitions
+fixed-partitions
+partition@3fc0000
+8ospi.phypattern
+ethernet@8000000
+ti,am642-cpsw-nuss
+cpsw_nuss
+Ctx0
+.default
+ethernet-ports
+port@1
+8port1
+/rgmii-rxid
+mdio@f00
+ti,cpsw-mdio
+ti,davinci_mdio
+'okay
+.default
+ethernet-phy@0
+dss@30200000
+ti,am625-dss
+common
+vidl1
+ovr1
+ovr2
+common1
+'okay
+.default
+aliases
+/bus@f0000/serial@2800000
+/bus@f0000/mmc@fa10000
+/bus@f0000/mmc@fa00000
+/bus@f0000/bus@fc00000/spi@fc40000
+/bus@f0000/ethernet@8000000/ethernet-ports/port@1
+/bus@f0000/dwc3-usb@f900000/usb@31000000
+memory@80000000
+memory
+regulator-0
+regulator-fixed
+vmain_pd
+regulator-1
+regulator-fixed
+vcc_5v0
+regulator-2
+regulator-fixed
+vcc_3v3_sys
+regulator-3
+regulator-fixed
+vdd_mmc1
+regulator-4
+regulator-gpio
+tlv71033
+.default
+panel-lvds
+simple-panel
+'okay
+vesa-24
+panel-timing
+	model
+compatible
+#address-cells
+#size-cells
+stdout-path
+tick-timer
+ranges
+phandle
+#pinctrl-cells
+pinctrl-single,register-width
+pinctrl-single,function-mask
+pinctrl-single,pins
+ti,esm-pins
+reg-names
+ti,sysc-mask
+ti,sysc-sidle
+ti,syss-mask
+ti,no-reset-on-init
+power-domains
+clocks
+clock-names
+status
+pinctrl-names
+pinctrl-0
+#phy-cells
+dma-ranges
+ti,sci-dev-id
+#mbox-cells
+interrupt-names
+msi-parent
+#dma-cells
+ti,sci
+ti,sci-rm-range-tchan
+ti,sci-rm-range-tflow
+ti,sci-rm-range-rchan
+ti,sci-rm-range-rflow
+ti,host-id
+mbox-names
+mboxes
+ti,partial-io-wakeup-sources
+#power-domain-cells
+#clock-cells
+#reset-cells
+interrupt-controller
+#interrupt-cells
+assigned-clocks
+assigned-clock-parents
+ti,timer-pwm
+clock-frequency
+interrupts-extended
+gpio-controller
+#gpio-cells
+gpio-line-names
+gpio-ranges
+ti,ngpio
+ti,davinci-gpio-unbanked
+bus-width
+mmc-ddr-1_8v
+mmc-hs200-1_8v
+ti,clkbuf-sel
+ti,otap-del-sel-legacy
+ti,otap-del-sel-mmc-hs
+ti,otap-del-sel-ddr52
+ti,otap-del-sel-hs200
+ti,itap-del-sel-legacy
+ti,itap-del-sel-mmc-hs
+disable-wp
+ti,otap-del-sel-sd-hs
+ti,otap-del-sel-sdr12
+ti,otap-del-sel-sdr25
+ti,otap-del-sel-sdr50
+ti,otap-del-sel-sdr104
+ti,otap-del-sel-ddr50
+ti,itap-del-sel-sd-hs
+ti,itap-del-sel-sdr12
+ti,itap-del-sel-sdr25
+vmmc-supply
+vqmmc-supply
+ti,syscon-phy-pll-refclk
+ti,vbus-divider
+maximum-speed
+dr_mode
+snps,usb2-gadget-lpm-disable
+snps,usb2-lpm-disable
+usb-role-switch
+cdns,fifo-depth
+cdns,fifo-width
+cdns,trigger-address
+assigned-clock-rates
+spi-tx-bus-width
+spi-rx-bus-width
+spi-max-frequency
+cdns,tshsl-ns
+cdns,tsd2d-ns
+cdns,tchsh-ns
+cdns,tslch-ns
+cdns,read-delay
+cdns,phy-mode
+label
+dmas
+dma-names
+ti,mac-only
+phys
+mac-address
+ti,syscon-efuse
+phy-handle
+bus_freq
+ti,rx-internal-delay
+ti,fifo-depth
+ti,min-output-impedance
+ti,am65x-oldi-io-ctrl
+serial2
+mmc0
+mmc1
+spi0
+ethernet0
+usb0
+device_type
+regulator-name
+regulator-min-microvolt
+regulator-max-microvolt
+regulator-always-on
+regulator-boot-on
+vin-supply
+enable-active-high
+gpios
+states
+width-mm
+height-mm
+data-mapping
+hactive
+vactive
+hback-porch
+hfront-porch
+vback-porch
+vfront-porch
+hsync-len
+vsync-len
+de-active
+configurations
+conf-0
+conf-0
+Hk3-am625-sk
+tifsstub-hs
+tifsstub-fs
+tifsstub-gp
+fdt-0
+	fdt
+loadables
+firmware
+default
+data
+type
+arch
+compression
+load
+entry
+description
+#address-cells
+timestamp

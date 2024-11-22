@@ -1,0 +1,28 @@
+[[0;34m+[0m] [0;36m[1mFinal aggregator[0m
+[1m=================================================================[0m
+The main aggregator module compiles and summarizes results from various analysis modules into a comprehensive overview by processing and logging detailed information from each identified element.
+
+
+[[0;32m+[0m][0;32m Tested firmware:[0;33m /home/nijames-local/workspace/ti/10.00.07.04/board-support/prebuilt-images/am62xx-evm/tispl.bin[0m[0m
+[[0;32m+[0m][0;32m EMBA start command:[0;33m ./emba -l ./tispl_full_log -f /home/nijames-local/workspace/ti/10.00.07.04/board-support/prebuilt-images/am62xx-evm/tispl.bin -p ./scan-profiles/full-scan.emba[0m[0m
+[[0;32m+[0m][0;32m Detected architecture and endianness ([0;33mverified[0;32m):[0;33m ARM / EL[0m[0m
+[[0;32m+[0m][0;32m Possible operating system detected ([0;33munverified[0;32m): [0;33mFreeRTOS - #104[0m[0m
+[[0;32m+[0m][0;32m Possible operating system detected ([0;33munverified[0;32m): [0;33mVxWorks - #41[0m[0m
+[[0;32m+[0m][0;32m Possible operating system detected ([0;33munverified[0;32m): [0;33mLinux - #33[0m[0m
+
+-----------------------------------------------------------------
+
+[[0;32m+[0m][0;32m [0;33m23[0;32m files and [0;33m12 [0;32mdirectories detected.[0m
+[[0;32m+[0m][0;32m Entropy analysis of binary firmware is: [0;33m6.567337 bits per byte.[0m
+[[0;32m+[0m][0;32m Entropy analysis of binary firmware is available:[0;33m /logs/firmware_entropy.png[0m
+[[0;32m+[0m][0;32m Found [0;33m69[0;32m yara rule matches in [0;33m23[0;32m files.[0m[0m
+
+-----------------------------------------------------------------
+
+[[0;32m+[0m][0;32m Found [0;33m2 (100%)[0;32m binaries without enabled stack canaries in [0;33m2[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m2 (100%)[0;32m binaries without enabled RELRO in [0;33m2[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m2 (100%)[0;32m binaries without enabled NX in [0;33m2[0;32m binaries.[0m
+[[0;32m+[0m][0;32m Found [0;33m2 (100%)[0;32m binaries without enabled PIE in [0;33m2[0;32m binaries.[0m
+
+-----------------------------------------------------------------
+

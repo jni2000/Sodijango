@@ -1,0 +1,14 @@
+
+[[0;32m+[0m][0;32m Yara rule [0;33mCRC16_table[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[0m[0m
+
+CRC16_table [] [author="_pusher_",description="Look for CRC16 table",date="2016-04",version="0.1"] /logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5
+0x68cf1:64:$c0: 00 00 21 10 42 20 63 30 84 40 A5 50 C6 60 E7 70 08 81 29 91 4A A1 6B B1 8C C1 AD D1 CE E1 EF F1 31 12 10 02 73 32 52 22 B5 52 94 42 F7 72 D6 62 39 93 18 83 7B B3 5A A3 BD D3 9C C3 FF F3 DE E3
+
+[[0;32m+[0m][0;32m Yara rule [0;33mSHA512_Constants[0;32m matched in [0;33m/logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5[0m[0m
+
+SHA512_Constants [] [author="phoul (@phoul)",description="Look for SHA384/SHA512 constants",date="2014-01",version="0.1"] /logs/firmware/binwalk_extracted/_firmware.extracted/7E0A5
+0x6792b:4:$c1: 98 2F 8A 42
+0x67933:4:$c3: 91 44 37 71
+0x6793b:4:$c5: CF FB C0 B5
+0x67943:4:$c7: A5 DB B5 E9
+0x67927:4:$c9: 22 AE 28 D7

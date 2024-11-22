@@ -1,0 +1,87 @@
+[[0;33m*[0m] Root directory auto detection for [0;33m/logs/firmware[0m (could take some time)
+
+[[0;33m*[0m] Found no real root directory - setting it to: [0;33m/logs/firmware[0m via [0;33mlast resort[0m.
+[[0;34m+[0m] [0;36m[1mBinwalk binary firmware extractor (backup mode)[0m
+[1m=================================================================[0m
+The Binwalk extraction module is designed to extract binary firmware components from firmware files using Binwalk tool, providing insights into the firmwares structure and contents.
+
+
+
+
+[0;34m==>[0m [0;36mAnalyze binary firmware blob with binwalk[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] Extracting firmware to directory [0;33m/logs/firmware/binwalk_extracted[0m
+
+Scan Time:     2024-11-12 19:51:29
+Target File:   /firmware
+MD5 Checksum:  7417532d76e49ec07d7b888b985d26ad
+Signatures:    436
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Flattened device tree, size: 1111399 bytes, version: 17
+344           0x158           Certificate in DER format (x509 v3), header length: 4, sequence length: 1696
+55184         0xD790          Certificate in DER format (x509 v3), header length: 4, sequence length: 1696
+72916         0x11CD4         SHA256 hash constants, little endian
+464738        0x71762         Unix path: /usr/src/debug/optee-os/4.2.0+git/ldelf/main.c
+467054        0x7206E         Unix path: /usr/src/debug/optee-os/4.2.0+git/ldelf/ta_elf_rel.c
+475296        0x740A0         DES SP2, little endian
+475552        0x741A0         DES SP1, little endian
+479920        0x752B0         Unix path: /usr/src/debug/optee-os/4.2.0+git/core/arch/arm/kernel/thread.c
+516261        0x7E0A5         DES PC2 table
+516325        0x7E0E5         DES PC1 table
+535612        0x82C3C         Certificate in DER format (x509 v3), header length: 4, sequence length: 1696
+537312        0x832E0         ELF, 32-bit LSB executable, ARM, version 1 (SYSV)
+690360        0xA88B8         Certificate in DER format (x509 v3), header length: 4, sequence length: 1696
+982842        0xEFF3A         Unix path: /lib/firmware/am62-mcu-m4f0_0-fw
+1000020       0xF4254         Certificate in DER format (x509 v3), header length: 4, sequence length: 1742
+1001766       0xF4926         Certificate in DER format (x509 v3), header length: 4, sequence length: 1679
+1032332       0xFC08C         Certificate in DER format (x509 v3), header length: 4, sequence length: 1679
+1062896       0x1037F0        Certificate in DER format (x509 v3), header length: 4, sequence length: 967
+1092648       0x10AC28        Certificate in DER format (x509 v3), header length: 4, sequence length: 1695
+1094347       0x10B2CB        Flattened device tree, size: 15749 bytes, version: 17
+
+
+
+
+
+
+
+[0;34m==>[0m [0;36mFirmware extraction details[0m
+-----------------------------------------------------------------
+[[0;33m*[0m] [0;33mBinwalk[0m results:
+[[0;33m*[0m] Found [0;33m21[0m files ([0;33m20[0m unique files) and [0;33m2[0m directories at all.
+[[0;33m*[0m] Found [0;33m1[0m binaries.
+[[0;33m*[0m] Additionally the Linux path counter is [0;33m0[0m.
+
+
+[4.0K]  /logs/firmware/binwalk_extracted
+└── [4.0K]  _firmware.extracted
+    ├── [1.1M]  0
+    ├── [ 971]  1037F0
+    ├── [1.7K]  10AC28
+    ├── [ 17K]  10B2CB
+    ├── [1014K]  11CD4
+    ├── [1.7K]  158
+    ├── [632K]  71762
+    ├── [629K]  7206E
+    ├── [621K]  740A0
+    ├── [621K]  741A0
+    ├── [617K]  752B0
+    ├── [581K]  7E0A5
+    ├── [581K]  7E0E5
+    ├── [1.7K]  82C3C
+    ├── [561K]  832E0
+    ├── [1.7K]  A88B8
+    ├── [1.7K]  D790
+    ├── [126K]  EFF3A
+    ├── [1.7K]  F4254
+    ├── [1.6K]  F4926
+    └── [1.6K]  FC08C
+
+2 directories, 21 files
+
+
+[[0;33m*[0m] Root directory auto detection for [0;33m/logs/firmware/binwalk_extracted[0m (could take some time)
+
+[[0;33m*[0m] Found no real root directory - setting it to: [0;33m/logs/firmware/binwalk_extracted[0m via [0;33mlast resort[0m.

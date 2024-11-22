@@ -1,0 +1,48 @@
+[[0;34m+[0m] [0;36m[1mIntelligent grepit module[0m
+[1m=================================================================[0m
+This module tries to identify interesting areas within the firmware with the tool grepit from the CRASS (code review audit script scanner) toolbox.
+The grepit module name starts with a priority value between 1-9, where 1 is more interesting (low false positive rate, certainty of vulnerability) and 9 is only something you might want to have a look when you are desperately looking for vulnerabilities
+
+
+[[0;33m*[0m] Loaded [0;33m22[0m grepit modules
+
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m2_cryptocred_encryption_key[0m ([0;33mEncryption key and variants of it[0m).
+[[0;33m*[0m] [0;33m76[0m results of grepit module [0;33m2_general_hacking_techniques_buffer-overflow[0m ([0;33mBuffer overflow and variants of it. Sometimes refered in comments or variable names for code that should prevent it. If you find something interesting that is used for prevention in a framework, you might want to add another grep for that in this script.[0m).
+[[0;33m*[0m] [0;33m628[0m results of grepit module [0;33m2_general_uris_auth_info_wide[0m ([0;33mURIs with authentication information specified as username:password@example.org[0m).
+[[0;33m*[0m] [0;33m2[0m results of grepit module [0;33m2_js_insecure_JSON_parser[0m ([0;33mRFC 4627 includes a parser regex example http://www.ietf.org/rfc/rfc4627.txt and it is insecure as explained in the 'the tangled web' book, as it allows incrementing and decrementing of certain variables.[0m).
+[[0;33m*[0m] [0;33m65[0m results of grepit module [0;33m4_cryptocred_ciphers_crc32[0m ([0;33mCRC32 is a checksum algorithm. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m52[0m results of grepit module [0;33m4_cryptocred_ciphers_hmac[0m ([0;33mHMAC. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m110[0m results of grepit module [0;33m4_cryptocred_ciphers_sha1_lowercase[0m ([0;33mSHA1. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m4_cryptocred_ciphers_sha1_uppercase[0m ([0;33mSHA1. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m110[0m results of grepit module [0;33m4_cryptocred_ciphers_sha256[0m ([0;33mSHA256. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m110[0m results of grepit module [0;33m4_cryptocred_ciphers_sha512[0m ([0;33mSHA256. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m65[0m results of grepit module [0;33m4_general_sql_insert[0m ([0;33mSQL INSERT statement[0m).
+[[0;33m*[0m] [0;33m0[0m results of grepit module [0;33m4_java_serialization-serialized-data[0m ([0;33mJava serialized data? Usually Java serialized data in base64 format starts with rO0 or non-base64 with hex ACED0005. Decidezation is something that can result in remote command execution, there are various exploits for such things, see http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/ and https://github.com/mbechler/marshalsec for example[0m).
+[[0;33m*[0m] [0;33m68[0m results of grepit module [0;33m4_php_proc[0m ([0;33mDangerous PHP function: proc_[0m).
+[[0;33m*[0m] [0;33m525[0m results of grepit module [0;33m4_python_float_equality_general[0m ([0;33mThe float type can not be reliably compared for equality. Make sure none of these comparisons uses floats, see https://access.redhat.com/blogs/766093/posts/2592591[0m).
+[[0;33m*[0m] [0;33m87[0m results of grepit module [0;33m5_cryptocred_authentication[0m ([0;33mAuthentication[0m).
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m5_cryptocred_certificates_and_keys_wide_private-key[0m ([0;33mWide search for certificate and keys specifics of base64 encoded format[0m).
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m5_cryptocred_certificates_and_keys_wide_public-key[0m ([0;33mWide search for certificate and keys specifics of base64 encoded format[0m).
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m5_cryptocred_secret_wide[0m ([0;33mSecret and variants of it[0m).
+[[0;33m*[0m] [0;33m68[0m results of grepit module [0;33m5_general_base64_content[0m ([0;33mBase64 encoded data (that is more than 6 bytes long). This regex won't detect a base64 encoded value over several lines and won't detect one that does not end with an equal sign...[0m).
+[[0;33m*[0m] [0;33m68[0m results of grepit module [0;33m5_general_base64_urlsafe[0m ([0;33mBase64 URL-safe encoded data (that is more than 6 bytes long). To get from URL-safe base64 to regular base64 you need .replace('-','+').replace('_','/'). This regex won't detect a base64 encoded value over several lines and won't detect one that does not end with an equal sign...[0m).
+[[0;33m*[0m] [0;33m143[0m results of grepit module [0;33m5_general_exec_wide[0m ([0;33mExec mostly means executing on OS.[0m).
+[[0;33m*[0m] [0;33m280[0m results of grepit module [0;33m5_general_kernel[0m ([0;33mKernel. A reference to something low level in a Kernel?[0m).
+[[0;33m*[0m] [0;33m233[0m results of grepit module [0;33m5_general_relative_paths[0m ([0;33mRelative paths. May allow an attacker to put something early in the search path (if parts are user supplied input) and overwrite behavior[0m).
+[[0;33m*[0m] [0;33m528[0m results of grepit module [0;33m5_general_session_timeout[0m ([0;33mTimeout. Whatever timeout this might be, that might be interesting.[0m).
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m5_general_syscall_wide[0m ([0;33mSyscall: Command execution?[0m).
+[[0;33m*[0m] [0;33m512[0m results of grepit module [0;33m5_general_system_wide[0m ([0;33msystem: Command execution?[0m).
+[[0;33m*[0m] [0;33m11[0m results of grepit module [0;33m5_python_is_object_identity_operator_left[0m ([0;33mThe 'is' object identity operator should not be used for numbers, see https://access.redhat.com/blogs/766093/posts/2592591[0m).
+[[0;33m*[0m] [0;33m77[0m results of grepit module [0;33m5_python_is_object_identity_operator_right[0m ([0;33mThe 'is' object identity operator should not be used for numbers, see https://access.redhat.com/blogs/766093/posts/2592591[0m).
+[[0;33m*[0m] [0;33m224[0m results of grepit module [0;33m6_cryptocred_hash[0m ([0;33mHash[0m).
+[[0;33m*[0m] [0;33m44[0m results of grepit module [0;33m6_cryptocred_salt1[0m ([0;33mSalt for a hashing algorithm?[0m).
+[[0;33m*[0m] [0;33m65[0m results of grepit module [0;33m6_general_backup[0m ([0;33mBackup code and general backup strategy weaknesses[0m).
+[[0;33m*[0m] [0;33m245[0m results of grepit module [0;33m6_general_update[0m ([0;33mUpdate code and general update strategy weaknesses[0m).
+[[0;33m*[0m] [0;33m429[0m results of grepit module [0;33m6_php_echo_high_volume[0m ([0;33mMethods that often introduce XSS: echo[0m).
+[[0;33m*[0m] [0;33m67[0m results of grepit module [0;33m6_php_print_high_volume[0m ([0;33mMethods that often introduce XSS: print[0m).
+[[0;33m*[0m] [0;33m65[0m results of grepit module [0;33m7_cryptocred_ciphers_des[0m ([0;33mDES cipher. Security depends heavily on usage and what is secured.[0m).
+[[0;33m*[0m] [0;33m669[0m results of grepit module [0;33m7_php_type_unsafe_comparison[0m ([0;33mThe big problem with == is that in PHP (and some other languages), this comparison is not type safe. What you should always use is ===. For example a hash value that starts with 0E could be interpreted as an integer if you don't take care. There were real world bugs exploiting this issue already, think login form and comparing the hashed user password, what happens if you type in 0 as the password and brute force different usernames until a user has a hash which starts with 0E? Then there is also the question of different systems handling/doing Unicode Normalization (see for example https://gosecure.github.io/unicode-pentester-cheatsheet/ and https://www.gosecure.net/blog/2020/08/04/unicode-for-security-professionals/) or not: Bücher and Bücher is both UTF-8, but one is the character for a real Unicode u-Umlaut while the other is u[COMBINING DIAERESIS]. If the backend normalizes it could be that identifiers clash.[0m).
+[[0;33m*[0m] [0;33m174[0m results of grepit module [0;33m8_general_ip-addresses[0m ([0;33mIP addresses[0m).
+
+
+[[0;33m*[0m] Found [0;33m6324[0m results via grepit.
