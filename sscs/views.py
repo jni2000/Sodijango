@@ -60,8 +60,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Invoke package scanning: " + file_location)
                 cmd = "cve-bin-tool"
                 result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
-                result_dir = result_root + ref_id
-                full_cmd = cmd + " " + file_location + " > " + result_dir + "/" + ref_id + ".txt"
+                result_dir = result_root
+                scan_cmd = cmd + " " + file_location + " > " + result_dir + ref_id + ".txt"
+                convert_cmd = "cat " + result_dir + "/" + ref_id + ".txt | terminal-to-html -preview > " + result_dir + ref_id + ".html"
+                full_cmd = scan_cmd + "; " + convert_cmd + "; echo done > " + result_dir + ref_id + ".done &"
+                print(full_cmd)
                 subprocess.call(full_cmd, shell=True)
                 return Response({'status': 'in progress', 'ref_id': ref_id})
             case _:
@@ -79,7 +82,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             return Response({'Status': 'In-progress'})
         else:
             result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
-            result_file = ref_id + ".tar.gz"
+            if scan_rec.type == "binary":
+                result_file = ref_id + ".tar.gz"
+            else:  #"package":
+                result_file = ref_id + ".html"
             file_path = result_root + result_file
             try:
                 with open(file_path, 'rb') as f:
@@ -107,13 +113,16 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             if os.path.exists(result_root + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
-                # create the gzipped tar file for download
-                if os.path.exists(result_root + "/" + ref_id + ".tar.gz"):
-                    print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz exist.")
-                else:
-                    zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                    subprocess.call(zip_cmd, shell=True)
-                    print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz created.")
+                if scan_rec.type == "binary":
+                    # create the gzipped tar file for download
+                    if os.path.exists(result_root + "/" + ref_id + ".tar.gz"):
+                        print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz exist.")
+                    else:
+                        zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
+                        subprocess.call(zip_cmd, shell=True)
+                        print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz created.")
+                else:  # "package":
+                    print("Package scan result is reqdy.")
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
