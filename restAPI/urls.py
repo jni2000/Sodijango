@@ -39,7 +39,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
 # router = DefaultRouter()
-router.register(r'softwareScan', SoftwareSecurityScanViewSet)
+# router.register(r'softwareScan', SoftwareSecurityScanViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -47,5 +47,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/', include((router.urls, 'sscs'), namespace='sscs')),
+    path('api/softwareScan/', include('sscs.urls', namespace='sscs')),
+    # path('api/', include((router.urls, 'sscs'), namespace='sscs')),
 ]
