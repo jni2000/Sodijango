@@ -3,6 +3,8 @@ from rest_framework import viewsets
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from virtualenv.util.subprocess import run_cmd
+
 from .models import SoftwareSecurityScan
 from .serializers import SoftwareSecurityScanSerializer
 import uuid
@@ -12,7 +14,11 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 import os
 import subprocess
+import multiprocessing
 
+
+def runcmd(cmd):
+    subprocess.call(cmd, shell=True)
 
 class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
     queryset = SoftwareSecurityScan.objects.all()
@@ -52,8 +58,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 scan_profile = "/home/nijames-local/workspace/software-scanning/emba/scan-profiles/" + scan_level + "-scan.emba"
                 full_cmd = "cd " + emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + scan_profile + " > " + result_root + ref_id + ".log; echo done > " + result_root + ref_id + ".done &"
                 print("executing " + full_cmd)
-                subprocess.call(full_cmd, shell=True)
-                # subprocess.Popen(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+                child_proc.start()
+                # subprocess.call(full_cmd, shell=True)
+                # subprocess.run(full_cmd)
+                # os.system(full_cmd)
                 return Response({'status': 'in progress', 'ref_id': ref_id})
             case "package":
                 # invoke cve-bin-tool software package scanning
@@ -65,7 +74,9 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 convert_cmd = "cat " + result_dir + "/" + ref_id + ".txt | terminal-to-html -preview > " + result_dir + ref_id + ".html"
                 full_cmd = scan_cmd + "; " + convert_cmd + "; echo done > " + result_dir + ref_id + ".done &"
                 print(full_cmd)
-                subprocess.call(full_cmd, shell=True)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+                child_proc.start()
+                # subprocess.call(full_cmd, shell=True)
                 return Response({'status': 'in progress', 'ref_id': ref_id})
             case _:
                 return Response({'error': 'Invalid type, enter binary or package'}, status=404)
@@ -119,10 +130,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz exist.")
                     else:
                         zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                        subprocess.call(zip_cmd, shell=True)
+                        child_proc = multiprocessing.Process(target=runcmd, args=(zip_cmd,))
+                        child_proc.start()
+                        # subprocess.call(zip_cmd, shell=True)
                         print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz created.")
                 else:  # "package":
-                    print("Package scan result is reqdy.")
+                    print("Package scan result is ready.")
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 

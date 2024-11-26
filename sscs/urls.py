@@ -1,0 +1,22 @@
+from django.urls import path, include
+from rest_framework import routers, serializers, viewsets
+from .views import SoftwareSecurityScanViewSet
+
+# from . import views
+
+# router = routers.DefaultRouter()
+# router.register(r'softwareScan', SoftwareSecurityScanViewSet)
+app_name = 'sscs'
+
+urlpatterns = [
+    # path('', views.list, name='list'),
+    path('scan', SoftwareSecurityScanViewSet.as_view({'post': 'create'})),
+    path('', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
+    path('viewall', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
+    path('index', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
+    path('list', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
+    path('all', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
+    path('get/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'retrieve'})),
+    path('download/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download'}))
+    # path("<string:ref_id>/", views.retrieve_rec, name="result"),
+]
