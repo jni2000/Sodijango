@@ -94,7 +94,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
             if scan_rec.type == "binary":
-                result_file = ref_id + ".tar.gz"
+                result_file = ref_id + ".7z"
             else:  #"package":
                 result_file = ref_id + ".html"
             file_path = result_root + result_file
@@ -129,7 +129,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     if os.path.exists(result_root + "/" + ref_id + ".tar.gz"):
                         print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz exist.")
                     else:
-                        zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
+                        # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
+                        zip_cmd = "7z a " + result_root + ref_id + ".7z " + result_root + ref_id + "/html-report"
                         child_proc = multiprocessing.Process(target=runcmd, args=(zip_cmd,))
                         child_proc.start()
                         # subprocess.call(zip_cmd, shell=True)
