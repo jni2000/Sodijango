@@ -20,6 +20,7 @@ import multiprocessing
 def runcmd(cmd):
     subprocess.call(cmd, shell=True)
 
+
 class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
     queryset = SoftwareSecurityScan.objects.all()
     serializer_class = SoftwareSecurityScanSerializer
@@ -43,10 +44,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         scan_rec.save()
         # invoke the scan
         scan_type = request.data.__getitem__('type')
+        file_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
         file_name = request.data.__getitem__('name')
         file_path = request.data.__getitem__('location').replace("\\", "/")
         scan_level = request.data.__getitem__('level')
-        file_location = (file_path + "/" + file_name).replace("//", "/")
+        file_location = (file_root + file_path + "/" + file_name).replace("//", "/")
         match scan_type:
             case "binary":
                 # invoke emba firmware/binary scanning
@@ -67,12 +69,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "package":
                 # invoke cve-bin-tool software package scanning
                 print("Invoke package scanning: " + file_location)
-                cmd = "cve-bin-tool"
+                cmd = "cve-bin-tool --offline"
                 result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
-                result_dir = result_root
-                scan_cmd = cmd + " " + file_location + " > " + result_dir + ref_id + ".txt"
-                convert_cmd = "cat " + result_dir + "/" + ref_id + ".txt | terminal-to-html -preview > " + result_dir + ref_id + ".html"
-                full_cmd = scan_cmd + "; " + convert_cmd + "; echo done > " + result_dir + ref_id + ".done &"
+                result_dir = result_root + ref_id + "/html-report"
+                scan_cmd = cmd + " " + file_location + " > " + result_root + ref_id + ".txt"
+                prepare_cmd = "mkdir " + result_root + ref_id + "; mkdir " + result_dir + "; "
+                convert_cmd = "cat " + result_root + ref_id + ".txt | terminal-to-html -preview > " + result_dir + "/index.html"
+                full_cmd = prepare_cmd + scan_cmd + "; " + convert_cmd + "; echo done > " + result_root + ref_id + ".done &"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                 child_proc.start()
@@ -88,15 +91,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
         if scan_rec is None:
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
-        elif  scan_rec.status != "done":
+        elif scan_rec.status != "done":
             print(scan_rec.status)
             return Response({'Status': 'In-progress'})
         else:
             result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
-            if scan_rec.type == "binary":
-                result_file = ref_id + ".7z"
-            else:  #"package":
-                result_file = ref_id + ".html"
+            result_file = ref_id + ".7z"
             file_path = result_root + result_file
             try:
                 with open(file_path, 'rb') as f:
@@ -124,19 +124,16 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             if os.path.exists(result_root + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
-                if scan_rec.type == "binary":
-                    # create the gzipped tar file for download
-                    if os.path.exists(result_root + "/" + ref_id + ".tar.gz"):
-                        print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz exist.")
-                    else:
-                        # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                        zip_cmd = "7z a " + result_root + ref_id + ".7z " + result_root + ref_id + "/html-report"
-                        child_proc = multiprocessing.Process(target=runcmd, args=(zip_cmd,))
-                        child_proc.start()
-                        # subprocess.call(zip_cmd, shell=True)
-                        print("Zipped scan results " + result_root + "/" + ref_id + ".tar.gz created.")
-                else:  # "package":
-                    print("Package scan result is ready.")
+                # create the gzipped tar file for download
+                if os.path.exists(result_root + "/" + ref_id + ".7z"):
+                    print("Zipped scan results " + result_root + "/" + ref_id + ".7z exist.")
+                else:
+                    # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
+                    zip_cmd = "7z a " + result_root + ref_id + ".7z " + result_root + ref_id + "/html-report"
+                    child_proc = multiprocessing.Process(target=runcmd, args=(zip_cmd,))
+                    child_proc.start()
+                    # subprocess.call(zip_cmd, shell=True)
+                    print("Zipped scan results " + result_root + "/" + ref_id + ".7z created.")
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
