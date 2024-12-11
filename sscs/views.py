@@ -16,6 +16,10 @@ import os
 import subprocess
 import multiprocessing
 
+# html to PDF conversion packages
+# import pdfkit
+# import aspose.words as aw
+# from xhtml2pdf import pisa
 
 def runcmd(cmd):
     subprocess.call(cmd, shell=True)
@@ -119,7 +123,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             # update the scanning status
-            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
+            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan"
             progress = ref_id + ".done"
             if os.path.exists(result_root + "/" + progress):
                 scan_rec.status = "done"
@@ -129,11 +133,32 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     print("Zipped scan results " + result_root + "/" + ref_id + ".7z exist.")
                 else:
                     # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                    zip_cmd = "7z a " + result_root + ref_id + ".7z " + result_root + ref_id + "/html-report"
+                    zip_cmd = "7z a " + result_root + "/" + ref_id + ".7z " + result_root + "/" + ref_id + "/html-report"
                     child_proc = multiprocessing.Process(target=runcmd, args=(zip_cmd,))
                     child_proc.start()
                     # subprocess.call(zip_cmd, shell=True)
                     print("Zipped scan results " + result_root + "/" + ref_id + ".7z created.")
+                if os.path.exists(result_root + "/" + ref_id + ".pdf"):
+                    print("PDF of results " + result_root + "/" + ref_id + ".pdf exist.")
+                else:
+                    result_path = result_root + "/" + ref_id + "/html-report/"
+                    result_files = []
+                    pdf_file = result_root + "/" + ref_id + ".pdf"
+                    for x in os.listdir(result_path):
+                        if x.endswith(".html"):
+                            y = x.split('.')
+                            # print(result_path + "/" + x)
+                            # print(result_path + "/" + y[0] + ".pdf")
+                            pdf = result_path + "/" + y[0] + ".pdf"
+                            convert_cmd = "weasyprint " + result_path + x + " " + pdf
+                            child_proc = multiprocessing.Process(target=runcmd, args=(convert_cmd,))
+                            child_proc.start()
+                            # pdfkit.from_file(result_files, pdf)
+                            result_files.append(pdf)
+                    if result_files:
+                        # build the final PDF
+                        print(result_files)
+
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
