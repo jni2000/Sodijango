@@ -20,6 +20,7 @@ import multiprocessing
 # import pdfkit
 # import aspose.words as aw
 # from xhtml2pdf import pisa
+from PyPDF2 import PdfMerger
 
 def runcmd(cmd):
     subprocess.call(cmd, shell=True)
@@ -138,27 +139,94 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     child_proc.start()
                     # subprocess.call(zip_cmd, shell=True)
                     print("Zipped scan results " + result_root + "/" + ref_id + ".7z created.")
+
+            serializer = SoftwareSecurityScanSerializer(scan_rec)
+            return Response(serializer.data)
+
+    def retrieve_pdf(self, request, ref_id=None):
+        print("Software scan get PDF request recived: ref_id = " + ref_id)
+        # path_info = f"{request.META['PATH_INFO']}"
+        # path_segs = path_info.split("/")
+        # ref_id = path_segs[-2]
+        scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
+        if scan_rec is None:
+            return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            # update the scanning status
+            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan"
+            progress = ref_id + ".done"
+            if os.path.exists(result_root + "/" + progress):
+                scan_rec.status = "done"
+                scan_rec.save()
                 if os.path.exists(result_root + "/" + ref_id + ".pdf"):
                     print("PDF of results " + result_root + "/" + ref_id + ".pdf exist.")
+                    return Response({'Status': 'done'}, status=status.HTTP_200_OK)
                 else:
                     result_path = result_root + "/" + ref_id + "/html-report/"
-                    result_files = []
-                    pdf_file = result_root + "/" + ref_id + ".pdf"
                     for x in os.listdir(result_path):
                         if x.endswith(".html"):
                             y = x.split('.')
-                            # print(result_path + "/" + x)
-                            # print(result_path + "/" + y[0] + ".pdf")
-                            pdf = result_path + "/" + y[0] + ".pdf"
+                            pdf = result_path + y[0] + ".pdf"
                             convert_cmd = "weasyprint " + result_path + x + " " + pdf
                             child_proc = multiprocessing.Process(target=runcmd, args=(convert_cmd,))
                             child_proc.start()
-                            # pdfkit.from_file(result_files, pdf)
-                            result_files.append(pdf)
-                    if result_files:
-                        # build the final PDF
-                        print(result_files)
+                    return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
 
+            serializer = SoftwareSecurityScanSerializer(scan_rec)
+            return Response(serializer.data)
+
+    def download_pdf(self, request, ref_id=None):
+        print("Software scan download PDF request recived: ref_id = " + ref_id)
+        # path_info = f"{request.META['PATH_INFO']}"
+        # path_segs = path_info.split("/")
+        # ref_id = path_segs[-2]
+        scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
+        if scan_rec is None:
+            return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            # update the scanning status
+            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan"
+            progress = ref_id + ".done"
+            if os.path.exists(result_root + "/" + progress):
+                scan_rec.status = "done"
+                scan_rec.save()
+                result_pdf = result_root + "/" + ref_id + ".pdf"
+                if os.path.exists(result_pdf):
+                    print("PDF of results " + result_root + "/" + ref_id + ".pdf exist.")
+                    return Response({'Status': 'done'}, status=status.HTTP_200_OK)
+                else:
+                    html_count = 0
+                    pdf_count = 0
+                    result_path = result_root + "/" + ref_id + "/html-report/"
+                    for x in os.listdir(result_path):
+                        if x.endswith(".html"):
+                            html_count +=1
+                        if x.endswith(".pdf"):
+                            pdf_count +=1
+                    if html_count == pdf_count:
+                        result_files = []
+                        if scan_rec.type == "binary":
+                            result_files.append(result_path + "emba.pdf")
+                        result_files.append(result_path + "index.pdf")
+                        for x in os.listdir(result_path):
+                            if x.endswith(".pdf"):
+                                pdf = result_path + x
+                                if (x != "emba.pdf") and (x != "index.pdf"):
+                                    result_files.append(pdf)
+                        if result_files:
+                            # build the final PDF
+                            # print(result_files)
+                            merger = PdfMerger()
+                            for pdf_file in result_files:
+                                merger.append(open(pdf_file, 'rb'))
+                            with open(result_pdf, 'wb') as fout:
+                                merger.write(fout)
+                            # down load logic
+                            return Response({'Status': 'done'}, status=status.HTTP_200_OK)
+                        else:
+                            return Response({'Status': 'not-available'}, status=status.HTTP_204_NO_CONTENT)
+                    else:
+                        return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
