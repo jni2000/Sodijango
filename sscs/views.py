@@ -225,7 +225,19 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 result_pdf = result_dir + "/" + ref_id + ".pdf"
                 if os.path.exists(result_pdf):
                     print("PDF of results " + result_dir + "/" + ref_id + ".pdf exist.")
-                    return Response({'Status': 'done'}, status=status.HTTP_200_OK)
+                    # down load logic
+                    print("Download " + result_pdf)
+                    try:
+                        with open(result_pdf, 'rb') as f:
+                            response = HttpResponse(f, content_type='application/force-download')
+                            response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(
+                                result_pdf)
+                            # response = FileResponse(f)
+                            # response['Content-Type'] = 'application/force-download'
+                            # response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(file_path)
+                            return response
+                    except:
+                        return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
                 else:
                     html_count = 0
                     pdf_count = 0
@@ -254,7 +266,18 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             with open(result_pdf, 'wb') as fout:
                                 merger.write(fout)
                             # down load logic
-                            return Response({'Status': 'done'}, status=status.HTTP_200_OK)
+                            print("Download " + result_pdf)
+                            try:
+                                with open(result_pdf, 'rb') as f:
+                                    response = HttpResponse(f, content_type='application/force-download')
+                                    response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(
+                                        result_pdf)
+                                    # response = FileResponse(f)
+                                    # response['Content-Type'] = 'application/force-download'
+                                    # response['Content-Disposition'] = 'attachment; filename="%s"' % os.path.basename(file_path)
+                                    return response
+                            except:
+                                return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
                         else:
                             return Response({'Status': 'not-available'}, status=status.HTTP_204_NO_CONTENT)
                     else:
