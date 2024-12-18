@@ -29,6 +29,11 @@ def runcmd(cmd):
 class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
     queryset = SoftwareSecurityScan.objects.all()
     serializer_class = SoftwareSecurityScanSerializer
+    home_directory = os.environ['HOME']
+    file_root = home_directory + "/workspace/sodiacs-api/sscs/Scan/Repository/"
+    emba_home = home_directory + "/workspace/software-scanning/emba/"
+    emba_profile_home = emba_home + "scan-profiles/"
+    result_root = home_directory + "/workspace/sodiacs-api/sscs/Scan/Results/"
 
     def list(self, request):
         queryset = SoftwareSecurityScan.objects.all()
@@ -49,21 +54,32 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         scan_rec.save()
         # invoke the scan
         scan_type = request.data.__getitem__('type')
-        file_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
         file_name = request.data.__getitem__('name')
         file_path = request.data.__getitem__('location').replace("\\", "/")
         scan_level = request.data.__getitem__('level')
-        file_location = (file_root + file_path + "/" + file_name).replace("//", "/")
+        if file_path == "" and file_name == "":
+            return Response({'error': 'Invalid file name or path'}, status=404)
+        elif file_path == "":
+            file_location = (self.file_root + file_name).replace("//", "/")
+        elif file_name == "":
+            file_location = (self.file_root + file_path).replace("//", "/")
+        else:
+            file_location = (self.file_root + file_path + "/" + file_name).replace("//", "/")
+        result_file_location = self.result_root + file_name
+        result_dir = result_file_location + "/" + ref_id
+        if not os.path.exists(result_file_location):
+            full_cmd = "mkdir " + result_file_location
+            subprocess.call(full_cmd, shell=True)
+        if not os.path.exists(result_dir):
+            full_cmd = "mkdir " + result_dir
+            subprocess.call(full_cmd, shell=True)
         match scan_type:
             case "binary":
                 # invoke emba firmware/binary scanning
                 print("Invoke binary scanning: " + file_location)
-                emba_home = "/home/nijames-local/workspace/software-scanning/emba"
                 cmd = "sudo ./emba"
-                result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
-                result_dir = result_root + ref_id
-                scan_profile = "/home/nijames-local/workspace/software-scanning/emba/scan-profiles/" + scan_level + "-scan.emba"
-                full_cmd = "cd " + emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + scan_profile + " > " + result_root + ref_id + ".log; echo done > " + result_root + ref_id + ".done &"
+                emba_profile = self.emba_profile_home + scan_level + "-scan.emba"
+                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".done &"
                 print("executing " + full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                 child_proc.start()
@@ -75,12 +91,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # invoke cve-bin-tool software package scanning
                 print("Invoke package scanning: " + file_location)
                 cmd = "cve-bin-tool --offline"
-                result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
-                result_dir = result_root + ref_id + "/html-report"
-                scan_cmd = cmd + " " + file_location + " > " + result_root + ref_id + ".txt"
-                prepare_cmd = "mkdir " + result_root + ref_id + "; mkdir " + result_dir + "; "
-                convert_cmd = "cat " + result_root + ref_id + ".txt | terminal-to-html -preview > " + result_dir + "/index.html"
-                full_cmd = prepare_cmd + scan_cmd + "; " + convert_cmd + "; echo done > " + result_root + ref_id + ".done &"
+                scan_cmd = cmd + " " + file_location + " > " + result_file_location + "/" + ref_id + ".log"
+                prepare_cmd = "mkdir " + result_dir + "/html-report; "
+                convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
+                full_cmd = prepare_cmd + scan_cmd + "; " + convert_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".done &"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                 child_proc.start()
@@ -93,16 +107,18 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         print("Software scan result download request recived: ref_id = " + ref_id)
         # find file path by ref_id, return the result files if scan is complete
         scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
-        scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
         if scan_rec is None:
+            print("Scan record not found!!")
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         elif scan_rec.status != "done":
             print(scan_rec.status)
             return Response({'Status': 'In-progress'})
         else:
-            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan/"
+            result_dir = self.result_root + scan_rec.name + "/" + ref_id
+            zip_dir = result_dir + "/download-zip"
             result_file = ref_id + ".7z"
-            file_path = result_root + result_file
+            file_path = zip_dir + "/" + result_file
+            print("Download " + file_path)
             try:
                 with open(file_path, 'rb') as f:
                     response = HttpResponse(f, content_type='application/force-download')
@@ -123,22 +139,26 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if scan_rec is None:
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
+            result_file_location = self.result_root + scan_rec.name
+            result_dir = result_file_location + "/" + ref_id
+            zip_dir = result_dir + "/download-zip"
+
             # update the scanning status
-            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan"
             progress = ref_id + ".done"
-            if os.path.exists(result_root + "/" + progress):
+            if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
                 # create the gzipped tar file for download
-                if os.path.exists(result_root + "/" + ref_id + ".7z"):
-                    print("Zipped scan results " + result_root + "/" + ref_id + ".7z exist.")
+                if os.path.exists(zip_dir + "/" + ref_id + ".7z"):
+                    print("Zipped scan results " + zip_dir + "/" + ref_id + ".7z exist.")
                 else:
                     # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                    zip_cmd = "7z a " + result_root + "/" + ref_id + ".7z " + result_root + "/" + ref_id + "/html-report"
-                    child_proc = multiprocessing.Process(target=runcmd, args=(zip_cmd,))
+                    prepare_cmd = "mkdir " + zip_dir + "; "
+                    zip_cmd = "7z a " + zip_dir + "/" + ref_id + ".7z " + result_dir + "/html-report"
+                    full_cmd = prepare_cmd + zip_cmd
+                    child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                     child_proc.start()
-                    # subprocess.call(zip_cmd, shell=True)
-                    print("Zipped scan results " + result_root + "/" + ref_id + ".7z created.")
+                    print("Zipped scan results " + result_dir + "/" + ref_id + ".7z created.")
 
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
@@ -153,25 +173,36 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             # update the scanning status
-            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan"
+            result_file_location = self.result_root + scan_rec.name
+            result_dir = result_file_location + "/" + ref_id
             progress = ref_id + ".done"
-            if os.path.exists(result_root + "/" + progress):
+            if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
-                if os.path.exists(result_root + "/" + ref_id + ".pdf"):
-                    print("PDF of results " + result_root + "/" + ref_id + ".pdf exist.")
+                if os.path.exists(result_dir + "/" + ref_id + ".pdf"):
+                    print("PDF of results " + result_dir + "/" + ref_id + ".pdf exist.")
                     return Response({'Status': 'done'}, status=status.HTTP_200_OK)
                 else:
-                    result_path = result_root + "/" + ref_id + "/html-report/"
+                    html_count = 0
+                    pdf_count = 0
+                    result_path = result_dir + "/html-report/"
                     for x in os.listdir(result_path):
                         if x.endswith(".html"):
-                            y = x.split('.')
-                            pdf = result_path + y[0] + ".pdf"
-                            convert_cmd = "weasyprint " + result_path + x + " " + pdf
-                            child_proc = multiprocessing.Process(target=runcmd, args=(convert_cmd,))
-                            child_proc.start()
-                    return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
-
+                            html_count +=1
+                        if x.endswith(".pdf"):
+                            pdf_count +=1
+                    if html_count == pdf_count:
+                        return Response({'Status': 'done'}, status=status.HTTP_200_OK)
+                    else:
+                        for x in os.listdir(result_path):
+                            if x.endswith(".html"):
+                                y = x.split('.')
+                                pdf = result_path + y[0] + ".pdf"
+                                convert_cmd = "weasyprint " + result_path + x + " " + pdf
+                                print("Executing: " + convert_cmd)
+                                child_proc = multiprocessing.Process(target=runcmd, args=(convert_cmd,))
+                                child_proc.start()
+                        return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
@@ -184,20 +215,21 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if scan_rec is None:
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
+            result_file_location = self.result_root + scan_rec.name
+            result_dir = result_file_location + "/" + ref_id
             # update the scanning status
-            result_root = "/home/nijames-local/workspace/sodiacs-api/sscs/Scan"
             progress = ref_id + ".done"
-            if os.path.exists(result_root + "/" + progress):
+            if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
-                result_pdf = result_root + "/" + ref_id + ".pdf"
+                result_pdf = result_dir + "/" + ref_id + ".pdf"
                 if os.path.exists(result_pdf):
-                    print("PDF of results " + result_root + "/" + ref_id + ".pdf exist.")
+                    print("PDF of results " + result_dir + "/" + ref_id + ".pdf exist.")
                     return Response({'Status': 'done'}, status=status.HTTP_200_OK)
                 else:
                     html_count = 0
                     pdf_count = 0
-                    result_path = result_root + "/" + ref_id + "/html-report/"
+                    result_path = result_dir + "/html-report/"
                     for x in os.listdir(result_path):
                         if x.endswith(".html"):
                             html_count +=1
