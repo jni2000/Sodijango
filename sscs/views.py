@@ -90,11 +90,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "package":
                 # invoke cve-bin-tool software package scanning
                 print("Invoke package scanning: " + file_location)
-                cmd = "cve-bin-tool --offline"
-                scan_cmd = cmd + " " + file_location + " > " + result_file_location + "/" + ref_id + ".log"
+                cmd = "cve-bin-tool --offline -f html -o "
+                scan_cmd = cmd + result_dir + "/html-report/index.html " + file_location
                 prepare_cmd = "mkdir " + result_dir + "/html-report; "
-                convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
-                full_cmd = prepare_cmd + scan_cmd + "; " + convert_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".done &"
+                # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".done &"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                 child_proc.start()
