@@ -60,13 +60,21 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if file_path == "" and file_name == "":
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
-            file_location = (self.file_root + file_name).replace("//", "/")
+            file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
         elif file_name == "":
-            file_location = (self.file_root + file_path).replace("//", "/")
+            file_location = (self.file_root + file_path + "/softwarefiles").replace("//", "/")
         else:
-            file_location = (self.file_root + file_path + "/" + file_name).replace("//", "/")
+            file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
         result_file_location = self.result_root + file_name
-        result_dir = result_file_location + "/" + ref_id
+        # result_dir = result_file_location + "/" + ref_id
+        match scan_type:
+            case "binary":
+                result_dir = result_file_location + "/binaryscan"
+            case "package":
+                result_dir = result_file_location + "/packagescan"
+            case _:
+                result_dir = result_file_location + "/" + ref_id
+
         if not os.path.exists(result_file_location):
             full_cmd = "mkdir " + result_file_location
             subprocess.call(full_cmd, shell=True)
@@ -114,7 +122,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             print(scan_rec.status)
             return Response({'Status': 'In-progress'})
         else:
-            result_dir = self.result_root + scan_rec.name + "/" + ref_id
+            result_file_location = self.result_root + scan_rec.name
+            match scan_rec.type:
+                case "binary":
+                    result_dir = result_file_location + "/binaryscan"
+                case "package":
+                    result_dir = result_file_location + "/packagescan"
+                case _:
+                    result_dir = result_file_location + "/" + ref_id
+            
             zip_dir = result_dir + "/download-zip"
             result_file = ref_id + ".7z"
             file_path = zip_dir + "/" + result_file
@@ -139,11 +155,18 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if scan_rec is None:
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            result_file_location = self.result_root + scan_rec.name
-            result_dir = result_file_location + "/" + ref_id
+            result_file_location = self.result_root + scan_rec.name 
+            match scan_rec.type:
+                case "binary":
+                    result_dir = result_file_location + "/binaryscan"
+                case "package":
+                    result_dir = result_file_location + "/packagescan"
+                case _:
+                    result_dir = result_file_location + "/" + ref_id
             zip_dir = result_dir + "/download-zip"
 
             # update the scanning status
+            result_file_location = self.result_root + scan_rec.name
             progress = ref_id + ".done"
             if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
@@ -174,7 +197,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             # update the scanning status
             result_file_location = self.result_root + scan_rec.name
-            result_dir = result_file_location + "/" + ref_id
+            match scan_rec.type:
+                case "binary":
+                    result_dir = result_file_location + "/binaryscan"
+                case "package":
+                    result_dir = result_file_location + "/packagescan"
+                case _:
+                    result_dir = result_file_location + "/" + ref_id
             progress = ref_id + ".done"
             if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
@@ -216,7 +245,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             result_file_location = self.result_root + scan_rec.name
-            result_dir = result_file_location + "/" + ref_id
+            match scan_rec.type:
+                case "binary":
+                    result_dir = result_file_location + "/binaryscan"
+                case "package":
+                    result_dir = result_file_location + "/packagescan"
+                case _:
+                    result_dir = result_file_location + "/" + ref_id
             # update the scanning status
             progress = ref_id + ".done"
             if os.path.exists(result_file_location + "/" + progress):
