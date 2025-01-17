@@ -94,7 +94,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # subprocess.call(full_cmd, shell=True)
                 # subprocess.run(full_cmd)
                 # os.system(full_cmd)
-                return Response({'status': 'in progress', 'ref_id': ref_id})
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
             case "package":
                 # invoke cve-bin-tool software package scanning
                 print("Invoke package scanning: " + file_location)
@@ -107,7 +107,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                 child_proc.start()
                 # subprocess.call(full_cmd, shell=True)
-                return Response({'status': 'in progress', 'ref_id': ref_id})
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
             case _:
                 return Response({'error': 'Invalid type, enter binary or package'}, status=404)
 
@@ -120,7 +120,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         elif scan_rec.status != "done":
             print(scan_rec.status)
-            return Response({'Status': 'In-progress'})
+            return Response({'Status': 'in-progress'})
         else:
             result_file_location = self.result_root + scan_rec.name
             match scan_rec.type:
