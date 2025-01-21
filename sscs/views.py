@@ -81,6 +81,17 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if not os.path.exists(result_dir):
             full_cmd = "mkdir " + result_dir
             subprocess.call(full_cmd, shell=True)
+        else:
+            done_check = scan_type + "*.done"
+            for done_root, done_dirs, done_files in os.walk(result_file_location):
+                for done_file in done_files:
+                    if done_file.endswith('.done'):
+                        old_scan = str(done_file).removesuffix('.done')
+                        # rename the existing scan result
+                        rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
+                        full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                        subprocess.call(full_cmd, shell=True)
+                        break
         match scan_type:
             case "binary":
                 # invoke emba firmware/binary scanning
