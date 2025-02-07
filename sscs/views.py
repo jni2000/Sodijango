@@ -175,6 +175,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 case _:
                     result_dir = result_file_location + "/" + ref_id
             zip_dir = result_dir + "/download-zip"
+            text_dir = result_dir + "/clean-text"
 
             # update the scanning status
             result_file_location = self.result_root + scan_rec.name
@@ -186,10 +187,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 if os.path.exists(zip_dir + "/html-report.zip"):
                     print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
                 else:
+                    if scan_rec.type == "binary":
+                        process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
+                    else:
+                        process_text_file_cmd = ""
                     # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
                     prepare_cmd = "mkdir " + zip_dir + "; "
                     zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
-                    full_cmd = prepare_cmd + zip_cmd
+                    full_cmd = process_text_file_cmd + prepare_cmd + zip_cmd
+                    print(full_cmd)
                     child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
                     child_proc.start()
                     print("Zipped scan results " + result_dir + "/html-report.zip created.")
