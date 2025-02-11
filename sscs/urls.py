@@ -17,6 +17,7 @@ urlpatterns = [
     path('list', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
     path('all', SoftwareSecurityScanViewSet.as_view({'get': 'list'})),
     path('get/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'retrieve'})),
+    path('stopScan/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'stopScan'})),
     path('download/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download'})),
     path('get/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'retrieve_pdf'})),
     path('download/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download_pdf'}))

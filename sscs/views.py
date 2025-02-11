@@ -203,6 +203,31 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
+    def stopScan(self, request, ref_id=None):
+        print("Software scan stop request recived: ref_id = " + ref_id)
+        scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
+        if scan_rec is None:
+            return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            # stop the scanning
+            result_file_location = self.result_root + scan_rec.name
+            match scan_rec.type:
+                case "binary":
+                    stop_cmd = "sudo emba-stop-scan; "
+                case "package":
+                    stop_cmd = "sudo cve-bin-tool-stop-scan; "
+                case _:
+                    stop_cmd =""
+            full_cmd = stop_cmd + "echo done > " + result_file_location + "/" + ref_id + ".done &"
+            print(full_cmd)
+            child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+            child_proc.start()
+            print("Scan " + ref_id + " stopped!")
+            scan_rec.status = "done"
+            scan_rec.save()
+            serializer = SoftwareSecurityScanSerializer(scan_rec)
+            return Response(serializer.data)
+
     def retrieve_pdf(self, request, ref_id=None):
         print("Software scan get PDF request recived: ref_id = " + ref_id)
         # path_info = f"{request.META['PATH_INFO']}"
