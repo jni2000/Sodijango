@@ -1,0 +1,2 @@
+mount -t cifs -o username=nijames-local //ca25ftp2-unity.motacc.net/sodiacs_root/Staging/Scan /home/nijames-local/workspace/sodiacs-api/sscs/Scan
+

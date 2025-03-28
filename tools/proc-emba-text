@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mkdir -p clean-text
+
+# Loop through all text files in the current directory
+for file in *.txt; do
+  # Check if the file is a regular file
+  if [ -f "$file" ]; then
+    # convert to clean text file and save to a new directory 
+    echo "Processing file: $file"
+    emba-log-viewer $file > clean-text/$file
+  fi
+done
