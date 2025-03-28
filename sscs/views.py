@@ -170,8 +170,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             match scan_rec.type:
                 case "binary":
                     result_dir = result_file_location + "/binaryscan"
+                    result_to_zip = "/clean-text"
                 case "package":
                     result_dir = result_file_location + "/packagescan"
+                    result_to_zip = "/html-report"
                 case _:
                     result_dir = result_file_location + "/" + ref_id
             zip_dir = result_dir + "/download-zip"
@@ -193,7 +195,9 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         process_text_file_cmd = ""
                     # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
                     prepare_cmd = "mkdir " + zip_dir + "; "
-                    zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
+                    # zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
+                    zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + result_to_zip
+                    # zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + "/clean-text"
                     full_cmd = process_text_file_cmd + prepare_cmd + zip_cmd
                     print(full_cmd)
                     child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
