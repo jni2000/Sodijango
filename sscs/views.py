@@ -222,12 +222,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     stop_cmd = "sudo cve-bin-tool-stop-scan; "
                 case _:
                     stop_cmd =""
-            full_cmd = stop_cmd + "echo done > " + result_file_location + "/" + ref_id + ".done &"
+            full_cmd = stop_cmd + "echo aborted > " + result_file_location + "/" + ref_id + ".aborted &"
             print(full_cmd)
             child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
             child_proc.start()
             print("Scan " + ref_id + " stopped!")
-            scan_rec.status = "done"
+            scan_rec.status = "aborted"
             scan_rec.save()
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
