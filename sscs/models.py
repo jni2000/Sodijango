@@ -11,6 +11,7 @@ class SoftwareSecurityScan(models.Model):
     note = models.TextField(default="None")
     status = models.CharField(max_length=32, editable=False, default="in-progress")
     ref_id = models.CharField(max_length=256, editable=False, default="1234-abcd")
+    handler = models.IntegerField(default=-1)
 
     def __str__(self):
         return self.name

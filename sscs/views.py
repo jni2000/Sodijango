@@ -15,6 +15,8 @@ from django.shortcuts import get_object_or_404
 import os
 import subprocess
 import multiprocessing
+import signal
+
 
 # html to PDF conversion packages
 # import pdfkit
@@ -22,8 +24,16 @@ import multiprocessing
 # from xhtml2pdf import pisa
 from PyPDF2 import PdfMerger
 
-def runcmd(cmd):
-    subprocess.call(cmd, shell=True)
+def runcmd(cmd, scan_rec=None):
+    p = subprocess.Popen(cmd, preexec_fn=os.setsid, shell=True)
+    if scan_rec is not None:
+        scan_rec.handler = os.getpgid(p.pid)
+        scan_rec.save()
+    p.wait()
+
+def stopcmd(pid):
+    print("Stop scanning: ", pid, os.getpgid(pid))
+    os.killpg(os.getpgid(pid), signal.SIGTERM)
 
 
 class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
@@ -98,13 +108,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Invoke binary scanning: " + file_location)
                 cmd = "sudo ./emba"
                 emba_profile = self.emba_profile_home + scan_level + "-scan.emba"
-                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".done &"
+                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".done"
                 print("executing " + full_cmd)
-                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
-                # subprocess.call(full_cmd, shell=True)
-                # subprocess.run(full_cmd)
-                # os.system(full_cmd)
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case "package":
                 # invoke cve-bin-tool software package scanning
@@ -113,10 +120,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
                 prepare_cmd = "mkdir " + result_dir + "/html-report; "
                 # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
-                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".done &"
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".done"
                 print(full_cmd)
-                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
+
                 # subprocess.call(full_cmd, shell=True)
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case _:
@@ -215,6 +223,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             # stop the scanning
             result_file_location = self.result_root + scan_rec.name
+            '''
             match scan_rec.type:
                 case "binary":
                     stop_cmd = "sudo emba-stop-scan; "
@@ -223,6 +232,9 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 case _:
                     stop_cmd =""
             full_cmd = stop_cmd + "echo aborted > " + result_file_location + "/" + ref_id + ".aborted &"
+            '''
+            stopcmd(scan_rec.handler)
+            full_cmd = "echo aborted > " + result_file_location + "/" + ref_id + ".done &"
             print(full_cmd)
             child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
             child_proc.start()
