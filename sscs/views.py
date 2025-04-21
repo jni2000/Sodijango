@@ -217,22 +217,22 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
     def stopScan(self, request, ref_id=None):
         print("Software scan stop request recived: ref_id = " + ref_id)
+        return Response({'error': 'Not available'}, status=404)
+        '''
         scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
         if scan_rec is None:
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             # stop the scanning
             result_file_location = self.result_root + scan_rec.name
-            '''
-            match scan_rec.type:
-                case "binary":
-                    stop_cmd = "sudo emba-stop-scan; "
-                case "package":
-                    stop_cmd = "sudo cve-bin-tool-stop-scan; "
-                case _:
-                    stop_cmd =""
-            full_cmd = stop_cmd + "echo aborted > " + result_file_location + "/" + ref_id + ".aborted &"
-            '''
+            #match scan_rec.type:
+            #    case "binary":
+            #        stop_cmd = "sudo emba-stop-scan; "
+            #    case "package":
+            #        stop_cmd = "sudo cve-bin-tool-stop-scan; "
+            #    case _:
+            #        stop_cmd =""
+            #full_cmd = stop_cmd + "echo aborted > " + result_file_location + "/" + ref_id + ".aborted &"
             stopcmd(scan_rec.handler)
             full_cmd = "echo aborted > " + result_file_location + "/" + ref_id + ".done &"
             print(full_cmd)
@@ -243,9 +243,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             scan_rec.save()
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
+        '''
 
     def retrieve_pdf(self, request, ref_id=None):
         print("Software scan get PDF request recived: ref_id = " + ref_id)
+        return Response({'error': 'Not available'}, status=404)
+        '''    
         # path_info = f"{request.META['PATH_INFO']}"
         # path_segs = path_info.split("/")
         # ref_id = path_segs[-2]
@@ -292,9 +295,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
+        '''
 
     def download_pdf(self, request, ref_id=None):
         print("Software scan download PDF request recived: ref_id = " + ref_id)
+        return Response({'error': 'Not available'}, status=404)
+        '''
         # path_info = f"{request.META['PATH_INFO']}"
         # path_segs = path_info.split("/")
         # ref_id = path_segs[-2]
@@ -377,7 +383,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         return Response({'Status': 'in-progress'}, status=status.HTTP_200_OK)
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
-
+        '''
     def update(self, request, pk=None):
         pass
 
