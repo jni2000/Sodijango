@@ -116,7 +116,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "package":
                 # invoke cve-bin-tool software package scanning
                 print("Invoke package scanning: " + file_location)
-                cmd = "cve-bin-tool --offline -f json,html -o "
+                # cmd = "cve-bin-tool --offline -f json,html -o "
+                cmd = "cve-bin-tool -f json,html -o "
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
                 prepare_cmd = "mkdir " + result_dir + "/html-report; "
                 # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
