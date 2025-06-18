@@ -71,20 +71,40 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
             file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_name
         elif file_name == "":
             file_location = (self.file_root + file_path + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path
         else:
             file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
-        result_file_location = self.result_root + file_name
+            result_file_location = self.result_root + file_path + "/" + file_name
         # result_dir = result_file_location + "/" + ref_id
         match scan_type:
             case "binary":
                 result_dir = result_file_location + "/binaryscan"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.bin'):
+                            old_scan = str(done_file).removesuffix('.bin')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
             case "package":
                 result_dir = result_file_location + "/packagescan"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.pkg'):
+                            old_scan = str(done_file).removesuffix('.pkg')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
             case _:
                 result_dir = result_file_location + "/" + ref_id
-
+        '''
         if not os.path.exists(result_file_location):
             full_cmd = "mkdir " + result_file_location
             subprocess.call(full_cmd, shell=True)
@@ -92,23 +112,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             full_cmd = "mkdir " + result_dir
             subprocess.call(full_cmd, shell=True)
         else:
-            done_check = scan_type + "*.done"
-            for done_root, done_dirs, done_files in os.walk(result_file_location):
-                for done_file in done_files:
-                    if done_file.endswith('.done'):
-                        old_scan = str(done_file).removesuffix('.done')
-                        # rename the existing scan result
-                        rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
-                        full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
-                        subprocess.call(full_cmd, shell=True)
-                        break
+        '''
+        os.makedirs(result_dir, exist_ok=True)
         match scan_type:
             case "binary":
                 # invoke emba firmware/binary scanning
                 print("Invoke binary scanning: " + file_location)
                 cmd = "sudo ./emba"
                 emba_profile = self.emba_profile_home + scan_level + "-scan.emba"
-                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".done"
+                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".bin"
                 print("executing " + full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
@@ -121,7 +133,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
                 prepare_cmd = "mkdir " + result_dir + "/html-report; "
                 # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
-                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".done"
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".pkg"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
@@ -142,7 +154,14 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             print(scan_rec.status)
             return Response({'Status': 'in-progress'})
         else:
-            result_file_location = self.result_root + scan_rec.name
+            if scan_rec.location == "" and scan_rec.name == "":
+                return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+            elif scan_rec.location == "":
+                result_file_location = self.result_root + scan_rec.name
+            elif scan_rec.name == "":
+                result_file_location = self.result_root + scan_rec.location
+            else:
+                result_file_location = self.result_root + scan_rec.location + "/" + scan_rec.name
             match scan_rec.type:
                 case "binary":
                     result_dir = result_file_location + "/binaryscan"
@@ -175,14 +194,29 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if scan_rec is None:
             return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            result_file_location = self.result_root + scan_rec.name 
+            if scan_rec.location == "" and scan_rec.name == "":
+                return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+            elif scan_rec.location == "":
+                result_file_location = self.result_root + scan_rec.name
+            elif scan_rec.name == "":
+                result_file_location = self.result_root + scan_rec.location
+            else:
+                result_file_location = self.result_root + scan_rec.location + "/" + scan_rec.name
             match scan_rec.type:
                 case "binary":
                     result_dir = result_file_location + "/binaryscan"
                     result_to_zip = "/clean-text"
+                    progress = ref_id + ".bin"
                 case "package":
                     result_dir = result_file_location + "/packagescan"
                     result_to_zip = "/html-report"
+                    progress = ref_id + ".pkg"
+                case "spdx":
+                    result_dir = result_file_location + "/spdx"
+                    progress = ref_id + ".spdx"
+                case "cyclonedx":
+                    result_dir = result_file_location + "/cyclonedx"
+                    progress = ref_id + ".cyclonedx"
                 case _:
                     result_dir = result_file_location + "/" + ref_id
             zip_dir = result_dir + "/download-zip"
@@ -190,7 +224,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
             # update the scanning status
             result_file_location = self.result_root + scan_rec.name
-            progress = ref_id + ".done"
+
             if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
@@ -198,21 +232,21 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 if os.path.exists(zip_dir + "/html-report.zip"):
                     print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
                 else:
-                    if scan_rec.type == "binary":
-                        process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
-                    else:
-                        process_text_file_cmd = ""
-                    # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                    prepare_cmd = "mkdir " + zip_dir + "; "
-                    # zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
-                    zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + result_to_zip
-                    # zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + "/clean-text"
-                    full_cmd = process_text_file_cmd + prepare_cmd + zip_cmd
-                    print(full_cmd)
-                    child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
-                    child_proc.start()
-                    print("Zipped scan results " + result_dir + "/html-report.zip created.")
-
+                    if scan_rec.type == "binary" or scan_rec.type == "package":
+                        if scan_rec.type == "binary":
+                            process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
+                        else:
+                            process_text_file_cmd = ""
+                        # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
+                        prepare_cmd = "mkdir " + zip_dir + "; "
+                        # zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
+                        zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + result_to_zip
+                        # zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + "/clean-text"
+                        full_cmd = process_text_file_cmd + prepare_cmd + zip_cmd
+                        print(full_cmd)
+                        child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+                        child_proc.start()
+                        print("Zipped scan results " + result_dir + "/html-report.zip created.")
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
 
@@ -385,6 +419,100 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             serializer = SoftwareSecurityScanSerializer(scan_rec)
             return Response(serializer.data)
         '''
+    def generate_sbom(self, request, pk=None):
+        print("Software SBOM generation request recived")
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        pk = serializer.data['id']
+        queryset = SoftwareSecurityScan.objects.all()
+        scan_rec = get_object_or_404(queryset, pk=pk)
+
+        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_sbom_" + str(uuid.uuid4())
+        scan_rec.ref_id = ref_id
+        scan_rec.save()
+        # invoke the scan
+        scan_type = request.data.__getitem__('type')
+        file_name = request.data.__getitem__('name')
+        file_path = request.data.__getitem__('location').replace("\\", "/")
+        scan_level = request.data.__getitem__('level')
+        if file_path == "" and file_name == "":
+            return Response({'error': 'Invalid file name or path'}, status=404)
+        elif file_path == "":
+            file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_name
+        elif file_name == "":
+            file_location = (self.file_root + file_path + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path
+        else:
+            file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path + "/" + file_name
+        # result_dir = result_file_location + "/" + ref_id
+        match scan_type:
+            case "cyclonedx":
+                result_dir = result_file_location + "/cyclonedx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.cyclonedx'):
+                            old_scan = str(done_file).removesuffix('.cyclonedx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case "spdx":
+                result_dir = result_file_location + "/spdx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.spdx'):
+                            old_scan = str(done_file).removesuffix('.spdx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case _:
+                result_dir = result_file_location + "/" + ref_id
+
+        '''
+        if not os.path.exists(result_file_location):
+            full_cmd = "mkdir " + result_file_location
+            subprocess.call(full_cmd, shell=True)
+        if not os.path.exists(result_dir):
+            full_cmd = "mkdir " + result_dir
+            subprocess.call(full_cmd, shell=True)
+        else:
+        '''
+        os.makedirs(result_dir, exist_ok=True)
+        match scan_type:
+            case "cyclonedx":
+                # invoke emba firmware/binary scanning
+                print("Build CycloneDX SBOM: " + file_location)
+                cmd = "cve-bin-tool --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".cyclonedx"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case "spdx":
+                print("Build SPDX SBOM: " + file_location)
+                cmd = "cve-bin-tool --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".spdx"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case _:
+                return Response({'error': 'Invalid type, enter binary or package'}, status=404)
+
     def update(self, request, pk=None):
         pass
 

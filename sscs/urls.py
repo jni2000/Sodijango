@@ -20,7 +20,8 @@ urlpatterns = [
     path('stopScan/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'stopScan'})),
     path('download/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download'})),
     path('get/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'retrieve_pdf'})),
-    path('download/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download_pdf'}))
+    path('download/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download_pdf'})),
+    path('sbom', SoftwareSecurityScanViewSet.as_view({'post': 'generate_sbom'}))
 
     # path("<string:ref_id>/", views.retrieve_rec, name="result"),
 ]
