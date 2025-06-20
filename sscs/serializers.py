@@ -5,4 +5,4 @@ from .models import SoftwareSecurityScan
 class SoftwareSecurityScanSerializer(serializers.ModelSerializer):
     class Meta:
         model = SoftwareSecurityScan
-        fields = ['id', 'date', 'type', 'name', 'location', 'level', 'note', 'status', 'ref_id', 'handler']
+        fields = ['id', 'date', 'type', 'name', 'location', 'level', 'note', 'status', 'ref_id', 'handler', 'product', 'release', 'vendor', 'revision_reason']

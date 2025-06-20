@@ -574,6 +574,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         file_name = request.data.__getitem__('name')
         file_path = request.data.__getitem__('location').replace("\\", "/")
         scan_level = request.data.__getitem__('level')
+        file_product = request.data.__getitem__('product')
+        file_release = request.data.__getitem__('release')
+        file_vendor = request.data.__getitem__('vendor')
+        file_revision_reason = request.data.__getitem__('revision_reason')
+        print(file_product, file_release, file_vendor, file_revision_reason)
         if file_path == "" and file_name == "":
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
@@ -651,7 +656,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "cyclonedx":
                 # invoke emba firmware/binary scanning
                 print("Build CycloneDX VEX: " + file_location)
-                cmd = "cve-bin-tool --vex-type cyclonedx --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
+                cmd = "cve-bin-tool --vex-type cyclonedx " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_cyclonedx"
@@ -663,7 +668,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case "csaf":
                 print("Build CSAF VEX: " + file_location)
-                cmd = "cve-bin-tool --vex-type csaf --vex-output " + result_dir + "/vex-report/vex_csaf.json "
+                cmd = "cve-bin-tool --vex-type csaf " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_csaf.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_csaf"
@@ -675,7 +680,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case "openvex":
                 print("Build OpenVEX VEX: " + file_location)
-                cmd = "cve-bin-tool --vex-type openvex --vex-output " + result_dir + "/vex-report/vex_openvex.json "
+                cmd = "cve-bin-tool --vex-type openvex " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_openvex.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_openvex"

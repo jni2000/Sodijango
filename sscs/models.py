@@ -12,6 +12,10 @@ class SoftwareSecurityScan(models.Model):
     status = models.CharField(max_length=32, editable=False, default="in-progress")
     ref_id = models.CharField(max_length=256, editable=False, default="1234-abcd")
     handler = models.IntegerField(default=-1)
+    product = models.TextField(default="Unknown")
+    release = models.TextField(default="Unknown")
+    vendor = models.TextField(default="Unknown")
+    revision_reason = models.TextField(default="Unknown")
 
     def __str__(self):
         return self.name
