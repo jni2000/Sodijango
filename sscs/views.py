@@ -43,6 +43,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
     file_root = home_directory + "/workspace/sodiacs-api/sscs/Scan/Repository/"
     emba_home = home_directory + "/workspace/software-scanning/emba/"
     emba_profile_home = emba_home + "scan-profiles/"
+    scancode_home = home_directory + "/workspace/software-scanning/scancode/"
     result_root = home_directory + "/workspace/sodiacs-api/sscs/Scan/Results/"
 
     def list(self, request):
@@ -195,6 +196,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     result_dir = result_file_location + "/vex_openvex/vex-report"
                     result_file = "vex_openvex.json"
                     file_path = result_dir + "/" + result_file
+                case "license_json":
+                    result_dir = result_file_location + "/license_json/license-report"
+                    result_file = "licenses.json"
+                    file_path = result_dir + "/" + result_file
                 case _:
                     result_dir = result_file_location + "/" + ref_id
             
@@ -251,6 +256,9 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 case "vex_openvex":
                     result_dir = result_file_location + "/vex_openvex"
                     progress = ref_id + ".vex_openvex"
+                case "license_json":
+                    result_dir = result_file_location + "/license_json"
+                    progress = ref_id + ".license_json"
                 case _:
                     result_dir = result_file_location + "/" + ref_id
 
@@ -694,7 +702,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 return Response({'error': 'Invalid type, enter binary or package'}, status=404)
 
     def generate_license(self, request, pk=None):
-        print("Software licenses generation request recived")
+        print("Software license generation request recived")
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
@@ -702,7 +710,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
-        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_sbom_" + str(uuid.uuid4())
+        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_license_" + str(uuid.uuid4())
         scan_rec.ref_id = ref_id
         scan_rec.save()
         # invoke the scan
@@ -723,30 +731,31 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             result_file_location = self.result_root + file_path + "/" + file_name
         # result_dir = result_file_location + "/" + ref_id
         match scan_type:
-            case "cyclonedx":
-                result_dir = result_file_location + "/cyclonedx"
+            case "json":
+                result_dir = result_file_location + "/license_json"
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
-                        if done_file.endswith('.cyclonedx'):
-                            old_scan = str(done_file).removesuffix('.cyclonedx')
+                        if done_file.endswith('.license_json'):
+                            old_scan = str(done_file).removesuffix('.license_json')
                             # rename the existing scan result
-                            rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
-                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
-                            subprocess.call(full_cmd, shell=True)
-                            break
-            case "spdx":
-                result_dir = result_file_location + "/spdx"
-                for done_root, done_dirs, done_files in os.walk(result_file_location):
-                    for done_file in done_files:
-                        if done_file.endswith('.spdx'):
-                            old_scan = str(done_file).removesuffix('.spdx')
-                            # rename the existing scan result
-                            rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
+                            rename_cmd = "mv " + result_file_location + "/license_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
                             break
             case _:
-                result_dir = result_file_location + "/" + ref_id
+                scan_type = "json"
+                result_dir = result_file_location + "/license_json"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.license_json'):
+                            old_scan = str(done_file).removesuffix('.license_json')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+        scan_rec.type = "license_" + scan_type
+        scan_rec.save()
 
         '''
         if not os.path.exists(result_file_location):
@@ -761,27 +770,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             shutil.rmtree(result_dir)
         os.makedirs(result_dir, exist_ok=True)
         match scan_type:
-            case "cyclonedx":
+            case "json":
                 # invoke emba firmware/binary scanning
-                print("Build CycloneDX SBOM: " + file_location)
-                cmd = "cve-bin-tool --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
-                scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
-                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".cyclonedx"
+                print("Build JSON software license document: " + file_location)
+                cmd = "./scancode -clpeui -n 2 --json-pp " + result_dir + "/license-report/licenses.json "
+                scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/license-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_json"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
-                child_proc.start()
-
-                # subprocess.call(full_cmd, shell=True)
-                return Response({'status': 'in-progress', 'ref_id': ref_id})
-            case "spdx":
-                print("Build SPDX SBOM: " + file_location)
-                cmd = "cve-bin-tool --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
-                scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
-                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".spdx"
-                print(full_cmd)
-                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
 
                 # subprocess.call(full_cmd, shell=True)
