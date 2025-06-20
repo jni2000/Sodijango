@@ -16,7 +16,7 @@ import os
 import subprocess
 import multiprocessing
 import signal
-
+import shutil
 
 # html to PDF conversion packages
 # import pdfkit
@@ -88,7 +88,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             old_scan = str(done_file).removesuffix('.bin')
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
-                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
                             break
             case "package":
@@ -99,7 +99,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             old_scan = str(done_file).removesuffix('.pkg')
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
-                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
                             break
             case _:
@@ -113,6 +113,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             subprocess.call(full_cmd, shell=True)
         else:
         '''
+        if os.path.exists(result_dir):
+            shutil.rmtree(result_dir)
         os.makedirs(result_dir, exist_ok=True)
         match scan_type:
             case "binary":
@@ -165,14 +167,37 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             match scan_rec.type:
                 case "binary":
                     result_dir = result_file_location + "/binaryscan"
+                    zip_dir = result_dir + "/download-zip"
+                    result_file = "html-report.zip"
+                    file_path = zip_dir + "/" + result_file
                 case "package":
                     result_dir = result_file_location + "/packagescan"
+                    zip_dir = result_dir + "/download-zip"
+                    result_file = "html-report.zip"
+                    file_path = zip_dir + "/" + result_file
+                case "sbom_spdx":
+                    result_dir = result_file_location + "/sbom_spdx/sbom-report"
+                    result_file = "sbom_spdx.json"
+                    file_path = result_dir + "/" + result_file
+                case "sbom_cyclonedx":
+                    result_dir = result_file_location + "/sbom_cyclonedx/sbom-report"
+                    result_file = "sbom_cyclonedx.json"
+                    file_path = result_dir + "/" + result_file
+                case "vex_csaf":
+                    result_dir = result_file_location + "/vex_csaf/vex-report"
+                    result_file = "vex_csaf.json"
+                    file_path = result_dir + "/" + result_file
+                case "vex_cyclonedx":
+                    result_dir = result_file_location + "/vex_cyclonedx/vex-report"
+                    result_file = "vex_cyclonedx.json"
+                    file_path = result_dir + "/" + result_file
+                case "vex_openvex":
+                    result_dir = result_file_location + "/vex_openvex/vex-report"
+                    result_file = "vex_openvex.json"
+                    file_path = result_dir + "/" + result_file
                 case _:
                     result_dir = result_file_location + "/" + ref_id
             
-            zip_dir = result_dir + "/download-zip"
-            result_file = "html-report.zip"
-            file_path = zip_dir + "/" + result_file
             print("Download " + file_path)
             try:
                 with open(file_path, 'rb') as f:
@@ -211,28 +236,35 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     result_dir = result_file_location + "/packagescan"
                     result_to_zip = "/html-report"
                     progress = ref_id + ".pkg"
-                case "spdx":
-                    result_dir = result_file_location + "/spdx"
-                    progress = ref_id + ".spdx"
-                case "cyclonedx":
-                    result_dir = result_file_location + "/cyclonedx"
-                    progress = ref_id + ".cyclonedx"
+                case "sbom_spdx":
+                    result_dir = result_file_location + "/sbom_spdx"
+                    progress = ref_id + ".sbom_spdx"
+                case "sbom_cyclonedx":
+                    result_dir = result_file_location + "/sbom_cyclonedx"
+                    progress = ref_id + ".sbom_cyclonedx"
+                case "vex_csaf":
+                    result_dir = result_file_location + "/vex_csaf"
+                    progress = ref_id + ".vex_csaf"
+                case "vex_cyclonedx":
+                    result_dir = result_file_location + "/vex_cyclonedx"
+                    progress = ref_id + ".vex_cyclonedx"
+                case "vex_openvex":
+                    result_dir = result_file_location + "/vex_openvex"
+                    progress = ref_id + ".vex_openvex"
                 case _:
                     result_dir = result_file_location + "/" + ref_id
+
             zip_dir = result_dir + "/download-zip"
             text_dir = result_dir + "/clean-text"
-
-            # update the scanning status
-            result_file_location = self.result_root + scan_rec.name
 
             if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
                 scan_rec.save()
-                # create the gzipped tar file for download
-                if os.path.exists(zip_dir + "/html-report.zip"):
-                    print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
-                else:
-                    if scan_rec.type == "binary" or scan_rec.type == "package":
+                if scan_rec.type == "binary" or scan_rec.type == "package":
+                    # create the gzipped tar file for download
+                    if os.path.exists(zip_dir + "/html-report.zip"):
+                        print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
+                    else:
                         if scan_rec.type == "binary":
                             process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
                         else:
@@ -430,6 +462,243 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
         ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_sbom_" + str(uuid.uuid4())
         scan_rec.ref_id = ref_id
+        # invoke the scan
+        scan_type = request.data.__getitem__('type')
+        file_name = request.data.__getitem__('name')
+        file_path = request.data.__getitem__('location').replace("\\", "/")
+        scan_level = request.data.__getitem__('level')
+        if file_path == "" and file_name == "":
+            return Response({'error': 'Invalid file name or path'}, status=404)
+        elif file_path == "":
+            file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_name
+        elif file_name == "":
+            file_location = (self.file_root + file_path + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path
+        else:
+            file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path + "/" + file_name
+        # result_dir = result_file_location + "/" + ref_id
+        match scan_type:
+            case "cyclonedx":
+                result_dir = result_file_location + "/sbom_cyclonedx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.sbom_cyclonedx'):
+                            old_scan = str(done_file).removesuffix('.sbom_cyclonedx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/sbom_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case "spdx":
+                result_dir = result_file_location + "/sbom_spdx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.sbom_spdx'):
+                            old_scan = str(done_file).removesuffix('.sbom_spdx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/sbom_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case _:
+                scan_type = "cyclonedx"
+                result_dir = result_file_location + "/sbom_cyclonedx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.sbom_cyclonedx'):
+                            old_scan = str(done_file).removesuffix('.sbom_cyclonedx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/sbom_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+        scan_rec.type = "sbom_" + scan_type
+        scan_rec.save()
+
+        '''
+        if not os.path.exists(result_file_location):
+            full_cmd = "mkdir " + result_file_location
+            subprocess.call(full_cmd, shell=True)
+        if not os.path.exists(result_dir):
+            full_cmd = "mkdir " + result_dir
+            subprocess.call(full_cmd, shell=True)
+        else:
+        '''
+        if os.path.exists(result_dir):
+            shutil.rmtree(result_dir)
+        os.makedirs(result_dir, exist_ok=True)
+        match scan_type:
+            case "cyclonedx":
+                # invoke emba firmware/binary scanning
+                print("Build CycloneDX SBOM: " + file_location)
+                cmd = "cve-bin-tool --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case "spdx":
+                print("Build SPDX SBOM: " + file_location)
+                cmd = "cve-bin-tool --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_spdx"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case _:
+                return Response({'error': 'Invalid type, enter binary or package'}, status=404)
+
+    def generate_vex(self, request, pk=None):
+        print("Software VEX generation request recived")
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        pk = serializer.data['id']
+        queryset = SoftwareSecurityScan.objects.all()
+        scan_rec = get_object_or_404(queryset, pk=pk)
+
+        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_vex_" + str(uuid.uuid4())
+        scan_rec.ref_id = ref_id
+        # invoke the scan
+        scan_type = request.data.__getitem__('type')
+        file_name = request.data.__getitem__('name')
+        file_path = request.data.__getitem__('location').replace("\\", "/")
+        scan_level = request.data.__getitem__('level')
+        if file_path == "" and file_name == "":
+            return Response({'error': 'Invalid file name or path'}, status=404)
+        elif file_path == "":
+            file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_name
+        elif file_name == "":
+            file_location = (self.file_root + file_path + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path
+        else:
+            file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
+            result_file_location = self.result_root + file_path + "/" + file_name
+        # result_dir = result_file_location + "/" + ref_id
+        match scan_type:
+            case "cyclonedx":
+                result_dir = result_file_location + "/vex_cyclonedx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.vex_cyclonedx'):
+                            old_scan = str(done_file).removesuffix('.vex_cyclonedx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case "csaf":
+                result_dir = result_file_location + "/vex_csaf"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.vex_csaf'):
+                            old_scan = str(done_file).removesuffix('.vex_csaf')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case "openvex":
+                result_dir = result_file_location + "/vex_openvex"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.vex_openvex'):
+                            old_scan = str(done_file).removesuffix('.vex_openvex')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case _:
+                scan_type = "cyclonedx"
+                result_dir = result_file_location + "/vex_cyclonedx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.vex_cyclonedx'):
+                            old_scan = str(done_file).removesuffix('.vex_cyclonedx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+        scan_rec.type = "vex_" + scan_type
+        scan_rec.save()
+
+        '''
+        if not os.path.exists(result_file_location):
+            full_cmd = "mkdir " + result_file_location
+            subprocess.call(full_cmd, shell=True)
+        if not os.path.exists(result_dir):
+            full_cmd = "mkdir " + result_dir
+            subprocess.call(full_cmd, shell=True)
+        else:
+        '''
+        if os.path.exists(result_dir):
+            shutil.rmtree(result_dir)
+        os.makedirs(result_dir, exist_ok=True)
+        match scan_type:
+            case "cyclonedx":
+                # invoke emba firmware/binary scanning
+                print("Build CycloneDX VEX: " + file_location)
+                cmd = "cve-bin-tool --vex-type cyclonedx --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/vex-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_cyclonedx"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case "csaf":
+                print("Build CSAF VEX: " + file_location)
+                cmd = "cve-bin-tool --vex-type csaf --vex-output " + result_dir + "/vex-report/vex_csaf.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/vex-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_csaf"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case "openvex":
+                print("Build OpenVEX VEX: " + file_location)
+                cmd = "cve-bin-tool --vex-type openvex --vex-output " + result_dir + "/vex-report/vex_openvex.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/vex-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_openvex"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case _:
+                return Response({'error': 'Invalid type, enter binary or package'}, status=404)
+
+    def generate_license(self, request, pk=None):
+        print("Software licenses generation request recived")
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        pk = serializer.data['id']
+        queryset = SoftwareSecurityScan.objects.all()
+        scan_rec = get_object_or_404(queryset, pk=pk)
+
+        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_sbom_" + str(uuid.uuid4())
+        scan_rec.ref_id = ref_id
         scan_rec.save()
         # invoke the scan
         scan_type = request.data.__getitem__('type')
@@ -457,7 +726,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             old_scan = str(done_file).removesuffix('.cyclonedx')
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
-                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
                             break
             case "spdx":
@@ -468,7 +737,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             old_scan = str(done_file).removesuffix('.spdx')
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
-                            full_cmd = rename_cmd + ";" + " mkdir " + result_dir + "; rm " + result_file_location + "/" + done_file
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
                             break
             case _:
@@ -483,6 +752,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             subprocess.call(full_cmd, shell=True)
         else:
         '''
+        if os.path.exists(result_dir):
+            shutil.rmtree(result_dir)
         os.makedirs(result_dir, exist_ok=True)
         match scan_type:
             case "cyclonedx":

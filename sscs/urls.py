@@ -21,7 +21,9 @@ urlpatterns = [
     path('download/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download'})),
     path('get/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'retrieve_pdf'})),
     path('download/pdf/<str:ref_id>', SoftwareSecurityScanViewSet.as_view({'get': 'download_pdf'})),
-    path('sbom', SoftwareSecurityScanViewSet.as_view({'post': 'generate_sbom'}))
+    path('sbom', SoftwareSecurityScanViewSet.as_view({'post': 'generate_sbom'})),
+    path('vex', SoftwareSecurityScanViewSet.as_view({'post': 'generate_vex'})),
+    path('license', SoftwareSecurityScanViewSet.as_view({'post': 'generate_license'}))
 
     # path("<string:ref_id>/", views.retrieve_rec, name="result"),
 ]
