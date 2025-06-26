@@ -25,7 +25,9 @@ cores
 cpu    
 disk                    
 
-
+// emba html file parser
+emba-extract-f17_cve_bin_tool.py
+emba-extract-index.py
 
 
 
