@@ -64,10 +64,11 @@ class Subsec:
 
 @dataclass
 class Section:
-    def __init__(self, desc: str, subsecs: Optional[List[Subsec]] = None):
+    def __init__(self, desc: str, subsecs: Optional[List[Subsec]] = None, nt: str = ""):
         self.description = desc
         self.subsections = subsecs or []
         self.subsection_count = len(self.subsections) or 0
+        self.note = nt
 
     def append(self, subsec: Optional[Subsec] = None):
         if subsec is not None:
@@ -171,7 +172,8 @@ def main():
                 for pre in all_pres:
                     #.replace("[+]", "   ").lstrip()
                     # pre_text = pre_text.replace("[*]", "   ").lstrip()
-                    pre_text = pre.get_text().replace("kernel_verifica:", "kernel_verifica :")
+                    # pre_text = pre.get_text().replace("kernel_verifica:", "kernel_verifica :")
+                    pre_text = pre.get_text().replace(": ", " : ")
                     links_within_pre = pre.find_all('a')
                     for link in links_within_pre:
                         href = link.get('href')
@@ -184,7 +186,8 @@ def main():
                     pre_text = pre_text.replace("</span>", "").replace("</pre>", "")
                     pre_text = " ".join(pre_text.split())
                     pre_text_aray.append(pre_text)
-                    unique_pre_text_array = list(dict.fromkeys(pre_text_aray))
+                    unique_pre_text_array = [s for s in pre_text_aray if s.strip()]
+                    # unique_pre_text_array = list(dict.fromkeys(unique_pre_text_array))
                 with open(pre_file, 'w', encoding='utf-8') as f:  # Use 'with open' to ensure the file is closed properly
                     # Write the information to the file
                     f.writelines(s + '\n' for s in unique_pre_text_array)
@@ -193,17 +196,18 @@ def main():
                     line_cnt = 0
                     while line_cnt < len(lines):
                         line = lines[line_cnt]
-                        section_start = False
                         if section_delimiter in line:
-                            section_start = True
                             output_section = Section(line.removeprefix(section_delimiter))
                             line_cnt += 1
-                            line = lines[line_cnt]
                             while line_cnt < len(lines):
+                                line = lines[line_cnt]
                                 if subsection_delimiter in line:
                                     output_subsection = Subsec(line.removeprefix(subsection_delimiter))
                                     line_cnt += 1
-                                    line = lines[line_cnt]
+                                    if line_cnt < len(lines):
+                                        line = lines[line_cnt]
+                                    else:
+                                        break
                                     if finding_delimiter in line:
                                         # move to the exact findings
                                         line_cnt += 1
@@ -213,20 +217,37 @@ def main():
                                                 output_subsection.conclusion = line.removeprefix(conclusion_delimiter)
                                                 line_cnt += 1
                                                 break
+                                            elif finding_delimiter in line:
+                                                line_cnt += 1
                                             else:
                                                 output_finding = parse_finding(line)
                                                 export_finding = copy.deepcopy(output_finding)
                                                 output_subsection.append(export_finding)
                                                 line_cnt += 1
+                                    else:
+                                        if conclusion_delimiter in line:
+                                            output_subsection.conclusion = line.removeprefix(conclusion_delimiter)
+                                            line_cnt += 1
                                     export_subsection = copy.deepcopy(output_subsection)
                                     output_section.append(export_subsection)
-                                    break
-                                if conclusion_delimiter in line:
-                                    output_subsection.conclusion = line.removeprefix(conclusion_delimiter)
+                                    if section_delimiter in line:
+                                        break
+                                elif conclusion_delimiter in line:
+                                    output_section.note += line.replace(conclusion_delimiter, "")
                                     line_cnt += 1
+                                    break
+                                elif section_delimiter in line:
+                                    break
+                                elif line_cnt < len(lines):
+                                    line_cnt += 1
+                                else:
+                                    break
                             export_section = copy.deepcopy(output_section)
                             output_sections.append(export_section)
-                        line_cnt += 1
+                        elif line_cnt < len(lines):
+                            line_cnt += 1
+                        else:
+                            break
                     output_sections.count()
                     with open(json_file, 'w', encoding='utf-8') as f:  # Use 'with open' to ensure the file is closed properly
                         f.writelines(json.dumps(output_sections, default=lambda o: o.__dict__))
