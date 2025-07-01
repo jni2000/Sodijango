@@ -4,11 +4,10 @@ import os, io, json, copy, re, sys
 from typing import List, Optional
 from dataclasses import dataclass
 
-
 def main():
     argumentList = sys.argv[1:]
     f = argumentList[0]
-    print("Process " + f + ".")
+    #print("Process " + f + ".")
     starting = []
     finished = []
     with open(f) as textFile:
@@ -16,7 +15,12 @@ def main():
         line_cnt = 0
         while line_cnt < len(lines):
             line = lines[line_cnt]
-            line = line.replace("[*] ", "").replace("^M", "").replace(" - ", ",").replace(" ", ",").replace(",,", ",")
+            line_split = line.split(" - ")
+            temp = line_split[0]
+            line_split[0] = line_split[1]
+            line_split[1] = temp
+            line = ", ".join(line_split)
+            line = line.replace("[*] ", "").replace("^M", "").replace(" ", ",").replace(",,", ",")
             if "starting" in line:
                 starting.append(line)
             elif "finished" in line:
