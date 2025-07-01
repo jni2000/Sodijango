@@ -68,6 +68,9 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         file_name = request.data.__getitem__('name')
         file_path = request.data.__getitem__('location').replace("\\", "/")
         scan_level = request.data.__getitem__('level')
+        if scan_level == "" or scan_level is None:
+            scan_level = "default"
+
         if file_path == "" and file_name == "":
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
