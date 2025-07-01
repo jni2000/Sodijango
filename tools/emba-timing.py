@@ -33,7 +33,7 @@ def main():
         if len(starting) != len(finished):
             print("Warning -- started tasks do not match the finished ones!")
             length = min(len(starting), len(finished))
-        print("start_day, start_month, start_date, start_time, start_time_zone, start_year, start_module, start_note, finish_day, finish_month, finish_date, finish_time, finish_time_zone, finish_year, finish_module, finish_note\n")
+        print("start_module, start_note, start_day, start_month, start_date, start_time, start_time_zone, start_year, finish_module, finish_note, finish_day, finish_month, finish_date, finish_time, finish_time_zone, finish_year\n")
         while line_cnt < length:
             print(starting[line_cnt] + ", " + finished[line_cnt])
             line_cnt += 1
