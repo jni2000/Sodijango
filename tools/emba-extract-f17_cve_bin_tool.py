@@ -16,13 +16,14 @@ class Exploit:
 
 @dataclass
 class Find:
-    def __init__(self, desc: str, modul: str, ver: str, cve: str, cvss: str, epss: str, src: str, lnk: str, lnk_tag: str, explts: Optional[List[Exploit]] = None):
+    def __init__(self, desc: str, modul: str, ver: str, cve: str, cvss: str, epss: str, lvl: str, src: str, lnk: str, lnk_tag: str, explts: Optional[List[Exploit]] = None):
         self.description = desc
         self.module = modul
         self.version = ver
         self.cve_id = cve
         self.cvss_score = cvss
         self.epss_score = epss
+        self.level = lvl
         self.source = src
         self.exploits = explts or []
         self.link = lnk
@@ -124,6 +125,19 @@ def parse_finding(line):
             ver = parts[1]
             cve = parts[2]
             cvss = parts[3]
+            severity_string = cvss.split()
+            severity = float(severity_string[0])
+            if severity >= 9.0:
+                lvl = "critical"
+            elif severity >= 7.0:
+                lvl = "high"
+            elif severity >= 4.0:
+                lvl = "medium"
+            elif severity >= 0.1:
+                lvl = "low"
+            else:
+                lvl = "none"
+
             epss = parts[4]
             src = parts[5]
             exploits = []
@@ -135,7 +149,7 @@ def parse_finding(line):
             if parts[7] and parts[8]:
                 lnk = parts[8]
                 lnk_tag = parts[7]
-            find = Find("Finding details", modul, ver, cve, cvss, epss, src, lnk, lnk_tag, exploits)
+            find = Find("Finding details", modul, ver, cve, cvss, epss, lvl, src, lnk, lnk_tag, exploits)
     return find
 
 def main():
@@ -173,7 +187,8 @@ def main():
                     #.replace("[+]", "   ").lstrip()
                     # pre_text = pre_text.replace("[*]", "   ").lstrip()
                     # pre_text = pre.get_text().replace("kernel_verifica:", "kernel_verifica :")
-                    pre_text = pre.get_text().replace(": ", " : ")
+                    pre_text = pre.get_text().replace("Snyk:", "").replace("PSS:", "").replace(": ", " : ")
+                    # pre_text = pre.get_text().replace(": ", " : ")
                     links_within_pre = pre.find_all('a')
                     for link in links_within_pre:
                         href = link.get('href')
