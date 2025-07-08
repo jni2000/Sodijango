@@ -132,9 +132,18 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case "package":
                 # invoke cve-bin-tool software package scanning
-                print("Invoke package scanning: " + file_location)
+                print("Invoke package scanning: " + file_location + " " + scan_level)
+                match scan_level:
+                    case "quick":
+                        offline = "--offline "
+                    case "full":
+                        offline = ""
+                    case "default":
+                        offline = ""
+                    case _:
+                        offline = ""
                 # cmd = "cve-bin-tool --offline -f json,html -o "
-                cmd = "cve-bin-tool -f json,html -o "
+                cmd = "cve-bin-tool " + offline + "-f json,html -o "
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
                 prepare_cmd = "mkdir " + result_dir + "/html-report; "
                 # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
@@ -603,6 +612,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
             result_file_location = self.result_root + file_path + "/" + file_name
         # result_dir = result_file_location + "/" + ref_id
+        if file_product == "" or file_release == "" or file_vendor == "" or file_revision_reason == "":
+            return Response({'error': 'Product, release, vendor, revision reason must be specified.'}, status=404)
         match scan_type:
             case "cyclonedx":
                 result_dir = result_file_location + "/vex_cyclonedx"
