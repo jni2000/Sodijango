@@ -23,11 +23,11 @@ class Find:
         self.cve_id = cve
         self.cvss_score = cvss
         self.epss_score = epss
-        self.level = lvl
-        self.source = src
+        self.severity = lvl
+        self.method = src
         self.exploits = explts or []
-        self.link = lnk
-        self.link_tag = lnk_tag
+        self.cve_link = lnk
+        self.cve_link_tag = lnk_tag
         self.exploit_count = len(self.exploits) or 0
 
     def append(self, exploit: Optional[Exploit] = None):
@@ -159,10 +159,16 @@ def main():
     finding_delimiter = "BIN NAME"
     breakdown_entry = " : "
 
+    if len(sys.argv) > 1:
+        in_file = sys.argv[1]
+    else:
+        in_file = "html-report/f17_cve_bin_tool.html"
+    print(in_file)
+
     output_sections = Sections()
     try:
         # Prompt the user to enter the filename
-        in_file = input("Enter the name of the file to open: ")
+        # in_file = input("Enter the name of the file to open: ")
 
         # Open the file in read mode ('r')
         # The 'with' statement ensures the file is properly closed even if errors occur
@@ -180,7 +186,7 @@ def main():
                 # soup1 = BeautifulSoup(extracted_content, 'html.parser')
                 all_pres = div_to_extract.find_all('pre')
                 pre_file = os.path.splitext(out_file)[0] + "_items" + os.path.splitext(in_file)[1]
-                json_file = os.path.splitext(out_file)[0] + ".json"
+                json_file = os.path.splitext(in_file)[0] + ".json"
                 pre_text_aray = []
                 # Iterate through the extracted <a> tags
                 for pre in all_pres:
