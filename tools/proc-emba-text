@@ -8,6 +8,41 @@ for file in *.txt; do
   if [ -f "$file" ]; then
     # convert to clean text file and save to a new directory 
     echo "Processing file: $file"
-    emba-log-viewer $file > clean-text/$file
+    # emba-log-viewer $file > clean-text/$file
   fi
+done
+
+# loop through all subdirectories
+find . -type d -print0 | while IFS= read -r -d $'\0' subdir; do
+    # Skip the current directory itself if not desired
+    if [[ "$subdir" == "." ]]; then
+        continue
+    fi
+    if [[ "$subdir" == "./clean-text"* ]]; then
+        continue
+    fi
+    if [[ "$subdir" == "./download-zip" ]]; then
+        continue
+    fi
+    if [[ "$subdir" == "./html-report" ]]; then
+        continue
+    fi
+    if [[ "$subdir" == "./etc" ]]; then
+        continue
+    fi
+    if [[ "$subdir" == "./firmware" ]]; then
+        continue
+    fi
+    if [[ "$subdir" == "./s26_kernel_vuln_verifier/linux-6.1.83"* ]]; then
+        continue
+    fi
+    # echo "Processing directory: $subdir"
+    mkdir -p clean-text/$subdir
+
+    for file in "$subdir"/*; do
+	if [ -f "$file" ]; then
+	    # echo "clean-text/${file#./}"
+	    emba-log-viewer $file > clean-text/${file#./}
+	fi
+    done
 done
