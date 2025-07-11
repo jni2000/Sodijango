@@ -161,9 +161,11 @@ def main():
 
     if len(sys.argv) > 1:
         in_file = sys.argv[1]
+        json_file = sys.argv[2]
     else:
         in_file = "html-report/f17_cve_bin_tool.html"
-    print(in_file)
+        json_file = "clean-text/f17_cve_bin_tool.json"
+    print("Extract " + in_file + " into " + json_file + "......")
 
     output_sections = Sections()
     try:
@@ -186,7 +188,7 @@ def main():
                 # soup1 = BeautifulSoup(extracted_content, 'html.parser')
                 all_pres = div_to_extract.find_all('pre')
                 pre_file = os.path.splitext(out_file)[0] + "_items" + os.path.splitext(in_file)[1]
-                json_file = os.path.splitext(in_file)[0] + ".json"
+                # json_file = os.path.splitext(in_file)[0] + ".json"
                 pre_text_aray = []
                 # Iterate through the extracted <a> tags
                 for pre in all_pres:
