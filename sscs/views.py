@@ -275,6 +275,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
             zip_dir = result_dir + "/download-zip"
             text_dir = result_dir + "/clean-text"
+            html_dir = result_dir + "/html-report"
 
             if os.path.exists(result_file_location + "/" + progress):
                 scan_rec.status = "done"
@@ -285,7 +286,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
                     else:
                         if scan_rec.type == "binary":
-                            process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
+                            process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; proc-emba-html; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
                         else:
                             process_text_file_cmd = ""
                         # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"

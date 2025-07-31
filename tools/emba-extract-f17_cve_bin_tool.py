@@ -5,7 +5,6 @@ from typing import List, Optional
 from dataclasses import dataclass
 from bs4 import BeautifulSoup
 from hamcrest import empty
-from landscape.lib.apt.package.store import ensure_hash_id_schema
 
 @dataclass
 class Exploit:
@@ -44,7 +43,7 @@ class Find:
 
 @dataclass
 class Subsec:
-    def __init__(self, desc: str, cncl: str = "", finds: Optional[List[Find]] = None):
+    def __init__(self, desc: str, cncl: str = "", finds: Optional[List] = None):
         self.description = desc
         self.conclusion = cncl
         self.finds = finds or []
@@ -101,18 +100,32 @@ class Sections:
 
     def count(self):
         return self.section_count
+    
+class Legend:
+    def __init__(self, r, l, d, p, p_link, s, s_link, x, x_link, v):
+        self.r = r
+        self.l = l
+        self.d = d
+        self.p = p
+        self.p_link = p_link
+        self.s = s
+        self.s_link = s_link
+        self.x = x
+        self.x_link = x_link
+        self.v = v
 
 def Parse_exploits(parts):
     exploits = []
     if parts is not empty():
-        count = 9
+        count = 10
+        desc = parts[6].split("(")[1].strip()
         while count < len(parts)-1:
             eid = parts[count].replace(")", "")
             count += 1
             elnk = parts[count].replace(")", "")
             count += 1
             # print("Exploit, " + eid +", " + elnk)
-            exploit = Exploit("Exploit", eid, elnk)
+            exploit = Exploit(desc, eid, elnk)
             exploits.append(copy.deepcopy(exploit))
     return exploits
 
@@ -120,6 +133,7 @@ def parse_finding(line):
     find = None
     if line is not empty():
         parts = line.split(" : ")
+        parts = [item.strip() for item in parts]
         if parts is not empty():
             modul = parts[0]
             ver = parts[1]
@@ -142,20 +156,32 @@ def parse_finding(line):
             src = parts[5]
             exploits = []
             if "No exploit available" in parts[6]:
-                exploit = Exploit(parts[6])
-                exploits.append(copy.deepcopy(exploit))
+                # exploit = Exploit(parts[6])
+                # exploits.append(copy.deepcopy(exploit))
+                exploits = []
+                if parts[7] and parts[8]:
+                    lnk = parts[8]
+                    lnk_tag = parts[7]
+            elif "KEV" in parts[6]:
+                exploit = Exploit("KEV", "", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog")
+                exploits.append(exploit)
+                if parts[7] and parts[8]:
+                    lnk = parts[8]
+                    lnk_tag = parts[7]
             else:
                 exploits = Parse_exploits(parts)
-            if parts[7] and parts[8]:
-                lnk = parts[8]
-                lnk_tag = parts[7]
+                if parts[8] and parts[9]:
+                    lnk = parts[9]
+                    lnk_tag = parts[8]
+            
             find = Find("Finding details", modul, ver, cve, cvss, epss, lvl, src, lnk, lnk_tag, exploits)
     return find
 
+
 def main():
     section_delimiter = "==> "
-    subsection_delimiter  = "[*] "
-    conclusion_delimiter  = "[+]"
+    subsection_delimiter  = "[ * ] "
+    conclusion_delimiter  = "[ + ] "
     finding_delimiter = "BIN NAME"
     breakdown_entry = " : "
 
@@ -163,7 +189,7 @@ def main():
         in_file = sys.argv[1]
         json_file = sys.argv[2]
     else:
-        in_file = "html-report/f17_cve_bin_tool.html"
+        in_file = "BinaryScanHTMLFiles/html-report/f17_cve_bin_tool.html"
         json_file = "clean-text/f17_cve_bin_tool.json"
     print("Extract " + in_file + " into " + json_file + "......")
 
@@ -190,12 +216,13 @@ def main():
                 pre_file = os.path.splitext(out_file)[0] + "_items" + os.path.splitext(in_file)[1]
                 # json_file = os.path.splitext(in_file)[0] + ".json"
                 pre_text_aray = []
+                
                 # Iterate through the extracted <a> tags
                 for pre in all_pres:
                     #.replace("[+]", "   ").lstrip()
                     # pre_text = pre_text.replace("[*]", "   ").lstrip()
                     # pre_text = pre.get_text().replace("kernel_verifica:", "kernel_verifica :")
-                    pre_text = pre.get_text().replace("Snyk:", "").replace("PSS:", "").replace(": ", " : ")
+                    pre_text = pre.get_text(separator=' ', strip=True).replace(": ", " : ")
                     # pre_text = pre.get_text().replace(": ", " : ")
                     links_within_pre = pre.find_all('a')
                     for link in links_within_pre:
@@ -219,8 +246,8 @@ def main():
                     line_cnt = 0
                     while line_cnt < len(lines):
                         line = lines[line_cnt]
-                        if section_delimiter in line:
-                            output_section = Section(line.removeprefix(section_delimiter))
+                        if section_delimiter in line and "Vulnerability Exploitability eXchange" not in line:
+                            output_section = Section(line.split(":")[0].removeprefix(section_delimiter))
                             line_cnt += 1
                             while line_cnt < len(lines):
                                 line = lines[line_cnt]
@@ -271,10 +298,35 @@ def main():
                             line_cnt += 1
                         else:
                             break
+
                     output_sections.count()
-                    with open(json_file, 'w', encoding='utf-8') as f:  # Use 'with open' to ensure the file is closed properly
-                        f.writelines(json.dumps(output_sections, default=lambda o: o.__dict__))
+                    # with open(json_file, 'w', encoding='utf-8') as f:  # Use 'with open' to ensure the file is closed properly
+                    #     f.writelines(json.dumps(output_sections, default=lambda o: o.__dict__))
                     # print(json.dumps(output_sections, default=lambda o: o.__dict__))
+            tags = div_to_extract.find_all(["pre", "a"], recursive=False)
+            vex_capture = False
+            section = None
+            for tag in tags:
+                text = tag.get_text(separator=' ', strip=True)
+                if vex_capture:
+                    if "[ + ]" in text:
+                        if tag.name == 'a' and tag.find('pre'):
+                            href = tag.get('href')
+                            pre = tag.find('pre')
+                            subsection = Subsec(text.removeprefix("[ + ] "), href)
+                            section.append(subsection)
+                if "Vulnerability Exploitability eXchange" in text:
+                    vex_capture = True
+                    section = Section(text.removeprefix(section_delimiter))
+
+            exploit_notes = Legend("remote exploits", "local exploits", "DoS exploits", "PoC code found on Packetstormsecurity (unknown exploit vector)", "https://packetstormsecurity.com/files/tags/exploit/", "PoC code found on Snyk vulnerability database (unknown exploit vector)", "https://security.snyk.io/vuln", "Vulnerability is known as exploited", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "Vulnerability verified - Kernel or BusyBox (S26, S118)")
+            exploit_notes_subsec = Subsec("Exploitability notes")
+            exploit_notes_subsec.append(exploit_notes)
+            section.append(exploit_notes_subsec)
+            output_sections.append(section)
+
+            with open(json_file, 'w', encoding='utf-8') as f:  # Use 'with open' to ensure the file is closed properly
+                f.writelines(json.dumps(output_sections, default=lambda o: o.__dict__))
     except FileNotFoundError:
         print(f"Error: The file '{in_file}' was not found.")
     except Exception as e:
