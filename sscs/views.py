@@ -211,6 +211,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     result_dir = result_file_location + "/license_json/license-report"
                     result_file = "licenses.json"
                     file_path = result_dir + "/" + result_file
+                case "license_cyclonedx":
+                    result_dir = result_file_location + "/license_cyclonedx/license-report"
+                    result_file = "licenses_cyclonedx.json"
+                    file_path = result_dir + "/" + result_file
+                case "license_spdx":
+                    result_dir = result_file_location + "/license_spdx/license-report"
+                    result_file = "licenses_spdx.tv"
+                    file_path = result_dir + "/" + result_file
+
                 case _:
                     result_dir = result_file_location + "/" + ref_id
             
@@ -270,6 +279,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 case "license_json":
                     result_dir = result_file_location + "/license_json"
                     progress = ref_id + ".license_json"
+                case "license_cyclonedx":
+                    result_dir = result_file_location + "/license_cyclonedx"
+                    progress = ref_id + ".license_cyclonedx"
+                case "license_spdx":
+                    result_dir = result_file_location + "/license_spdx"
+                    progress = ref_id + ".license_spdx"
                 case _:
                     result_dir = result_file_location + "/" + ref_id
 
@@ -761,6 +776,28 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
                             break
+            case "cyclonedx":
+                result_dir = result_file_location + "/license_cyclonedx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.license_cyclonedx'):
+                            old_scan = str(done_file).removesuffix('.license_cyclonedx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/license_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
+            case "spdx":
+                result_dir = result_file_location + "/license_spdx"
+                for done_root, done_dirs, done_files in os.walk(result_file_location):
+                    for done_file in done_files:
+                        if done_file.endswith('.license_spdx'):
+                            old_scan = str(done_file).removesuffix('.license_spdx')
+                            # rename the existing scan result
+                            rename_cmd = "mv " + result_file_location + "/license_" + scan_type + " " + result_file_location + "/" + old_scan
+                            full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+                            subprocess.call(full_cmd, shell=True)
+                            break
             case _:
                 scan_type = "json"
                 result_dir = result_file_location + "/license_json"
@@ -796,6 +833,32 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/license-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_json"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case "cyclonedx":
+                # invoke emba firmware/binary scanning
+                print("Build JSON software license document: " + file_location)
+                cmd = "./scancode -clpeui -n 2 --cyclonedx " + result_dir + "/license-report/licenses_cyclonedx.json "
+                scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/license-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_cyclonedx"
+                print(full_cmd)
+                child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
+                child_proc.start()
+
+                # subprocess.call(full_cmd, shell=True)
+                return Response({'status': 'in-progress', 'ref_id': ref_id})
+            case "spdx":
+                # invoke emba firmware/binary scanning
+                print("Build JSON software license document: " + file_location)
+                cmd = "./scancode -clpeui -n 2 --spdx-tv " + result_dir + "/license-report/licenses_spdx.tv "
+                scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
+                prepare_cmd = "mkdir " + result_dir + "/license-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_spdx"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
                 child_proc.start()
