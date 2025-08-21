@@ -1,3 +1,56 @@
 #!/bin/bash
 
-echo "placeholder for html to json scripts calls" 
+
+echo "$PWD"
+
+
+
+if [ -f html-report/f17_cve_bin_tool.html ]; then
+	python ~/.local/bin/emba-extract-f17_cve_bin_tool.py html-report/f17_cve_bin_tool.html clean-text/f17_cve_bin_tool.json
+else
+	echo "File html-report/f17_cve_bin_tool.html does not exist"
+fi
+
+if [ -f html-report/index.html ]; then
+	python ~/.local/bin/emba-extract-index.py html-report/index.html clean-text/index.json
+else 
+	echo "File html-report/index.html does not exist"
+fi
+
+if [ -f html-report/p99_prepare_analyzer.html ]; then
+	python ~/.local/bin/emba-extract-p99_prepare_analyzer.py html-report/p99_prepare_analyzer.html clean-text/p99_prepare_analyzer.json
+else
+	echo "File html-report/p99_prepare_analyzer.html does not exist"
+fi
+
+if [ -f html-report/s05_firmware_details.html ]; then
+	python ~/.local/bin/emba-extract-s05_firmware_details.py html-report/s05_firmware_details.html clean-text/s05_firmware_details.json
+else
+	echo "File html-report/s05_firmware_details.html does not exist"
+fi
+	
+if [ -f html-report/s12_binary_protection.html ]; then
+	python ~/.local/bin/emba-extract-s12_binary_protection.py html-report/s12_binary_protection.html clean-text/s12_binary_protection.json
+else 
+	echo "File html-report/s12_binary_protection.html does not exist"
+fi
+	
+if [ -f html-report/s24_kernel_bin_identifier.html ]; then
+	python ~/.local/bin/emba-extract-s24_kernel_bin_identifier.py html-report/s24_kernel_bin_identifier.html clean-text/s24_kernel_bin_identifier.json
+else 
+	echo "File html-report/s24_kernel_bin_identifier.html does not exist"
+fi
+	
+if [ -f html-report/s26_kernel_vuln_verifier.html ]; then
+	python ~/.local/bin/emba-extract-s26_kernel_vuln_verifier.py html-report/s26_kernel_vuln_verifier.html clean-text/s26_kernel_vuln_verifier.json
+else
+	echo "File html-report/s26_kernel_vuln_verifier.html does not exist"
+fi
+	
+if [ -f html-report/s110_yara_check.html ]; then
+	python ~/.local/bin/emba-extract-s110_yara_check.py html-report/s110_yara_check.html clean-text/s110_yara_check.json
+else
+	echo "File html-report/s110_yara_check.html does not exist"
+fi
+
+echo "html files parsed!"

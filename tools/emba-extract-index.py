@@ -62,12 +62,14 @@ def main():
                     if text[1].endswith(" files."):
                         text = text[0] + "."
 
+                
                 subsection = JsonShared.Subsection(text, link)
                 section.append_subsection(subsection)
             elif crit_sec[i].name == 'pre':
                 if is_hr_pre(crit_sec[i]):
                     if section.description == "Binary protections":
                         sections.sections.insert(0, section)
+                        sections.section_count += 1
                     else:
                         sections.append(section)
                     if (desc_index < len(section_descs)):
@@ -79,6 +81,8 @@ def main():
                         text = text.removeprefix(plus_delim)
                     elif star_delim in text:
                         text = text.removeprefix(star_delim)
+                    if "Found the following configuration issues" in text:
+                        continue
                     subsection = JsonShared.Subsection(text, "")
                     section.append_subsection(subsection)
 

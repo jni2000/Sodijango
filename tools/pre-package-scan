@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <directory_path>"
+  exit 1
+fi
+
+directory="$1"
+
+# Check if the provided path is a valid directory
+if [ ! -d "$directory" ]; then
+  echo "Error: '$directory' not found."
+  exit 1
+fi
+
+cd "$directory"
+# find all .iso files and extract them
+find . -type f -name "*.iso" | while read -r filepath; do
+    # extract the file name from full path
+    filename=$(basename -- "$filepath")
+    
+    # make a sub-direcory for an iso file 
+    # echo "$filename"
+    isodir="${filename%.*}" 
+    mkdir "$isodir"
+    #extract the iso contents
+    7z x "$filename" -o"$isodir"
+
+    #rm the .iso file
+done
+
