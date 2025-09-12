@@ -85,26 +85,34 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         match scan_type:
             case "binary":
                 result_dir = result_file_location + "/binaryscan"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
-                        if done_file.endswith('.bin'):
-                            old_scan = str(done_file).removesuffix('.bin')
+                        if done_file.endswith('.binscan'):
+                            old_scan = str(done_file).removesuffix('.binscan')
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case "package":
                 result_dir = result_file_location + "/packagescan"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
-                        if done_file.endswith('.pkg'):
-                            old_scan = str(done_file).removesuffix('.pkg')
+                        if done_file.endswith('.pkgscan'):
+                            old_scan = str(done_file).removesuffix('.pkgscan')
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case _:
                 result_dir = result_file_location + "/" + ref_id
         '''
@@ -125,7 +133,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Invoke binary scanning: " + file_location)
                 cmd = "sudo ./emba"
                 emba_profile = self.emba_profile_home + scan_level + "-scan.emba"
-                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".bin"
+                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".binscan"
                 print("executing " + full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
@@ -147,7 +155,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
                 prepare_cmd = "mkdir " + result_dir + "/html-report; "
                 # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
-                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".pkg"
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".pkgscan"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
@@ -256,11 +264,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 case "binary":
                     result_dir = result_file_location + "/binaryscan"
                     result_to_zip = "/clean-text"
-                    progress = ref_id + ".bin"
+                    progress = ref_id + ".binscan"
                 case "package":
                     result_dir = result_file_location + "/packagescan"
                     result_to_zip = "/html-report"
-                    progress = ref_id + ".pkg"
+                    progress = ref_id + ".pkgscan"
                 case "sbom_spdx":
                     result_dir = result_file_location + "/sbom_spdx"
                     progress = ref_id + ".sbom_spdx"
@@ -517,6 +525,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         match scan_type:
             case "cyclonedx":
                 result_dir = result_file_location + "/sbom_cyclonedx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.sbom_cyclonedx'):
@@ -525,9 +534,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/sbom_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case "spdx":
                 result_dir = result_file_location + "/sbom_spdx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.sbom_spdx'):
@@ -536,10 +549,14 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/sbom_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case _:
                 scan_type = "cyclonedx"
                 result_dir = result_file_location + "/sbom_cyclonedx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.sbom_cyclonedx'):
@@ -548,7 +565,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/sbom_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
         scan_rec.type = "sbom_" + scan_type
         scan_rec.save()
 
@@ -633,6 +653,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         match scan_type:
             case "cyclonedx":
                 result_dir = result_file_location + "/vex_cyclonedx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.vex_cyclonedx'):
@@ -641,9 +662,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case "csaf":
                 result_dir = result_file_location + "/vex_csaf"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.vex_csaf'):
@@ -652,9 +677,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case "openvex":
                 result_dir = result_file_location + "/vex_openvex"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.vex_openvex'):
@@ -663,10 +692,14 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case _:
                 scan_type = "cyclonedx"
                 result_dir = result_file_location + "/vex_cyclonedx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.vex_cyclonedx'):
@@ -675,7 +708,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/vex_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
+
         scan_rec.type = "vex_" + scan_type
         scan_rec.save()
 
@@ -767,6 +804,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         match scan_type:
             case "json":
                 result_dir = result_file_location + "/license_json"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.license_json'):
@@ -775,9 +813,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/license_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case "cyclonedx":
                 result_dir = result_file_location + "/license_cyclonedx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.license_cyclonedx'):
@@ -786,9 +828,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/license_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case "spdx":
                 result_dir = result_file_location + "/license_spdx"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.license_spdx'):
@@ -797,10 +843,14 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/license_" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
             case _:
                 scan_type = "json"
                 result_dir = result_file_location + "/license_json"
+                done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
                         if done_file.endswith('.license_json'):
@@ -809,7 +859,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + " " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
                             subprocess.call(full_cmd, shell=True)
+                            done_file_found = True
                             break
+                    if done_file_found:
+                        break
+
         scan_rec.type = "license_" + scan_type
         scan_rec.save()
 
