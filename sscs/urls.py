@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 from .views import SoftwareSecurityScanViewSet
+from .views import SoftwareSecuritySignViewSet
 
 # from . import views
 
@@ -24,6 +25,11 @@ urlpatterns = [
     path('sbom', SoftwareSecurityScanViewSet.as_view({'post': 'generate_sbom'})),
     path('vex', SoftwareSecurityScanViewSet.as_view({'post': 'generate_vex'})),
     path('license', SoftwareSecurityScanViewSet.as_view({'post': 'generate_license'})),
+
+    path('sign', SoftwareSecuritySignViewSet.as_view({'post': 'sign'})),
+    path('signStatus/<str:ref_id>', SoftwareSecuritySignViewSet.as_view({'get': 'retrieve'})),
+    path('signHistory', SoftwareSecuritySignViewSet.as_view({'get': 'list'})),
+    path('cleanupSignHistory', SoftwareSecuritySignViewSet.as_view({'get': 'cleanup_database'})),
 
     path('cleanupDatabase', SoftwareSecurityScanViewSet.as_view({'get': 'cleanup_database'}))
     # path("<string:ref_id>/", views.retrieve_rec, name="result"),

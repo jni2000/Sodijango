@@ -19,3 +19,20 @@ class SoftwareSecurityScan(models.Model):
 
     def __str__(self):
         return self.name
+
+class SoftwareSecuritySign(models.Model):
+    date = models.DateTimeField(auto_now_add=True)
+    type = models.CharField(max_length=32, default="software")
+    name = models.TextField(default="")
+    data = models.CharField(max_length=8192, default="")
+    note = models.TextField(default="None")
+    status = models.CharField(max_length=32, editable=False, default="in-progress")
+    ref_id = models.CharField(max_length=256, editable=False, default="1234-sign")
+    sha = models.CharField(max_length=256, editable=False)
+    sha_type = models.CharField(max_length=32, editable=False, default="256")
+    signature = models.CharField(max_length=256, editable=False, default="none")
+
+    def __str__(self):
+        return self.name
+    
+

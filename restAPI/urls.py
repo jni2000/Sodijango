@@ -20,6 +20,7 @@ from django.urls import include, path
 from rest_framework import routers, serializers, viewsets
 from rest_framework.routers import DefaultRouter
 from sscs.views import SoftwareSecurityScanViewSet
+from sscs.views import SoftwareSecuritySignViewSet
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):

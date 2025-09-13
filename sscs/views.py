@@ -7,6 +7,9 @@ from virtualenv.util.subprocess import run_cmd
 
 from .models import SoftwareSecurityScan
 from .serializers import SoftwareSecurityScanSerializer
+from .models import SoftwareSecuritySign
+from .serializers import SoftwareSecuritySignSerializer
+
 import uuid
 from django.http import QueryDict
 # from django.http import FileResponse
@@ -981,3 +984,81 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         pass
+
+
+import hashlib
+
+class SoftwareSecuritySignViewSet(viewsets.ModelViewSet):
+    queryset = SoftwareSecuritySign.objects.all()
+    serializer_class = SoftwareSecuritySignSerializer
+
+    def sign(self, request):
+        print("Software signing request recived")
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        # if existing signing of the same product is in-progress, just return the current signing status
+        queryset = SoftwareSecuritySign.objects.all()
+        for sign_rec in queryset:
+            if sign_rec is not None and sign_rec.name == request.data.__getitem__('name') and sign_rec.type == request.data.__getitem__('type'):
+                if sign_rec.status != "done":
+                    print("Signing is already in progress - ref_id: ", sign_rec.ref_id)
+                    return Response({'status': 'in-progress', 'ref_id': sign_rec.ref_id})
+
+        self.perform_create(serializer)
+        pk = serializer.data['id']
+        queryset = SoftwareSecuritySign.objects.all()
+        sign_rec = get_object_or_404(queryset, pk=pk)
+
+        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_" + str(uuid.uuid4())
+        sign_rec.ref_id = ref_id
+        sign_rec.save()
+        # invoke the signing
+        sign_data = request.data.__getitem__('data')
+        data_bytes = sign_data.encode('utf-8')
+        hash_object = hashlib.sha256()
+        hash_object.update(data_bytes)
+        hash_hex = hash_object.hexdigest()
+        sign_rec.sha256 = hash_hex
+
+        #invoke PRiSM signing
+        print("Invoke PRiSM signing....")
+
+        sign_rec.signature = "example-signature"
+        sign_rec.save()
+
+        return Response({'status': 'in-progress', 'ref_id': ref_id})
+
+    def retrieve(self, request, ref_id=None):
+        print("Software sign get status equest recived: ref_id = " + ref_id)
+        sign_rec = SoftwareSecuritySign.objects.filter(ref_id=ref_id).first()
+        if sign_rec is None:
+            return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            if sign_rec.signature != "none":
+                sign_rec.status = "done"
+                sign_rec.save()
+            serializer = SoftwareSecuritySignSerializer(sign_rec)
+            return Response(serializer.data)
+
+    def list(self, request):
+        queryset = SoftwareSecuritySign.objects.all()
+        serializer = SoftwareSecuritySignSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+    # debug only
+    debug_mode = False
+    def cleanup_database(self, request):
+        queryset = SoftwareSecuritySign.objects.all()
+        if self.debug_mode is False:
+            print("Debug only command, not allowed in production mode")
+        else:
+            print("Cleanup database in debug mode")
+            for sign_rec in queryset:
+                if sign_rec is not None:
+                    sign_rec.status = "done"
+                    sign_rec.save()
+        serializer = SoftwareSecuritySignSerializer(queryset, many=True)
+        return Response(serializer.data)
+
