@@ -51,10 +51,34 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         serializer = SoftwareSecurityScanSerializer(queryset, many=True)
         return Response(serializer.data)
 
+    # debug only
+    debug_mode = False
+    def cleanup_database(self, request):
+        queryset = SoftwareSecurityScan.objects.all()
+        if self.debug_mode is False:
+            print("Debug only command, not allowed in production mode")
+        else:
+            print("Cleanup database in debug mode")
+            for scan_rec in queryset:
+                if scan_rec is not None:
+                    scan_rec.status = "done"
+                    scan_rec.save()
+        serializer = SoftwareSecurityScanSerializer(queryset, many=True)
+        return Response(serializer.data)
+
     def create(self, request):
         print("Software scan post request recived")
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
+        # if existing scanning of the same product is in-progress, just return the current scanning status
+        queryset = SoftwareSecurityScan.objects.all()
+        for scan_rec in queryset:
+            if scan_rec is not None and scan_rec.name == request.data.__getitem__('name') and scan_rec.type == request.data.__getitem__('type'):
+                if scan_rec.status != "done":
+                    print("Scan is already in progress - ref_id: ", scan_rec.ref_id)
+                    return Response({'status': 'in-progress', 'ref_id': scan_rec.ref_id})
+
         self.perform_create(serializer)
         pk = serializer.data['id']
         queryset = SoftwareSecurityScan.objects.all()
@@ -498,6 +522,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         print("Software SBOM generation request recived")
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
+        # if existing scanning of the same product is in-progress, just return the current scanning status
+        queryset = SoftwareSecurityScan.objects.all()
+        for scan_rec in queryset:
+            if scan_rec is not None and scan_rec.name == request.data.__getitem__('name') and scan_rec.type == request.data.__getitem__('type'):
+                if scan_rec.status != "done":
+                    print("SBOM generation is already in progress - ref_id: ", scan_rec.ref_id)
+                    return Response({'status': 'in-progress', 'ref_id': scan_rec.ref_id})
+
         self.perform_create(serializer)
         pk = serializer.data['id']
         queryset = SoftwareSecurityScan.objects.all()
@@ -619,6 +652,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         print("Software VEX generation request recived")
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
+        # if existing scanning of the same product is in-progress, just return the current scanning status
+        queryset = SoftwareSecurityScan.objects.all()
+        for scan_rec in queryset:
+            if scan_rec is not None and scan_rec.name == request.data.__getitem__('name') and scan_rec.type == request.data.__getitem__('type'):
+                if scan_rec.status != "done":
+                    print("VEX generation is already in progress - ref_id: ", scan_rec.ref_id)
+                    return Response({'status': 'in-progress', 'ref_id': scan_rec.ref_id})
+
         self.perform_create(serializer)
         pk = serializer.data['id']
         queryset = SoftwareSecurityScan.objects.all()
@@ -776,6 +818,15 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         print("Software license generation request recived")
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
+        # if existing scanning of the same product is in-progress, just return the current scanning status
+        queryset = SoftwareSecurityScan.objects.all()
+        for scan_rec in queryset:
+            if scan_rec is not None and scan_rec.name == request.data.__getitem__('name') and scan_rec.type == request.data.__getitem__('type'):
+                if scan_rec.status != "done":
+                    print("Software License generation is already in progress - ref_id: ", scan_rec.ref_id)
+                    return Response({'status': 'in-progress', 'ref_id': scan_rec.ref_id})
+
         self.perform_create(serializer)
         pk = serializer.data['id']
         queryset = SoftwareSecurityScan.objects.all()
