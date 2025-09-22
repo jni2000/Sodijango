@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+hgh++yf415n&469_4y-ko10swyjo+$@!n@a)(dd2r8#su67#0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.77.130.20', 'localhost']
+ALLOWED_HOSTS = ['172.21.1.36', 'localhost']
 
 # Application definition
 
@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
     'rest_framework',
     'sscs',
 ]
@@ -83,14 +82,50 @@ WSGI_APPLICATION = 'restAPI.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'sscs',
+        'USER': 'sodiacs',
+        'PASSWORD': 'Comm$cop3!',
+        'HOST': 'localhost',  # Or your PostgreSQL host
+        # 'HOST': '172.21.1.35',
+        'PORT': '5432',       # Or your PostgreSQL port
+    }
+}
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',  # Or DEBUG, WARNING, ERROR, CRITICAL
+            'class': 'logging.FileHandler',
+            'filename': '/home/sodiacs/workspace/sodiacs-api/sscs/django.log', # Specify your desired log file path
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        # You can define other loggers for specific apps or modules
+        'sscs': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

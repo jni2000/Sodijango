@@ -55,7 +55,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     # debug only
-    debug_mode = False
+    debug_mode = True
     def cleanup_database(self, request):
         queryset = SoftwareSecurityScan.objects.all()
         if self.debug_mode is False:
@@ -84,7 +84,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
         self.perform_create(serializer)
         pk = serializer.data['id']
-        queryset = SoftwareSecurityScan.objects.all()
+        # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
         ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_" + str(uuid.uuid4())
@@ -98,6 +98,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if scan_level == "" or scan_level is None:
             scan_level = "default"
         if file_path == "" and file_name == "":
+            scan_rec.status = "done"
+            scan_rec.save()
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
             file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
@@ -154,6 +156,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
         os.makedirs(result_dir, exist_ok=True)
+
         match scan_type:
             case "binary":
                 # invoke emba firmware/binary scanning
@@ -172,11 +175,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                     case "quick":
                         offline = "--offline "
                     case "full":
-                        offline = ""
+                        offline = "--offline "
                     case "default":
-                        offline = ""
+                        offline = "--offline "
                     case _:
-                        offline = ""
+                        offline = "--offline "
                 # cmd = "cve-bin-tool --offline -f json,html -o "
                 cmd = "cve-bin-tool " + offline + "-f json,html -o "
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
@@ -536,7 +539,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
         self.perform_create(serializer)
         pk = serializer.data['id']
-        queryset = SoftwareSecurityScan.objects.all()
+        # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
         ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_sbom_" + str(uuid.uuid4())
@@ -547,6 +550,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         file_path = request.data.__getitem__('location').replace("\\", "/")
         scan_level = request.data.__getitem__('level')
         if file_path == "" and file_name == "":
+            scan_rec.status = "done"
+            scan_rec.save()
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
             file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
@@ -620,12 +625,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
         os.makedirs(result_dir, exist_ok=True)
+
         match scan_type:
             case "cyclonedx":
                 # invoke emba firmware/binary scanning
                 print("Build CycloneDX SBOM: " + file_location)
                 # cmd = "cve-bin-tool --offline --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
-                cmd = "cve-bin-tool --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
+                cmd = "cve-bin-tool --offline --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
@@ -638,7 +644,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "spdx":
                 print("Build SPDX SBOM: " + file_location)
                 # cmd = "cve-bin-tool --offline --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
-                cmd = "cve-bin-tool --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
+                cmd = "cve-bin-tool --offline --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_spdx"
@@ -649,6 +655,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # subprocess.call(full_cmd, shell=True)
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case _:
+                scan_rec.status = "done"
+                scan_rec.save()
                 return Response({'error': 'Invalid type, enter binary or package'}, status=404)
 
     def generate_vex(self, request, pk=None):
@@ -662,11 +670,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             if scan_rec is not None and scan_rec.name == request.data.__getitem__('name') and scan_rec.type == request.data.__getitem__('type'):
                 if scan_rec.status != "done":
                     print("VEX generation is already in progress - ref_id: ", scan_rec.ref_id)
+                    # print(scan_rec.name, " ", scan_rec.type, " ", scan_rec.status)
+                    # print(request.data.__getitem__('name'), " ", request.data.__getitem__('type'))
                     return Response({'status': 'in-progress', 'ref_id': scan_rec.ref_id})
 
         self.perform_create(serializer)
         pk = serializer.data['id']
-        queryset = SoftwareSecurityScan.objects.all()
+        # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
         ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_vex_" + str(uuid.uuid4())
@@ -682,6 +692,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         file_revision_reason = request.data.__getitem__('revision_reason')
         print(file_product, file_release, file_vendor, file_revision_reason)
         if file_path == "" and file_name == "":
+            scan_rec.status = "done"
+            scan_rec.save()
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
             file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
@@ -694,6 +706,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             result_file_location = self.result_root + file_path + "/" + file_name
         # result_dir = result_file_location + "/" + ref_id
         if file_product == "" or file_release == "" or file_vendor == "" or file_revision_reason == "":
+            scan_rec.status = "done"
+            scan_rec.save()
             return Response({'error': 'Product, release, vendor, revision reason must be specified.'}, status=404)
         match scan_type:
             case "cyclonedx":
@@ -773,12 +787,13 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
         os.makedirs(result_dir, exist_ok=True)
+
         match scan_type:
             case "cyclonedx":
                 # invoke emba firmware/binary scanning
                 print("Build CycloneDX VEX: " + file_location)
                 # cmd = "cve-bin-tool --offline --vex-type cyclonedx " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
-                cmd = "cve-bin-tool --vex-type cyclonedx " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
+                cmd = "cve-bin-tool --offline --vex-type cyclonedx " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_cyclonedx"
@@ -791,7 +806,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "csaf":
                 print("Build CSAF VEX: " + file_location)
                 # cmd = "cve-bin-tool --offline --vex-type csaf " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_csaf.json "
-                cmd = "cve-bin-tool --vex-type csaf " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_csaf.json "
+                cmd = "cve-bin-tool --offline --vex-type csaf " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_csaf.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_csaf"
@@ -804,7 +819,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "openvex":
                 print("Build OpenVEX VEX: " + file_location)
                 # cmd = "cve-bin-tool --offline --vex-type openvex " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_openvex.json "
-                cmd = "cve-bin-tool --vex-type openvex " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_openvex.json "
+                cmd = "cve-bin-tool --offline --vex-type openvex " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_openvex.json "
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_openvex"
@@ -815,6 +830,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # subprocess.call(full_cmd, shell=True)
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case _:
+                scan_rec.status = "done"
+                scan_rec.save()
                 return Response({'error': 'Invalid type, enter binary or package'}, status=404)
 
     def generate_license(self, request, pk=None):
@@ -832,7 +849,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
 
         self.perform_create(serializer)
         pk = serializer.data['id']
-        queryset = SoftwareSecurityScan.objects.all()
+        # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
         ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_license_" + str(uuid.uuid4())
@@ -844,6 +861,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         file_path = request.data.__getitem__('location').replace("\\", "/")
         scan_level = request.data.__getitem__('level')
         if file_path == "" and file_name == "":
+            scan_rec.status = "done"
+            scan_rec.save()
             return Response({'error': 'Invalid file name or path'}, status=404)
         elif file_path == "":
             file_location = (self.file_root + file_name + "/softwarefiles").replace("//", "/")
@@ -974,6 +993,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # subprocess.call(full_cmd, shell=True)
                 return Response({'status': 'in-progress', 'ref_id': ref_id})
             case _:
+                scan_rec.status = "done"
+                scan_rec.save()
                 return Response({'error': 'Invalid type, enter binary or package'}, status=404)
 
     def update(self, request, pk=None):
@@ -1007,7 +1028,7 @@ class SoftwareSecuritySignViewSet(viewsets.ModelViewSet):
 
         self.perform_create(serializer)
         pk = serializer.data['id']
-        queryset = SoftwareSecuritySign.objects.all()
+        # queryset = SoftwareSecuritySign.objects.all()
         sign_rec = get_object_or_404(queryset, pk=pk)
 
         ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_" + str(uuid.uuid4())
@@ -1048,7 +1069,7 @@ class SoftwareSecuritySignViewSet(viewsets.ModelViewSet):
 
 
     # debug only
-    debug_mode = False
+    debug_mode = True
     def cleanup_database(self, request):
         queryset = SoftwareSecuritySign.objects.all()
         if self.debug_mode is False:
