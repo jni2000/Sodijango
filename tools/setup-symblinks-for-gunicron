@@ -1,0 +1,16 @@
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-f15_cyclonedx_sbom.py         emba-extract-f15_cyclonedx_sbom.py        
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-f17_cve_bin_tool.py	      emba-extract-f17_cve_bin_tool.py          
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-index.py		      emba-extract-index.py                     
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-p99_prepare_analyzer.py	      emba-extract-p99_prepare_analyzer.py      
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-s05_firmware_details.py	      emba-extract-s05_firmware_details.py      
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-s110_yara_check.py	      emba-extract-s110_yara_check.py           
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-s12_binary_protection.py      emba-extract-s12_binary_protection.py     
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-s24_kernel_bin_identifier.py  emba-extract-s24_kernel_bin_identifier.py 
+sudo ln -s /home/sodiacs/.local/bin/emba-extract-s26_kernel_vuln_verifier.py   emba-extract-s26_kernel_vuln_verifier.py  
+sudo ln -s /home/sodiacs/.local/bin/emba-log-viewer			      emba-log-viewer                           
+sudo ln -s /home/sodiacs/.local/bin/emba-stop-scan			      emba-stop-scan                            
+sudo ln -s /home/sodiacs/.local/bin/emba-text2json.py			      emba-text2json.py                         
+sudo ln -s /home/sodiacs/.local/bin/emba-timing.py			      emba-timing.py                            
+sudo ln -s /home/sodiacs/.local/bin/JsonShared.py			      JsonShared.py                             
+sudo ln -s /home/sodiacs/.local/bin/proc-emba-html			      proc-emba-html                            
+sudo ln -s /home/sodiacs/.local/bin/proc-emba-text                             proc-emba-text                            
