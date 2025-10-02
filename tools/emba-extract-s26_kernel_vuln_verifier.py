@@ -49,6 +49,11 @@ class CVE_Result_Find:
         self.symbols = symbols
         self.compile_files = compile_files
 
+
+class UnknownFind:
+    def __init__(self, description):
+        self.description = description
+
 class Text_Find:
     def __init__(self, details):
         self.details = details
@@ -71,11 +76,11 @@ def Parse_exploits(parts):
     return exploits
 
 def parse_finding(line):
-    find = None
+    find = UnknownFind(line)
     if line is not empty():
         parts = line.split(" : ")
         parts = [item.strip() for item in parts]
-        if parts is not empty():
+        if len(parts) >= 9:
             modul = parts[0]
             ver = parts[1]
             cve = parts[2]
@@ -110,6 +115,8 @@ def parse_finding(line):
                     lnk = parts[8]
                     lnk_tag = parts[7]
             else:
+                if (len(parts) < 10):
+                    return find
                 exploits = Parse_exploits(parts)
                 if parts[8] and parts[9]:
                     lnk = parts[9]
@@ -138,7 +145,7 @@ def parse_cve_results(link):
             elif len(row) == 6:
                 cve_result_find = CVE_Result_Find(row[0], row[1], row[2], link, row[3], row[3], row[4], row[5])
             else:
-                raise Exception("Invalid formatting")
+                continue
             
             finds.append(cve_result_find)
 
@@ -278,9 +285,16 @@ def main():
                             link = pre_tags[i].get('href')
 
                             if plus_delim in pre_tags[i].get_text(separator=' ', strip=True):
-                                finds = parse_cve_results(os.path.join(os.path.dirname(in_file), link))
+                                try:
+                                    finds = parse_cve_results(os.path.join(os.path.dirname(in_file), link))
+                                except FileNotFoundError as e:
+                                    print(e)
                             else:
-                                finds = get_html_text(os.path.join(os.path.dirname(in_file), link))
+                                try:
+                                    finds = get_html_text(os.path.join(os.path.dirname(in_file), link))
+                                except FileNotFoundError as e:
+                                    print(e)
+                                
                         else:
                             pre = pre_tags[i]
                             link = ""

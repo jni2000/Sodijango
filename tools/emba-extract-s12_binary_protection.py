@@ -15,6 +15,10 @@ class Find:
         self.forti = forti
         self.file = file
 
+class UnknownFind:
+    def __init__(self, description):
+        self.description = description
+
 def main():
     if len(sys.argv) > 1:
         in_file = sys.argv[1]
@@ -56,8 +60,20 @@ def main():
 
 
                 ## TODO: Will Forti column always only have one word?
+                if (len(plain_text.split()) < 2):
+                    find = UnknownFind(tag.get_text(separator=' ', strip=True))
+                    if find.description != "":
+                        subsection.append(find)
+                        
+                    continue
                 span_texts.append(plain_text.split()[0])
                 span_texts.append(" ".join(plain_text.split()[1:]))
+
+                if (len(span_texts) < 9):
+                    find = UnknownFind(tag.get_text(separator=' ', strip=True))
+                    if find.description != "":
+                        subsection.append(find)
+                    continue
 
                 find = Find((span_texts[0], span_colors[0]), (span_texts[1], span_colors[1]), (span_texts[2], span_colors[2]), (span_texts[3], span_colors[3]), (span_texts[4], span_colors[4]), (span_texts[5], span_colors[5]), (span_texts[6], span_colors[6]), span_texts[7], span_texts[8])
                 subsection.append(find)

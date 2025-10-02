@@ -36,6 +36,7 @@ def main():
 
         # Find the main div
         main_div = soup.find("div", id="main")
+        print(type(main_div))
         pre_tags = main_div.find_all(['pre', 'a'], recursive=False)
         section = JsonShared.Section("Kernel Binary and Configuration Identifier", None)
 
@@ -52,44 +53,49 @@ def main():
                     if pre_tags[i].name == 'a' and pre_tags[i].find("pre"):
                         link = pre_tags[i].get('href')
                         link = os.path.join(os.path.dirname(in_file), link)
-                        with open(link, "r", encoding="utf-8") as file:
-                            snd_soup = BeautifulSoup(file, "html.parser")
+                        try:
+                            with open(link, "r", encoding="utf-8") as file:
+                                snd_soup = BeautifulSoup(file, "html.parser")
                                 
-                        snd_main_div = snd_soup.find("div", id="main")
-                        conf_pre = snd_main_div.find_all('pre')
-                        capture = False
-                        for pre in conf_pre:
-                            if "Automatically generated file; DO NOT EDIT" in pre.get_text(strip=True):
-                                finding = '\n'.join([tag.get_text(strip=True) for tag in conf_pre])
-                                find = Conf_Find(finding, link)
-                                subsection.append(find)
-                                break
-                            else:
-                                items = pre.get_text(separator=' ', strip=True).split("|")
-                                items = [item.strip() for item in items]
-                                if capture and (plus_delim not in pre.get_text(strip=True)):
-                                    if len(items) == 6:
-                                        value_found = ""
-                                        if "FAIL:" in items[5]:
-                                            check_result = "FAIL"
-                                            if len(items[5].split("FAIL:")) > 1:
-                                                value_found = items[5].split("FAIL:")[1]
-                                        elif "OK" in items[5]:
-                                            check_result = "OK"
-                                            if len(items[5].split("OK:")) > 1:
-                                                value_found = items[5].split("OK:")[1]
-                                        else:
+                            snd_main_div = snd_soup.find("div", id="main")
+                            conf_pre = snd_main_div.find_all('pre')
+                            capture = False
+                            for pre in conf_pre:
+                                if "Automatically generated file; DO NOT EDIT" in pre.get_text(strip=True):
+                                    finding = '\n'.join([tag.get_text(strip=True) for tag in conf_pre])
+                                    find = Conf_Find(finding, link)
+                                    subsection.append(find)
+                                    break
+                                else:
+                                    items = pre.get_text(separator=' ', strip=True).split("|")
+                                    items = [item.strip() for item in items]
+                                    if capture and (plus_delim not in pre.get_text(strip=True)):
+                                        if len(items) == 6:
                                             value_found = ""
-                                            check_result = items[5]
-                                        find = Find(items[0], items[1], items[2], items[3], items[4], check_result, value_found)
-                                        subsection.append(find)
+                                            if "FAIL:" in items[5]:
+                                                check_result = "FAIL"
+                                                if len(items[5].split("FAIL:")) > 1:
+                                                    value_found = items[5].split("FAIL:")[1]
+                                            elif "OK" in items[5]:
+                                                check_result = "OK"
+                                                if len(items[5].split("OK:")) > 1:
+                                                    value_found = items[5].split("OK:")[1]
+                                            else:
+                                                value_found = ""
+                                                check_result = items[5]
+                                            find = Find(items[0], items[1], items[2], items[3], items[4], check_result, value_found)
+                                            subsection.append(find)
 
-                                if items == ["option_name", "type", "desired_val", "decision", "reason", "check_result"]:
-                                    capture = True
-                                
-                    next_raw = pre_tags[i + 1].get_text(separator=' ', strip=True)
-                    if pre_tags[i + 1].find("span", class_="orange") and plus_delim not in next_raw and star_delim not in next_raw:
-                        conclusion = next_raw
+                                    if items == ["option_name", "type", "desired_val", "decision", "reason", "check_result"]:
+                                        capture = True
+                        except FileNotFoundError:
+                            print(f"Error: The file '{link}' was not found.")
+
+                        
+                    if (i + 1 < len(pre_tags)):
+                        next_raw = pre_tags[i + 1].get_text(separator=' ', strip=True)
+                        if pre_tags[i + 1].find("span", class_="orange") and plus_delim not in next_raw and star_delim not in next_raw:
+                            conclusion = next_raw
 
                 subsection.conclusion = conclusion
                 section.append_subsection(subsection)
