@@ -29,9 +29,14 @@ from PyPDF2 import PdfMerger
 
 def runcmd(cmd, scan_rec=None):
     p = subprocess.Popen(cmd, preexec_fn=os.setsid, shell=True)
+    '''
+    # database access here caused exception in cases when database connection is closed
+    # handler is not needed as stop scan function does not work as expected for binary scans
+    # disabled the feature
     if scan_rec is not None:
         scan_rec.handler = os.getpgid(p.pid)
         scan_rec.save()
+    '''
     p.wait()
 
 def stopcmd(pid):
@@ -153,8 +158,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             subprocess.call(full_cmd, shell=True)
         else:
         '''
+        '''
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
+        '''
         os.makedirs(result_dir, exist_ok=True)
 
         match scan_type:
@@ -273,6 +280,123 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             except FileNotFoundError:
                 return Response({'error': 'Invalid reference ID'}, status=404)
 
+    '''
+    def getActionType(self, action, action_type):
+        result = "None"
+        match action:
+            case "scan":
+                match action_type:
+                    case "package" | "binary":
+                        result = action_type
+            case "sbom":
+                match action_type:
+                    case "spdx" | "cyclonedx":
+                        result = action + "_" + action_type
+            case "vex":
+                match action_type:
+                    case "cyclonedx" | "csaf" | "openvex":
+                        result = action + "_" + action_type
+            case "license":
+                match action_type:
+                    case "cyclonedx" | "spdx" | "json":
+                        result = action + "_" + action_type
+            case _:
+                match action_type:
+                    case "package" | "binary":
+                        result = action_type
+        return result
+
+    def retrieve(self, request, ref_id=None):
+        print("Software scan get request recived: ref_id = " + ref_id)
+        # path_info = f"{request.META['PATH_INFO']}"
+        # path_segs = path_info.split("/")
+        # ref_id = path_segs[-2]
+        scan_info = ref_id.split("_")
+        scan_rec_type = scan_info[0]
+        scan_rec_name = scan_info[1]
+        scan_rec_action = scan_info[2]
+        print("Get scan status for: "+scan_rec_type +"," +scan_rec_name+"," + scan_rec_action)
+
+        scan_action_type = self.getActionType(scan_rec_action, scan_rec_type)
+        print("Get: " + scan_action_type)
+
+        result_file_location = self.result_root + scan_rec_name
+
+        match scan_action_type:
+            case "binary":
+                result_dir = result_file_location + "/binaryscan"
+                result_to_zip = "/clean-text"
+                progress = ref_id + ".binscan"
+            case "package":
+                result_dir = result_file_location + "/packagescan"
+                result_to_zip = "/html-report"
+                progress = ref_id + ".pkgscan"
+            case "sbom_spdx":
+                result_dir = result_file_location + "/sbom_spdx"
+                progress = ref_id + ".sbom_spdx"
+            case "sbom_cyclonedx":
+                result_dir = result_file_location + "/sbom_cyclonedx"
+                progress = ref_id + ".sbom_cyclonedx"
+            case "vex_csaf":
+                result_dir = result_file_location + "/vex_csaf"
+                progress = ref_id + ".vex_csaf"
+            case "vex_cyclonedx":
+                result_dir = result_file_location + "/vex_cyclonedx"
+                progress = ref_id + ".vex_cyclonedx"
+            case "vex_openvex":
+                result_dir = result_file_location + "/vex_openvex"
+                progress = ref_id + ".vex_openvex"
+            case "license_json":
+                result_dir = result_file_location + "/license_json"
+                progress = ref_id + ".license_json"
+            case "license_cyclonedx":
+                result_dir = result_file_location + "/license_cyclonedx"
+                progress = ref_id + ".license_cyclonedx"
+            case "license_spdx":
+                result_dir = result_file_location + "/license_spdx"
+                progress = ref_id + ".license_spdx"
+            case _:
+                # result_dir = result_file_location + "/" + ref_id
+                return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+
+        zip_dir = result_dir + "/download-zip"
+        text_dir = result_dir + "/clean-text"
+        html_dir = result_dir + "/html-report"
+
+        if os.path.exists(result_file_location + "/" + progress):
+            scan_rec = SoftwareSecurityScan.objects.filter(ref_id=ref_id).first()
+            if scan_rec is None:
+                return Response({'Status': 'Not found'}, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                scan_rec.status = "done"
+                scan_rec.save()
+                if scan_rec.type == "binary" or scan_rec.type == "package":
+                    # create the gzipped tar file for download
+                    if os.path.exists(zip_dir + "/html-report.zip"):
+                        print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
+                    else:
+                        if scan_rec.type == "binary":
+                            process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; proc-emba-html; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
+                        else:
+                            process_text_file_cmd = ""
+                        # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
+                        prepare_cmd = "mkdir " + zip_dir + "; "
+                        # zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
+                        zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + result_to_zip
+                        # zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + "/clean-text"
+                        full_cmd = process_text_file_cmd + prepare_cmd + zip_cmd
+                        print(full_cmd)
+                        child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,))
+                        child_proc.start()
+                        print("Zipped scan results " + result_dir + "/html-report.zip created.")
+                serializer = SoftwareSecurityScanSerializer(scan_rec)
+                return Response(serializer.data)
+        elif os.path.exists(result_file_location + "/" + ref_id):
+            return Response({'status': 'done', 'ref_id': ref_id})
+        else:
+            return Response({'status': 'in-progress', 'ref_id': ref_id})
+
+    '''
     def retrieve(self, request, ref_id=None):
         print("Software scan get request recived: ref_id = " + ref_id)
         # path_info = f"{request.META['PATH_INFO']}"
@@ -622,8 +746,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             subprocess.call(full_cmd, shell=True)
         else:
         '''
+        '''
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
+        '''
         os.makedirs(result_dir, exist_ok=True)
 
         match scan_type:
@@ -635,6 +761,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 scan_cmd = cmd + file_location
                 prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
+                '''
+                cmd = "sudo ./emba"
+                emba_profile = self.emba_profile_home + "default-sbom.emba"
+                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
+                '''
+
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
                 child_proc.start()
@@ -784,8 +916,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             subprocess.call(full_cmd, shell=True)
         else:
         '''
+        '''
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
+        '''
         os.makedirs(result_dir, exist_ok=True)
 
         match scan_type:
@@ -949,8 +1083,10 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             subprocess.call(full_cmd, shell=True)
         else:
         '''
+        '''
         if os.path.exists(result_dir):
             shutil.rmtree(result_dir)
+        '''
         os.makedirs(result_dir, exist_ok=True)
         match scan_type:
             case "json":
