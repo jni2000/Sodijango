@@ -343,6 +343,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "vex_cyclonedx":
                 result_dir = result_file_location + "/vex_cyclonedx"
                 progress = ref_id + ".vex_cyclonedx"
+
             case "vex_openvex":
                 result_dir = result_file_location + "/vex_openvex"
                 progress = ref_id + ".vex_openvex"
