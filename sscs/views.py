@@ -115,10 +115,11 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
             result_file_location = self.result_root + file_path + "/" + file_name
-        # result_dir = result_file_location + "/" + ref_id
+        result_dir = result_file_location + "/" + ref_id
+        '''
         match scan_type:
             case "binary":
-                result_dir = result_file_location + "/binaryscan"
+                # result_dir = result_file_location + "/binaryscan"
                 done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
@@ -127,13 +128,14 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             # rename the existing scan result
                             rename_cmd = "mv " + result_file_location + "/" + scan_type + "scan " + result_file_location + "/" + old_scan
                             full_cmd = rename_cmd + "; rm " + result_file_location + "/" + done_file
+
                             subprocess.call(full_cmd, shell=True)
                             done_file_found = True
                             break
                     if done_file_found:
                         break
             case "package":
-                result_dir = result_file_location + "/packagescan"
+                # result_dir = result_file_location + "/packagescan"
                 done_file_found = False
                 for done_root, done_dirs, done_files in os.walk(result_file_location):
                     for done_file in done_files:
@@ -149,7 +151,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         break
             case _:
                 result_dir = result_file_location + "/" + ref_id
-        '''
+
         if not os.path.exists(result_file_location):
             full_cmd = "mkdir " + result_file_location
             subprocess.call(full_cmd, shell=True)
@@ -170,7 +172,9 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Invoke binary scanning: " + file_location)
                 cmd = "sudo ./emba"
                 emba_profile = self.emba_profile_home + scan_level + "-scan.emba"
-                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".binscan"
+                text_dir = result_dir + "/clean-text"
+                post_cmd = "cd " + result_dir + "; proc-emba-text; proc-emba-html; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
+                full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; " + post_cmd + "echo done > " + result_file_location + "/" + ref_id + ".binscan"
                 print("executing " + full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
                 child_proc.start()
@@ -190,7 +194,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # cmd = "cve-bin-tool --offline -f json,html -o "
                 cmd = "cve-bin-tool " + offline + "-f json,html -o "
                 scan_cmd = cmd + result_dir + "/html-report/index " + file_location
-                prepare_cmd = "mkdir " + result_dir + "/html-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/html-report; "
                 # convert_cmd = "cat " + result_file_location + "/" + ref_id + ".log | terminal-to-html -preview > " + result_dir + "/html-report" + "/index.html"
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".pkgscan"
                 print(full_cmd)
@@ -221,49 +225,50 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 result_file_location = self.result_root + scan_rec.location
             else:
                 result_file_location = self.result_root + scan_rec.location + "/" + scan_rec.name
+            result_dir = result_file_location + "/" + ref_id
             match scan_rec.type:
                 case "binary":
-                    result_dir = result_file_location + "/binaryscan"
+                    # result_dir = result_file_location + "/binaryscan"
                     zip_dir = result_dir + "/download-zip"
                     result_file = "html-report.zip"
                     file_path = zip_dir + "/" + result_file
                 case "package":
-                    result_dir = result_file_location + "/packagescan"
+                    # result_dir = result_file_location + "/packagescan"
                     zip_dir = result_dir + "/download-zip"
                     result_file = "html-report.zip"
                     file_path = zip_dir + "/" + result_file
                 case "sbom_spdx":
-                    result_dir = result_file_location + "/sbom_spdx/sbom-report"
+                    # result_dir = result_file_location + "/sbom_spdx/sbom-report"
                     result_file = "sbom_spdx.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/sbom-report/" + result_file
                 case "sbom_cyclonedx":
-                    result_dir = result_file_location + "/sbom_cyclonedx/sbom-report"
+                    # result_dir = result_file_location + "/sbom_cyclonedx/sbom-report"
                     result_file = "sbom_cyclonedx.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/sbom-report/" + result_file
                 case "vex_csaf":
-                    result_dir = result_file_location + "/vex_csaf/vex-report"
+                    # result_dir = result_file_location + "/vex_csaf/vex-report"
                     result_file = "vex_csaf.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/vex-report/" + result_file
                 case "vex_cyclonedx":
-                    result_dir = result_file_location + "/vex_cyclonedx/vex-report"
+                    # result_dir = result_file_location + "/vex_cyclonedx/vex-report"
                     result_file = "vex_cyclonedx.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/vex-report/" + result_file
                 case "vex_openvex":
-                    result_dir = result_file_location + "/vex_openvex/vex-report"
+                    # result_dir = result_file_location + "/vex_openvex/vex-report"
                     result_file = "vex_openvex.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/vex-report/" + result_file
                 case "license_json":
-                    result_dir = result_file_location + "/license_json/license-report"
+                    # result_dir = result_file_location + "/license_json/license-report"
                     result_file = "licenses.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/license-report/" + result_file
                 case "license_cyclonedx":
-                    result_dir = result_file_location + "/license_cyclonedx/license-report"
+                    # result_dir = result_file_location + "/license_cyclonedx/license-report"
                     result_file = "licenses_cyclonedx.json"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/license-report/" + result_file
                 case "license_spdx":
-                    result_dir = result_file_location + "/license_spdx/license-report"
+                    # result_dir = result_file_location + "/license_spdx/license-report"
                     result_file = "licenses_spdx.tv"
-                    file_path = result_dir + "/" + result_file
+                    file_path = result_dir + "/license-report/" + result_file
 
                 case _:
                     result_dir = result_file_location + "/" + ref_id
@@ -343,7 +348,6 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "vex_cyclonedx":
                 result_dir = result_file_location + "/vex_cyclonedx"
                 progress = ref_id + ".vex_cyclonedx"
-
             case "vex_openvex":
                 result_dir = result_file_location + "/vex_openvex"
                 progress = ref_id + ".vex_openvex"
@@ -415,38 +419,39 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 result_file_location = self.result_root + scan_rec.location
             else:
                 result_file_location = self.result_root + scan_rec.location + "/" + scan_rec.name
+            result_dir = result_file_location + "/" + ref_id
             match scan_rec.type:
                 case "binary":
-                    result_dir = result_file_location + "/binaryscan"
+                    # result_dir = result_file_location + "/binaryscan"
                     result_to_zip = "/clean-text"
                     progress = ref_id + ".binscan"
                 case "package":
-                    result_dir = result_file_location + "/packagescan"
+                    # result_dir = result_file_location + "/packagescan"
                     result_to_zip = "/html-report"
                     progress = ref_id + ".pkgscan"
                 case "sbom_spdx":
-                    result_dir = result_file_location + "/sbom_spdx"
+                    # result_dir = result_file_location + "/sbom_spdx"
                     progress = ref_id + ".sbom_spdx"
                 case "sbom_cyclonedx":
-                    result_dir = result_file_location + "/sbom_cyclonedx"
+                    # result_dir = result_file_location + "/sbom_cyclonedx"
                     progress = ref_id + ".sbom_cyclonedx"
                 case "vex_csaf":
-                    result_dir = result_file_location + "/vex_csaf"
+                    # result_dir = result_file_location + "/vex_csaf"
                     progress = ref_id + ".vex_csaf"
                 case "vex_cyclonedx":
-                    result_dir = result_file_location + "/vex_cyclonedx"
+                    # result_dir = result_file_location + "/vex_cyclonedx"
                     progress = ref_id + ".vex_cyclonedx"
                 case "vex_openvex":
-                    result_dir = result_file_location + "/vex_openvex"
+                    # result_dir = result_file_location + "/vex_openvex"
                     progress = ref_id + ".vex_openvex"
                 case "license_json":
-                    result_dir = result_file_location + "/license_json"
+                    # result_dir = result_file_location + "/license_json"
                     progress = ref_id + ".license_json"
                 case "license_cyclonedx":
-                    result_dir = result_file_location + "/license_cyclonedx"
+                    # result_dir = result_file_location + "/license_cyclonedx"
                     progress = ref_id + ".license_cyclonedx"
                 case "license_spdx":
-                    result_dir = result_file_location + "/license_spdx"
+                    # result_dir = result_file_location + "/license_spdx"
                     progress = ref_id + ".license_spdx"
                 case _:
                     result_dir = result_file_location + "/" + ref_id
@@ -464,11 +469,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                         print("Zipped scan results " + zip_dir + "/html-report.zip exist.")
                     else:
                         if scan_rec.type == "binary":
-                            process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; proc-emba-html; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
+                            process_text_file_cmd = ""
+                            # process_text_file_cmd = "cd " + result_dir + "; proc-emba-text; proc-emba-html; cd " + text_dir + "; emba-text2json.py > scan-results.json; "
                         else:
                             process_text_file_cmd = ""
                         # zip_cmd = "tar -czvf " + result_root + ref_id + ".tar.gz " + result_root + ref_id + "/html-report"
-                        prepare_cmd = "mkdir " + zip_dir + "; "
+                        prepare_cmd = "mkdir -p " + zip_dir + "; "
                         # zip_cmd = "zip -r " + zip_dir + "/html-report.zip " + result_dir + "/html-report"
                         zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + result_to_zip
                         # zip_cmd = "zip -r -j " + zip_dir + "/html-report.zip " + result_dir + "/clean-text"
@@ -667,7 +673,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
-        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_sbom_" + str(uuid.uuid4())
+        ref_id = "sbom_" + request.data.__getitem__('name') + "_" + request.data.__getitem__('type') + "_" + str(uuid.uuid4())
         scan_rec.ref_id = ref_id
         # invoke the scan
         scan_type = request.data.__getitem__('type')
@@ -687,7 +693,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
             result_file_location = self.result_root + file_path + "/" + file_name
-        # result_dir = result_file_location + "/" + ref_id
+        result_dir = result_file_location + "/" + ref_id
+        '''
         match scan_type:
             case "cyclonedx":
                 result_dir = result_file_location + "/sbom_cyclonedx"
@@ -735,6 +742,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             break
                     if done_file_found:
                         break
+        '''
         scan_rec.type = "sbom_" + scan_type
         scan_rec.save()
 
@@ -757,17 +765,16 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
             case "cyclonedx":
                 # invoke emba firmware/binary scanning
                 print("Build CycloneDX SBOM: " + file_location)
-                # cmd = "cve-bin-tool --offline --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
-                cmd = "cve-bin-tool --offline --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
-                scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
-                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
                 '''
                 cmd = "sudo ./emba"
                 emba_profile = self.emba_profile_home + "default-sbom.emba"
                 full_cmd = "cd " + self.emba_home + "; " + cmd + " -l " + result_dir + " -f " + file_location + " -p " + emba_profile + " > " + result_file_location + "/" + ref_id + ".log; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
                 '''
-
+                # cmd = "cve-bin-tool --offline --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
+                cmd = "cve-bin-tool --offline --sbom-type cyclonedx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_cyclonedx.json "
+                scan_cmd = cmd + file_location
+                prepare_cmd = "mkdir -p " + result_dir + "/sbom-report; "
+                full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_cyclonedx"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
                 child_proc.start()
@@ -779,7 +786,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # cmd = "cve-bin-tool --offline --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
                 cmd = "cve-bin-tool --offline --sbom-type spdx --sbom-format json --sbom-output " + result_dir + "/sbom-report/sbom_spdx.json "
                 scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/sbom-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/sbom-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".sbom_spdx"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
@@ -812,7 +819,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
-        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_vex_" + str(uuid.uuid4())
+        ref_id = "vex_" + request.data.__getitem__('name') + "_" + request.data.__getitem__('type') + "_" + str(uuid.uuid4())
         scan_rec.ref_id = ref_id
         # invoke the scan
         scan_type = request.data.__getitem__('type')
@@ -837,11 +844,12 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
             result_file_location = self.result_root + file_path + "/" + file_name
-        # result_dir = result_file_location + "/" + ref_id
+        result_dir = result_file_location + "/" + ref_id
         if file_product == "" or file_release == "" or file_vendor == "" or file_revision_reason == "":
             scan_rec.status = "done"
             scan_rec.save()
             return Response({'error': 'Product, release, vendor, revision reason must be specified.'}, status=404)
+        '''
         match scan_type:
             case "cyclonedx":
                 result_dir = result_file_location + "/vex_cyclonedx"
@@ -904,6 +912,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             break
                     if done_file_found:
                         break
+        '''
 
         scan_rec.type = "vex_" + scan_type
         scan_rec.save()
@@ -930,7 +939,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # cmd = "cve-bin-tool --offline --vex-type cyclonedx " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
                 cmd = "cve-bin-tool --offline --vex-type cyclonedx " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_cyclonedx.json "
                 scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/vex-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_cyclonedx"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
@@ -943,7 +952,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # cmd = "cve-bin-tool --offline --vex-type csaf " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_csaf.json "
                 cmd = "cve-bin-tool --offline --vex-type csaf " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_csaf.json "
                 scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/vex-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_csaf"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
@@ -956,7 +965,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 # cmd = "cve-bin-tool --offline --vex-type openvex " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_openvex.json "
                 cmd = "cve-bin-tool --offline --vex-type openvex " + "--product " + file_product + " --release " + file_release + " --vendor " + file_vendor + " --revision-reason " + file_revision_reason + " --vex-output " + result_dir + "/vex-report/vex_openvex.json "
                 scan_cmd = cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/vex-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/vex-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".vex_openvex"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd,scan_rec))
@@ -987,7 +996,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         # queryset = SoftwareSecurityScan.objects.all()
         scan_rec = get_object_or_404(queryset, pk=pk)
 
-        ref_id = request.data.__getitem__('type') + "_" + request.data.__getitem__('name') + "_license_" + str(uuid.uuid4())
+        ref_id = "license_" + request.data.__getitem__('name') + "_" + request.data.__getitem__('type') + "_" + str(uuid.uuid4())
         scan_rec.ref_id = ref_id
         scan_rec.save()
         # invoke the scan
@@ -1008,7 +1017,8 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
         else:
             file_location = (self.file_root + file_path + "/" + file_name + "/softwarefiles").replace("//", "/")
             result_file_location = self.result_root + file_path + "/" + file_name
-        # result_dir = result_file_location + "/" + ref_id
+        result_dir = result_file_location + "/" + ref_id
+        '''
         match scan_type:
             case "json":
                 result_dir = result_file_location + "/license_json"
@@ -1071,6 +1081,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                             break
                     if done_file_found:
                         break
+        '''
 
         scan_rec.type = "license_" + scan_type
         scan_rec.save()
@@ -1095,7 +1106,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Build JSON software license document: " + file_location)
                 cmd = "./scancode -clpeui -n 2 --json-pp " + result_dir + "/license-report/licenses.json "
                 scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/license-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/license-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_json"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
@@ -1108,7 +1119,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Build JSON software license document: " + file_location)
                 cmd = "./scancode -clpeui -n 2 --cyclonedx " + result_dir + "/license-report/licenses_cyclonedx.json "
                 scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/license-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/license-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_cyclonedx"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
@@ -1121,7 +1132,7 @@ class SoftwareSecurityScanViewSet(viewsets.ModelViewSet):
                 print("Build JSON software license document: " + file_location)
                 cmd = "./scancode -clpeui -n 2 --spdx-tv " + result_dir + "/license-report/licenses_spdx.tv "
                 scan_cmd = "cd " + self.scancode_home + "; " + cmd + file_location
-                prepare_cmd = "mkdir " + result_dir + "/license-report; "
+                prepare_cmd = "mkdir -p " + result_dir + "/license-report; "
                 full_cmd = prepare_cmd + scan_cmd + "; echo done > " + result_file_location + "/" + ref_id + ".license_spdx"
                 print(full_cmd)
                 child_proc = multiprocessing.Process(target=runcmd, args=(full_cmd, scan_rec))
